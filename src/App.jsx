@@ -1,16 +1,21 @@
-import Footer from './components/Foother';
+import './App.css';
 import Header from './components/Header';
-import SectionBot from './components/SectionBot';
-import SectionMid from './components/SectionMid';
-import SectionTop from './components/SectionTop';
+import Hero from './components/Hero';
+import Mode from './components/Mode';
+import Profile from './components/Profile';
+import Projeckts from './components/Projeckts';
+import Skill from './components/Skill';
+import Footer from './components/footer';
 
 export default function App() {
   return (
-    <div>
+    <div className="all">
+      <Mode />
       <Header />
-      <SectionTop />
-      <SectionMid />
-      <SectionBot />
+      <Hero />
+      <Skill />
+      <Profile />
+      <Projeckts />
       <Footer />
     </div>
   );

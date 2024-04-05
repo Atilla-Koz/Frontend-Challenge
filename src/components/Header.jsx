@@ -1,7 +1,12 @@
+import Logo from '../assets/header/Ellipse 9.png';
+import '../App.css';
 export default function Header() {
   return (
-    <header>
-      <h1>My App</h1>
-    </header>
+    <div className="headerContainer">
+      <img src={Logo} alt="Logo" />
+      <p>Skills</p>
+      <p>Projeckts</p>
+      <p>Hire me</p>
+    </div>
   );
 }

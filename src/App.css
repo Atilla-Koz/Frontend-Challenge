@@ -1,13 +1,44 @@
+/* App Css */
 .all {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   height: 100vh;
   background-color: #f1f1f1;
+}
+/* Header Css */
+
+.headerHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .headerContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+}
+
+.hNav {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+.hLogo {
+  position: relative;
+}
+.hText {
+  position: absolute;
+  top: 4.7%;
+  left: 21.6%;
+}
+/* Hero Css */
+.heroContainer {
+  display: flex;
+
+  justify-content: center;
+}
+
+.heroP {
+  display: flex;
+  flex-direction: row;
 }

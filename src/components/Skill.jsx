@@ -1,7 +1,31 @@
 export default function Skill() {
   return (
-    <section>
-      <h2>Skill</h2>
+    <section className="skillsContainer">
+      <h2 className="SkillTitle">Skills</h2>
+      <div className="skillsCards">
+        <div className="skillsCard">
+          <h3 className="cardTitle">Java Script</h3>
+          <p className="cardText">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div className="skillsCard">
+          <h3 className="cardTitle">Java Script</h3>
+          <p className="cardText">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div className="skillsCard">
+          <h3 className="cardTitle">Java Script</h3>
+          <p className="cardText">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+      <hr className="skillsHr" />
     </section>
   );
 }

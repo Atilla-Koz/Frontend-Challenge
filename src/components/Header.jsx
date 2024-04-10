@@ -11,7 +11,7 @@ export default function Header() {
       <section className="hNav">
         <p>Skills</p>
         <p>Projeckts</p>
-        <p>Hire me</p>
+        <p className="headerHireMe">Hire me</p>
       </section>
     </header>
   );

@@ -23,6 +23,19 @@
   display: flex;
   flex-direction: row;
   gap: 4rem;
+
+  align-items: center;
+}
+.headerHireMe {
+  display: flex;
+  flex-direction: row;
+  color: #3730a3;
+  border: 2px solid #3730a3;
+  border-radius: 5px;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 28px;
+  padding: 5px 20px;
 }
 .logoContainer {
   position: relative;
@@ -117,4 +130,47 @@
 }
 .gitIcon {
   margin-right: 5px;
+}
+/*skills Css */
+.skillsCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.SkillTitle {
+  color: #1f2937;
+  font: Interd;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+  width: 1039px;
+  height: 64px;
+  padding-left: 5%;
+  padding-bottom: 3%;
+}
+.cardTitle {
+  width: 236px;
+  height: 28pxs;
+  color: #4338ca;
+  font: Inter;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 28px;
+  padding-bottom: 3%;
+}
+.cardText {
+  color: #6b7280;
+  font: Inter;
+  font-weight: 400;
+  size: 12px;
+  line-height: 16px;
+}
+.skillsHr {
+  top: 1407px;
+  left: 126px;
+  border: 1px solid;
+  color: #bab2e7;
 }

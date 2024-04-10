@@ -4,7 +4,7 @@
   flex-direction: column;
 
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
 }
 /* Header Css */
 
@@ -73,11 +73,18 @@
 }
 .heroText {
 }
+
 .heroName {
   font-size: 20px;
-  margin-left: 25%;
+  margin-left: 33%;
   margin-right: 25%;
   color: #4338ca;
+  position: relative;
+}
+.heroLine {
+  position: absolute;
+  top: 52%;
+  right: 100%;
 }
 .heroP {
   font-size: 18px;
@@ -169,8 +176,7 @@
   line-height: 16px;
 }
 .skillsHr {
-  top: 1407px;
-  left: 126px;
+  margin: 5rem;
   border: 1px solid;
   color: #bab2e7;
 }

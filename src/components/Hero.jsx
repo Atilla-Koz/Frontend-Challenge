@@ -1,6 +1,7 @@
 import img from '../assets/hero/image 1.png';
 import git from '../assets/hero/github.png';
 import linkedin from '../assets/hero/LinkedIn.png';
+import line from '../assets/hero/Line 11.png';
 
 export default function Hero() {
   return (
@@ -8,7 +9,11 @@ export default function Hero() {
       <section className="heroBot">
         <div className="heroText">
           <section className="heroContainerTitle">
-            <h2 className="heroName">Atilla Köz</h2>
+            <h2 className="heroName">
+              <img className="heroLine" src={line} alt="line" />
+              Atilla Köz
+            </h2>
+
             <h1 className="heroTitle">Frontend Developer</h1>
           </section>
           <p className="heroP">

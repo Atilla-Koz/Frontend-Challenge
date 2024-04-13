@@ -180,3 +180,34 @@
   border: 1px solid;
   color: #bab2e7;
 }
+/*prfile Css */
+.profileTitle {
+  font-size: 48px;
+}
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #1f2937;
+}
+.personInfo {
+  display: flex;
+  flex-direction: column;
+}
+.InfoTitle {
+  font-size: 30px;
+  color: #4338ca;
+}
+.InfoText {
+  display: flex;
+  flex-direction: row;
+
+  font-weight: 600;
+}
+.InfoTextData {
+  font-weight: 400;
+  padding-left: 1rem;
+}

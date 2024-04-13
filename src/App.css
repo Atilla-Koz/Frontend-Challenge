@@ -182,9 +182,17 @@
 }
 /*prfile Css */
 .profileTitle {
+  color: #1f2937;
+  font: Interd;
+  font-weight: 600;
   font-size: 48px;
+  line-height: 48px;
+  width: 1039px;
+  height: 64px;
+  padding-left: 5%;
+  padding-bottom: 3%;
 }
-.profileContainer {
+.ProfileContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -209,5 +217,21 @@
 }
 .InfoTextData {
   font-weight: 400;
-  padding-left: 1rem;
+  padding-left: 5%;
 }
+
+.aboutTitle {
+  font-size: 30px;
+  color: #4338ca;
+}
+.aboutMeTexts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.skillsHr {
+  margin: 5rem;
+  border: 1px solid;
+  color: #bab2e7;
+}
+/*projects Css */

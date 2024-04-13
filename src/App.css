@@ -6,6 +6,21 @@
   height: 100vh;
   background-color: #ffffff;
 }
+
+/*Modal Css */
+.modeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.soul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 /* Header Css */
 
 .headerHeader {

@@ -208,6 +208,7 @@
 .InfoTitle {
   font-size: 30px;
   color: #4338ca;
+  font-weight: 500;
 }
 .InfoText {
   display: flex;
@@ -223,6 +224,7 @@
 .aboutTitle {
   font-size: 30px;
   color: #4338ca;
+  font-weight: 500;
 }
 .aboutMeTexts {
   display: flex;
@@ -235,3 +237,75 @@
   color: #bab2e7;
 }
 /*projects Css */
+.ProjecktsTitle {
+  color: #1f2937;
+  font: Interd;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+  width: 1039px;
+  height: 64px;
+  padding-left: 5%;
+  padding-bottom: 3%;
+}
+.ProjecktsContainar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 5rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #1f2937;
+}
+.Projeckt {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.projecktImg {
+  width: 300px;
+  height: 180px;
+}
+.projecktTitle {
+  font-size: 30px;
+  color: #4338ca;
+  font-weight: 500;
+  padding: 5px;
+}
+
+.projecktText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  padding: 5px;
+}
+.projeckIns {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 5px;
+}
+.projecktIN {
+  display: flex;
+  flex-direction: row;
+  color: #3730a3;
+  border: 2px solid #3730a3;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  padding: 5px 20px;
+}
+.ProjecktLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
+.projecktLink {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #3730a3;
+  padding: 5px;
+}

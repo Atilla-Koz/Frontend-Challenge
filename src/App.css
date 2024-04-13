@@ -386,3 +386,109 @@
   line-height: 27px;
   color: #0077b5;
 }
+/* Responsive CSS */
+@media screen and (max-width: 1000px) {
+  .all {
+    height: auto;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroP {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .heroContainerTitle {
+    align-items: center;
+  }
+
+  .heroButtonsContainer {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .skillsCards {
+    flex-direction: column;
+  }
+
+  .cardText {
+    text-align: center;
+  }
+
+  .ProfileContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .personInfo {
+    align-items: center;
+  }
+
+  .InfoTitle {
+    text-align: center;
+  }
+
+  .InfoText {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .InfoTextData {
+    padding-left: 0;
+  }
+
+  .aboutTitle {
+    text-align: center;
+  }
+
+  .aboutMeTexts {
+    align-items: center;
+  }
+
+  .ProjecktsContainar {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .projecktImg {
+    width: 100%;
+    height: auto;
+  }
+
+  .projecktTitle {
+    text-align: center;
+  }
+
+  .projecktText {
+    text-align: center;
+  }
+
+  .projeckIns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerContainer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footerTitle {
+    width: auto;
+    height: auto;
+    padding-left: 1rem;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+  }
+}

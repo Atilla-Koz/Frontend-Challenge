@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className="flex flex-col gap-4 pb-4">
       <section className="flex flex-row justify-center items-center">
-        <div className="heroText">
+        <div className="">
           <section className="flex flex-col gap-4 pb-4">
             <h2 className="text-xl ml-left-33 mr-right-25 text-customPurple relative">
               <img
@@ -44,7 +44,7 @@ export default function Hero() {
           </section>
         </div>
         <div className="flex justify-start items-start">
-          <img className="heroImg" src={img} alt="hero" />
+          <img className="" src={img} alt="hero" />
         </div>
       </section>
     </div>

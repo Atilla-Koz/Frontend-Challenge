@@ -15,6 +15,7 @@ module.exports = {
         'right-25': '25%',
         'left-33': '33%',
         'left-5': '5%',
+        'right-5': '5%',
       },
 
       spacing: {
@@ -23,9 +24,11 @@ module.exports = {
       width: {
         1039: '1039px',
         236: '236px',
+        300: '300px',
       },
       height: {
         64: '64px',
+        180: '180px',
       },
     },
   },

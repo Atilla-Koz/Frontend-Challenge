@@ -236,18 +236,16 @@
   color: #bab2e7;
 } */
 /*projects Css */
-.ProjecktsTitle {
+/* .ProjecktsTitle {
   color: #1f2937;
-  font: Interd;
   font-weight: 600;
   font-size: 48px;
   line-height: 48px;
   width: 1039px;
   height: 64px;
   padding-left: 5%;
-  padding-bottom: 3%;
-}
-.ProjecktsContainar {
+} */
+/* .ProjecktsContainar {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -255,36 +253,35 @@
   padding-left: 5%;
   padding-right: 5%;
   color: #1f2937;
-}
-.Projeckt {
+} */
+/* .Projeckt {
   display: flex;
   flex-direction: column;
-  flex: 1;
-}
-.projecktImg {
+} */
+/* .projecktImg {
   width: 300px;
   height: 180px;
-}
-.projecktTitle {
+} */
+/* .projecktTitle {
   font-size: 30px;
   color: #4338ca;
   font-weight: 500;
   padding: 5px;
-}
+} */
 
-.projecktText {
+/* .projecktText {
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
   padding: 5px;
-}
-.projeckIns {
+} */
+/* .projeckIns {
   display: flex;
   flex-direction: row;
   gap: 5px;
   padding: 5px;
-}
-.projecktIN {
+} */
+/* .projecktIN {
   display: flex;
   flex-direction: row;
   color: #3730a3;
@@ -294,21 +291,21 @@
   font-weight: 500;
   line-height: 14px;
   padding: 5px 20px;
-}
-.ProjecktLinks {
+} */
+/* .ProjecktLinks {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
-}
-.projecktLink {
+} */
+/* .projecktLink {
   font-size: 16px;
   font-weight: 500;
   line-height: 16px;
   color: #3730a3;
   padding: 5px;
   text-decoration: underline;
-}
+} */
 /*footer Css */
 .footerContainer {
   display: flex;
@@ -435,29 +432,29 @@
     align-items: center;
   } */
 
-  .ProjecktsContainar {
+  /* .ProjecktsContainar {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-  }
+  } */
 
-  .projecktImg {
+  /* .projecktImg {
     width: 100%;
     height: auto;
-  }
+  } */
 
-  .projecktTitle {
+  /* .projecktTitle {
     text-align: center;
-  }
+  } */
 
-  .projecktText {
+  /* .projecktText {
     text-align: center;
-  }
+  } */
 
-  .projeckIns {
+  /* .projeckIns {
     flex-direction: column;
     align-items: center;
-  }
+  } */
 
   .footerContainer {
     padding-top: 2rem;

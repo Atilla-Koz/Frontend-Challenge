@@ -67,56 +67,52 @@
   color: white;
 }
 /* Hero Css */
-.heroContainer {
-}
-.heroBot {
+
+/* .heroBot {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.heroTitle {
+} */
+/* .heroTitle {
   margin-left: 25%;
   margin-right: 25%;
   font-size: 72px;
   color: #1f2937;
-}
-.heroText {
-}
+}  */
 
-.heroName {
+/* .heroName {
   font-size: 20px;
   margin-left: 33%;
   margin-right: 25%;
   color: #4338ca;
   position: relative;
-}
-.heroLine {
+} */
+/* .heroLine {
   position: absolute;
   top: 52%;
   right: 100%;
-}
-.heroP {
+} */
+/* .heroP {
   font-size: 18px;
   margin-left: 25%;
   margin-right: 25%;
   color: #6b7280;
-}
-.heroContainerTitle {
+} */
+/* .heroContainerTitle {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding-bottom: 1rem;
-  margin-right: 1%;
-}
-.heroButtonsContainer {
+} */
+/* .heroButtonsContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
   padding-top: 2rem;
-}
-.heroButtons {
+} */
+/* .heroButtons {
   display: flex;
   flex-direction: row;
   color: #3730a3;
@@ -126,8 +122,8 @@
   font-weight: 500;
   line-height: 28px;
   padding: 5px 20px;
-}
-.heroButtonsHere {
+} */
+/* .heroButtonsHere {
   color: #3730a3;
   border: 2px solid #3730a3;
   border-radius: 5px;
@@ -137,17 +133,16 @@
   padding: 5px 20px;
   background-color: #3730a3;
   color: white;
-}
-.heroImgContainer {
+} */
+/* .heroImgContainer {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-}
-.heroImg {
-}
-.gitIcon {
+} */
+
+/* .gitIcon {
   margin-right: 5px;
-}
+} */
 /*skills Css */
 .skillsCards {
   display: flex;
@@ -387,9 +382,9 @@
     height: auto;
   }
 
-  .heroTitle {
+  /* .heroTitle {
     font-size: 48px;
-  }
+  } */
 
   .heroP {
     margin-left: 10px;
@@ -397,16 +392,16 @@
     text-align: center;
   }
 
-  .heroContainerTitle {
+  /* .heroContainerTitle {
     align-items: center;
-  }
+  } */
 
-  .heroButtonsContainer {
+  /* .heroButtonsContainer {
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
+  } */
 
   .skillsCards {
     flex-direction: column;

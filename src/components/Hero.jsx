@@ -5,37 +5,45 @@ import line from '../assets/hero/Line 11.png';
 
 export default function Hero() {
   return (
-    <div className="heroContainer">
-      <section className="heroBot">
+    <div className="flex flex-col gap-4 pb-4">
+      <section className="flex flex-row justify-center items-center">
         <div className="heroText">
-          <section className="heroContainerTitle">
-            <h2 className="heroName">
-              <img className="heroLine" src={line} alt="line" />
+          <section className="flex flex-col gap-4 pb-4">
+            <h2 className="text-xl ml-left-33 mr-right-25 text-customPurple relative">
+              <img
+                className="absolute top-1/2 right-full"
+                src={line}
+                alt="line"
+              />
               Atilla Köz
             </h2>
 
-            <h1 className="heroTitle">Frontend Developer</h1>
+            <h1 className="ml-left-25 mr-right-25 text-title  text-5xl md:text-7xl">
+              Frontend Developer
+            </h1>
           </section>
-          <p className="heroP">
+          <p className="text-lg ml-left-25 mr-right-25  text-customGray">
             Hi, I'm Almila. I'm a full-stack developer. If you are looking for a
             Developer who to craft solid and scalable frontend products with
             great user experiences. Let's shake hands with me.
           </p>
-          <section className="heroButtonsContainer">
-            <button className="heroButtonsHere">Hire Me</button>
+          <section className="flex md:flex-row md:pt-10  md:justify-center items-center gap-4 pt-8 flex-col  ">
+            <button className="text-white bg-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2">
+              Hire Me
+            </button>
             <a href="https://github.com/Atilla-Koz">
-              <button className="heroButtons">
-                <img className="gitIcon" src={git}></img>GitHub
+              <button className="flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2">
+                <img className="mr-1" src={git}></img>GitHub
               </button>
             </a>
             <a href="https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/">
-              <button className="heroButtons">
-                <img className="gitIcon" src={linkedin}></img>Linkdin
+              <button className="flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2">
+                <img className="mr-1" src={linkedin}></img>Linkdin
               </button>
             </a>
           </section>
         </div>
-        <div className="heroImgContainer">
+        <div className="flex justify-start items-start">
           <img className="heroImg" src={img} alt="hero" />
         </div>
       </section>

@@ -181,19 +181,18 @@
   border: 1px solid;
   color: #bab2e7;
 } */
-/*prfile Css */
-.profileTitle {
+
+/*profile Css */
+/* .profileTitle {
   color: #1f2937;
-  font: Interd;
   font-weight: 600;
   font-size: 48px;
   line-height: 48px;
   width: 1039px;
   height: 64px;
   padding-left: 5%;
-  padding-bottom: 3%;
-}
-.ProfileContainer {
+} */
+/* .ProfileContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -201,42 +200,41 @@
   padding-left: 5%;
   padding-right: 5%;
   color: #1f2937;
-}
-.personInfo {
+} */
+/* .personInfo {
   display: flex;
   flex-direction: column;
-}
-.InfoTitle {
+} */
+/* .InfoTitle {
   font-size: 30px;
   color: #4338ca;
   font-weight: 500;
-}
-.InfoText {
+} */
+/* .InfoText {
   display: flex;
   flex-direction: row;
-
   font-weight: 600;
-}
-.InfoTextData {
+} */
+/* .InfoTextData {
   font-weight: 400;
   padding-left: 5%;
-}
+} */
 
-.aboutTitle {
+/* .aboutTitle {
   font-size: 30px;
   color: #4338ca;
   font-weight: 500;
-}
-.aboutMeTexts {
+} */
+/* .aboutMeTexts {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-.skillsHr {
+} */
+/* .skillsHr {
   margin: 5rem;
   border: 1px solid;
   color: #bab2e7;
-}
+} */
 /*projects Css */
 .ProjecktsTitle {
   color: #1f2937;
@@ -407,35 +405,35 @@
     text-align: center;
   } */
 
-  .ProfileContainer {
+  /* .ProfileContainer {
     flex-direction: column;
     align-items: center;
-  }
+  } */
 
-  .personInfo {
+  /* .personInfo {
     align-items: center;
-  }
+  } */
 
   .InfoTitle {
     text-align: center;
   }
 
-  .InfoText {
+  /* .InfoText {
     flex-direction: column;
     align-items: center;
-  }
+  } */
 
-  .InfoTextData {
+  /* .InfoTextData {
     padding-left: 0;
-  }
+  } */
 
   .aboutTitle {
     text-align: center;
   }
 
-  .aboutMeTexts {
+  /* .aboutMeTexts {
     align-items: center;
-  }
+  } */
 
   .ProjecktsContainar {
     flex-direction: column;

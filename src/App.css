@@ -23,25 +23,20 @@
 
 /* Header Css */
 
-.headerHeader {
+/* .headerHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding-bottom: 3rem;
-}
-.headerContainer {
-  display: flex;
-  flex-direction: row;
-}
+} */
 
-.hNav {
+/* .hNav {
   display: flex;
   flex-direction: row;
   gap: 4rem;
-
   align-items: center;
-}
-.headerHireMe {
+} */
+/* .headerHireMe {
   display: flex;
   flex-direction: row;
   color: #3730a3;
@@ -51,15 +46,15 @@
   font-weight: 500;
   line-height: 28px;
   padding: 5px 20px;
-}
-.logoContainer {
+} */
+/* .logoContainer {
   position: relative;
-}
-.hText {
+} */
+/* .hText {
   position: absolute;
   top: 30%;
   left: 20px;
-}
+} */
 .hireME {
   color: #3730a3;
   border: 2px solid #3730a3;

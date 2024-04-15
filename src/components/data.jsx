@@ -5,6 +5,12 @@ import img from '../assets/hero/image 1.png';
 import git from '../assets/hero/github.png';
 import linkedin from '../assets/hero/LinkedIn.png';
 import line from '../assets/hero/Line 11.png';
+
+export const modeData = {
+  darkModeLabel: 'Dark Mode',
+  translationText: 'Translate into Turkish',
+};
+
 export const heroData = {
   name: 'Atilla Köz',
   role: 'Creative thinker Minimalism lover ',
@@ -46,19 +52,19 @@ export const profileData = {
   title: 'Profile',
   details: [
     {
-      label: 'Doğum tarihi',
+      label: 'Date of Birth',
       value: '20.10.1998',
     },
     {
-      label: 'İkamet Şehir',
+      label: 'city of residence',
       value: 'Istanbul',
     },
     {
-      label: 'Eğitim Durumu',
+      label: 'Education status',
       value: 'Istanbul Kultur University',
     },
     {
-      label: 'Tercih Ettiği Rol',
+      label: 'preffered role',
       value: 'Frontend',
     },
   ],

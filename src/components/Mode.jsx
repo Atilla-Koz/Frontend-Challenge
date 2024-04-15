@@ -1,3 +1,4 @@
+import { modeData } from './data';
 export default function Mode() {
   return (
     <div className="flex flex-row justify-around pt-4 pb-4">
@@ -12,11 +13,11 @@ export default function Mode() {
           />
           <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-customPurple"></div>
           <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-            Dark Mode
+            {modeData.darkModeLabel}
           </span>
         </label>
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          Turkce'ye cevir
+          {modeData.translationText}
         </p>
       </div>
     </div>

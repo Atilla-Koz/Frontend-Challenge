@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react';
 import { modeData } from './data';
 
 export default function Mode() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Uygulama ilk yüklendiğinde dark mode durumunu local storage'dan al
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
   useEffect(() => {
+    // Dark mode durumu değiştiğinde, bu durumu local storage'a kaydet
+    localStorage.setItem('darkMode', JSON.parse(isDarkMode));
     if (isDarkMode) {
       document.body.classList.add('dark');
     } else {

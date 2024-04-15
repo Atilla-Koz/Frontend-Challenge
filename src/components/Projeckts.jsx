@@ -2,7 +2,7 @@ import { projecktsData } from './data';
 
 export default function Projeckts() {
   return (
-    <section>
+    <section className=" bg-white dark:bg-black">
       <h2 className="text-title  font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
         Projeckts
       </h2>

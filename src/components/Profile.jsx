@@ -2,11 +2,11 @@ import { profileData } from './data';
 
 export default function Profile() {
   return (
-    <div>
+    <div className=" bg-white dark:bg-black">
       <h2 className="text-title  font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
         {profileData.title}
       </h2>
-      <section className="flex md:flex-row justify-around gap-4 pl-5 pr-5  text-title  flex-col ">
+      <section className="flex md:flex-row justify-around gap-4 pl-5 pr-5  text-title  flex-col  ">
         <div className="flex flex-col">
           <h3 className="text-3xl text-customPurple1 font-medium pb-2">
             {profileData.title}
@@ -32,7 +32,7 @@ export default function Profile() {
           </span>
         </div>
       </section>
-      <hr className="m-20 border border-line" />
+      <hr className="m-20 border border-line " />
     </div>
   );
 }

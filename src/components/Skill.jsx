@@ -2,7 +2,7 @@ import { skillData } from './data';
 
 export default function Skill() {
   return (
-    <section className="skillsContainer">
+    <section className=" bg-white dark:bg-black">
       <h2 className="text-title font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
         {skillData.title}
       </h2>

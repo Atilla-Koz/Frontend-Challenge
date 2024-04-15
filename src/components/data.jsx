@@ -1,6 +1,10 @@
 import projecktImg from '../assets/Projeckts/projeckt.png';
 import projecktImg1 from '../assets/Projeckts/work.png';
 import projecktImg2 from '../assets/Projeckts/jon.png';
+import img from '../assets/hero/image 1.png';
+import git from '../assets/hero/github.png';
+import linkedin from '../assets/hero/LinkedIn.png';
+import line from '../assets/hero/Line 11.png';
 export const heroData = {
   name: 'Atilla Köz',
   role: 'Creative thinker Minimalism lover ',
@@ -11,10 +15,10 @@ export const heroData = {
   githubLabel: 'GitHub',
   linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
   linkedinLabel: 'Linkdin',
-  heroImage: '../assets/hero/image 1.png',
-  githubIcon: '../assets/hero/github.png',
-  linkedinIcon: '../assets/hero/LinkedIn.png',
-  lineIcon: '../assets/hero/Line 11.png',
+  heroImage: img,
+  githubIcon: git,
+  linkedinIcon: linkedin,
+  lineIcon: line,
 };
 
 export const skillData = {

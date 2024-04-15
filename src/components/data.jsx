@@ -1,3 +1,6 @@
+import projecktImg from '../assets/Projeckts/projeckt.png';
+import projecktImg1 from '../assets/Projeckts/work.png';
+import projecktImg2 from '../assets/Projeckts/jon.png';
 export const heroData = {
   name: 'Atilla Köz',
   role: 'Creative thinker Minimalism lover ',
@@ -61,3 +64,32 @@ export const profileData = {
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.',
   },
 };
+export const projecktsData = [
+  {
+    title: 'Workintech',
+    description:
+      'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+    technologies: ['React', 'Redux', 'Axios'],
+    image: projecktImg1,
+    githubLink: 'https://github.com/Atilla-Koz',
+    linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+  },
+  {
+    title: 'Random Jokes',
+    description:
+      'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+    technologies: ['React', 'Redux', 'Axios'],
+    image: projecktImg,
+    githubLink: 'https://github.com/Atilla-Koz',
+    linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+  },
+  {
+    title: 'Journey',
+    description:
+      'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+    technologies: ['React', 'Redux', 'Axios'],
+    image: projecktImg2,
+    githubLink: 'https://github.com/Atilla-Koz',
+    linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+  },
+];

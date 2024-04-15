@@ -9,6 +9,7 @@ module.exports = {
         customGray: '#6b7280',
         title: '#1f2937',
         line: '#bab2e7',
+        footer: '#f9f9f9',
       },
       margin: {
         'left-25': '25%',

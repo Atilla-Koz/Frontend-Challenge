@@ -7,7 +7,6 @@ export default function Skill() {
         {skillData.title}
       </h2>
       <div className="flex md:flex-row justify-around gap-4 pl-5p pr-5p flex-col">
-        {/* Veri dizisini map ederek her bir öğe için bir skillsCard oluşturun */}
         {skillData.skills.map((skill, index) => (
           <div key={index} className="skillsCard">
             <h3 className="font-medium h-7 text-customPurple1 text-3xl leading-7 py-12">

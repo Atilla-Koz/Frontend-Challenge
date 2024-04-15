@@ -97,3 +97,21 @@ export const projecktsData = [
     linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
   },
 ];
+export const footerData = {
+  title: 'Let’s work together on your next product.',
+  email: 'atillakoz@hotmail.com',
+  links: [
+    {
+      label: 'Personal Blog',
+      url: 'atillakoz@hotmail.com',
+    },
+    {
+      label: 'GitHub',
+      url: 'https://github.com/Atilla-Koz',
+    },
+    {
+      label: 'Linkedin',
+      url: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+    },
+  ],
+};

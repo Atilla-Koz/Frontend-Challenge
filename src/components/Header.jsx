@@ -1,6 +1,5 @@
 import Text from '../assets/header/A.png';
 import Logo from '../assets/header/Ellipse 9.png';
-import '../App.css';
 export default function Header() {
   return (
     <header className="flex flex-row justify-around pb-12">

@@ -1,7 +1,7 @@
 import { heroData } from './data';
 export default function Hero() {
   return (
-    <div className="flex flex-col gap-4 pb-4">
+    <div className="dark:bg-black flex flex-col gap-4 pb-4">
       <section className="dark:bg-black flex flex-row justify-center items-center">
         <div className="">
           <section className="flex flex-col gap-4 pb-4">

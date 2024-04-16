@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { ModeContext } from '../globalState/ModeContext';
 import { modeData } from './data';
+// import axios from 'axios';
 
 export default function Mode() {
   const { isDarkMode, toggleDarkMode } = useContext(ModeContext);
@@ -13,6 +14,14 @@ export default function Mode() {
     } else {
       document.body.classList.remove('dark');
     }
+    /*axios
+      .post('https://reqres.in/api/pizza', { isDarkMode })
+      .then((response) => {
+        console.log('API Response:', response.data);
+      })
+      .catch((error) => {
+        console.error('API Request Error:', error);
+      });*/
   }, [isDarkMode]);
 
   return (

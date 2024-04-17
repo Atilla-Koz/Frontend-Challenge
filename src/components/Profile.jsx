@@ -32,6 +32,8 @@ export default function Profile() {
           </h2>
           <span className="flex flex-col justify-around items-center">
             <p>{data[language].profileData.aboutMe.description}</p>
+            <p>{data[language].profileData.aboutMe.description}</p>
+            <p>{data[language].profileData.aboutMe.description}</p>
           </span>
         </div>
       </section>

@@ -1,10 +1,12 @@
 import { useEffect, useContext } from 'react';
 import { ModeContext } from '../globalState/ModeContext';
-import { modeData } from './data';
-// import axios from 'axios';
+import { LanguageContext } from '../globalState/LanguageContext';
+
+import axios from 'axios';
 
 export default function Mode() {
   const { isDarkMode, toggleDarkMode } = useContext(ModeContext);
+  const { language, toggleLanguage } = useContext(LanguageContext);
 
   useEffect(() => {
     // Dark mode durumu değiştiğinde, bu durumu local storage'a kaydet
@@ -14,14 +16,14 @@ export default function Mode() {
     } else {
       document.body.classList.remove('dark');
     }
-    /*axios
+    axios
       .post('https://reqres.in/api/pizza', { isDarkMode })
       .then((response) => {
         console.log('API Response:', response.data);
       })
       .catch((error) => {
         console.error('API Request Error:', error);
-      });*/
+      });
   }, [isDarkMode]);
 
   return (
@@ -41,8 +43,11 @@ export default function Mode() {
             {isDarkMode ? 'Dark Mode' : 'Light Mode'}
           </span>
         </label>
-        <button className="text-sm text-gray-500 dark:text-gray-400">
-          {modeData.translationText}
+        <button
+          onClick={toggleLanguage}
+          className="text-sm text-gray-500 dark:text-gray-400"
+        >
+          {language === 'en' ? "Türkçe'ye Çevir" : 'Translate to English'}
         </button>
       </div>
     </div>

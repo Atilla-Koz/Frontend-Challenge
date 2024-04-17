@@ -1,13 +1,16 @@
-import { skillData } from './data';
+import { useContext } from 'react';
+import { LanguageContext } from '../globalState/LanguageContext';
+import { data } from './data';
 
 export default function Skill() {
+  const { language } = useContext(LanguageContext);
   return (
     <section className=" bg-white dark:bg-black">
       <h2 className="text-title font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
-        {skillData.title}
+        {data[language].skillData.title}
       </h2>
       <div className="flex md:flex-row justify-around gap-4 pl-5p pr-5p flex-col">
-        {skillData.skills.map((skill, index) => (
+        {data[language].skillData.skills.map((skill, index) => (
           <div key={index} className="skillsCard">
             <h3 className="font-medium h-7 text-customPurple1 text-3xl leading-7 py-12">
               {skill.title}

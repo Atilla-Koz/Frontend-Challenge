@@ -1,13 +1,16 @@
-import { projecktsData } from './data';
+import { useContext } from 'react';
+import { LanguageContext } from '../globalState/LanguageContext';
+import { data } from './data';
 
 export default function Projeckts() {
+  const { language } = useContext(LanguageContext);
   return (
     <section className=" bg-white dark:bg-black">
       <h2 className="text-title  font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
-        Projeckts
+        Projects
       </h2>
       <div className="flex md:flex-row justify-around md:gap-20 ml-left-5 mr-right-5 text-title flex-col items-center gap-8 ">
-        {projecktsData.map((project, index) => (
+        {data[language].projecktsData.map((project, index) => (
           <div key={index} className="flex flex-col">
             <img
               className="md:w-300 md:h-180 w-full h-auto"

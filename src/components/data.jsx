@@ -12,6 +12,11 @@ export const data = {
       darkModeLabel: 'Dark Mode',
       translationText: 'Translate into Turkish',
     },
+    headerData: {
+      skills: 'Skills',
+      projects: 'Projeckts',
+      hireMe: 'Hire me',
+    },
     heroData: {
       name: 'Atilla Köz',
       role: 'Creative thinker Minimalism lover',
@@ -73,6 +78,7 @@ export const data = {
           'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.',
       },
     },
+    projectTitle: 'Projects',
     projecktsData: [
       {
         title: 'Workintech',
@@ -125,6 +131,11 @@ export const data = {
     modeData: {
       darkModeLabel: 'Karanlık Mod',
       translationText: "Türkçe'ye Çevir",
+    },
+    headerData: {
+      skills: 'Yetenekler',
+      projects: 'Projelerim',
+      hireMe: 'Beni İşe Al',
     },
     heroData: {
       name: 'Atilla Köz',
@@ -187,8 +198,10 @@ export const data = {
           'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.',
       },
     },
+    projectTitle: 'Projelerim',
     projecktsData: [
       {
+        bigTitle: 'projelerim',
         title: 'Workintech',
         description:
           'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',

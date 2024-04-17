@@ -7,7 +7,7 @@ export default function Projeckts() {
   return (
     <section className=" bg-white dark:bg-black">
       <h2 className="text-title  font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
-        Projects
+        {data[language].projectTitle}
       </h2>
       <div className="flex md:flex-row justify-around md:gap-20 ml-left-5 mr-right-5 text-title flex-col items-center gap-8 ">
         {data[language].projecktsData.map((project, index) => (

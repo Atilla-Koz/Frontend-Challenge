@@ -5,6 +5,13 @@ import { LanguageContext } from '../globalState/LanguageContext';
 import { data } from './data';
 export default function Header() {
   const { language } = useContext(LanguageContext);
+  const handleScroll = (scrollAmount) => {
+    window.scrollBy({
+      top: scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <header className="flex flex-row justify-around pb-12">
       <section className="relative">
@@ -12,11 +19,15 @@ export default function Header() {
         <img className="absolute top-1/3 left-5" src={Text} alt="Text" />
       </section>
       <section className="flex flex-row gap-16 items-center">
-        <p className="dark:text-white">{data[language].headerData.skills}</p>
-        <p className="dark:text-white">{data[language].headerData.projects}</p>
-        <p className="flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2">
+        <button className="dark:text-white" onClick={() => handleScroll(400)}>
+          {data[language].headerData.skills}
+        </button>
+        <button className="dark:text-white" onClick={() => handleScroll(2000)}>
           {data[language].headerData.projects}
-        </p>
+        </button>
+        <button className="flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2">
+          {data[language].headerData.hireMe}
+        </button>
       </section>
     </header>
   );

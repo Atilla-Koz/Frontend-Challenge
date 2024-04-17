@@ -17,14 +17,14 @@ export default function Mode() {
       document.body.classList.remove('dark');
     }
     axios
-      .post('https://reqres.in/api/pizza', { isDarkMode })
+      .post('https://reqres.in/api/pizza', { language, isDarkMode })
       .then((response) => {
         console.log('API Response:', response.data);
       })
       .catch((error) => {
         console.error('API Request Error:', error);
       });
-  }, [isDarkMode]);
+  }, [isDarkMode, language]);
 
   return (
     <div className="flex flex-row justify-around pt-4 pb-4">

@@ -11,6 +11,10 @@ module.exports = {
         title: '#1f2937',
         line: '#bab2e7',
         footer: '#f9f9f9',
+        dark: '#252128',
+        titleDark: '#AEBCCF',
+        darkFont: '#FFFFFF',
+        darkSubTitle: '#B7AAFF',
       },
       margin: {
         'left-25': '25%',

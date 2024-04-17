@@ -5,8 +5,8 @@ import { data } from './data';
 export default function Footer() {
   const { language } = useContext(LanguageContext);
   return (
-    <footer className=" dark:bg-black flex flex-col justify-around bg-footer pt-10 pb-10">
-      <h2 className="font-semibold text-[42px] leading-[52.5px] text-title w-[540px] h-[106px] md:pl-[126px] pl-4">
+    <footer className="dark:rirle dark:bg-[#141414] flex flex-col justify-around bg-footer pt-10 pb-10">
+      <h2 className="dark:text-titleDark font-semibold text-[42px] leading-[52.5px] text-title w-[540px] h-[106px] md:pl-[126px] pl-4">
         {data[language].footerData.title}
       </h2>
       <div className="flex md:flex-row justify-around text-title md:pt-20  flex-col items-center pt-8">

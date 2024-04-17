@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="flex md:flex-row justify-around text-title md:pt-20  flex-col items-center pt-8">
         <a
           className="dark:text-[#BAB2E7] w-[296px] h-[24px] text-[24px] leading-[24.2px] text-[#af0c48] underline"
-          href={data[language].footerData.email}
+          href={`mailto:${data[language].footerData.email}`}
         >
           {data[language].footerData.email}
         </a>

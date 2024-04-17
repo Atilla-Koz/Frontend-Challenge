@@ -114,7 +114,7 @@ export const data = {
       links: [
         {
           label: 'Personal Blog',
-          url: 'atillakoz@hotmail.com',
+          url: 'https://atillakoz.netlify.app/',
         },
         {
           label: 'GitHub',
@@ -235,7 +235,7 @@ export const data = {
       links: [
         {
           label: 'Kişisel Blog',
-          url: 'atillakoz@hotmail.com',
+          url: 'https://atillakoz.netlify.app/',
         },
         {
           label: 'GitHub',

@@ -14,7 +14,7 @@ export const data = {
     },
     headerData: {
       skills: 'Skills',
-      projects: 'Projeckts',
+      projects: 'Projects',
       hireMe: 'Hire me',
     },
     heroData: {

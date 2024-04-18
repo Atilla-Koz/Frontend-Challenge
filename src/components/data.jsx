@@ -158,17 +158,17 @@ export const data = {
         {
           title: 'JavaScript',
           description:
-            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            "Proident olmayan cupidatat'ın dolayı, laborum bu işlerden vazgeçenlerin suçluluk duygusuyla doludur, bu, laborum'dur.",
         },
         {
           title: 'React',
           description:
-            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            "Proident olmayan cupidatat'ın dolayı, laborum bu işlerden vazgeçenlerin suçluluk duygusuyla doludur, bu, laborum'dur.",
         },
         {
           title: 'Node.js',
           description:
-            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            "Proident olmayan cupidatat'ın dolayı, laborum bu işlerden vazgeçenlerin suçluluk duygusuyla doludur, bu, laborum'dur.",
         },
       ],
     },

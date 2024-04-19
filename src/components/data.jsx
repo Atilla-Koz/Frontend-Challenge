@@ -1,7 +1,7 @@
 import projecktImg from '../assets/Projeckts/projeckt.png';
 import projecktImg1 from '../assets/Projeckts/work.png';
 import projecktImg2 from '../assets/Projeckts/jon.png';
-import img from '../assets/hero/image 1.png';
+import img from '../assets/hero/me.png';
 import git from '../assets/hero/github.png';
 import linkedin from '../assets/hero/LinkedIn.png';
 import line from '../assets/hero/Line 11.png';
@@ -74,8 +74,14 @@ export const data = {
       ],
       aboutMe: {
         title: 'About Me',
-        description:
-          'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.',
+        description: `Focused Full Stack Developer with a passion for technology and continuous learning.
+          Experienced in React, Java, JavaScript, and modern frameworks. Versatile in both
+          frontend and backend development, with a strong problem-solving ability. Demonstrates
+          a dedicated work ethic and commitment to project-based learning.
+          Previous experience in game development with Unity, bringing a creative mindset to
+          technology. Committed to mastering new technologies and delivering innovative
+          solutions. Eager to make a meaningful impact in the industry through continual growth
+          and self-improvement.`,
       },
     },
     projectTitle: 'Projects',
@@ -194,8 +200,10 @@ export const data = {
       ],
       aboutMe: {
         title: 'Hakkımda',
-        description:
-          'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.',
+        description: `
+        Teknolojiye ve sürekli öğrenmeye tutkulu, odaklı bir Full Stack Geliştirici.
+        React, Java, JavaScript ve modern framework'lerde deneyimli. Hem frontend hem de backend geliştirme konusunda çok yönlü, güçlü problem çözme yeteneğine sahip. Projeye dayalı öğrenme ve iş etiğine bağlılığını gösterir.
+        Unity ile oyun geliştirme konusunda önceki deneyim, teknolojiye yaratıcı bir bakış açısı getirir. Yeni teknolojileri ustalaşma ve yenilikçi çözümler sunma konusunda kararlı. Sürekli büyüme ve kendini geliştirme yoluyla endüstride anlamlı bir etki yaratmaya hevesli.`,
       },
     },
     projectTitle: 'Projelerim',

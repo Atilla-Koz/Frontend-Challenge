@@ -9,8 +9,8 @@ export default function Profile() {
       <h2 className="dark:text-darkSubTitle text-title  font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
         {data[language].profileData.title}
       </h2>
-      <section className="dark:text-darkFont flex md:flex-row justify-around gap-4 pl-5 pr-5  text-title  flex-col  ">
-        <div className="flex flex-col">
+      <section className="dark:text-darkFont flex md:flex-row justify-around gap-4 pl-[7rem] pr-[5rem]  text-title  flex-col  ">
+        <div className="flex-1 flex flex-col">
           <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-2">
             {data[language].profileData.title}
           </h3>
@@ -26,13 +26,11 @@ export default function Profile() {
             </p>
           ))}
         </div>
-        <div className="aboutMe">
+        <div className="flex-1">
           <h2 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-2">
             {data[language].profileData.aboutMe.title}
           </h2>
           <span className="flex flex-col justify-around items-center">
-            <p>{data[language].profileData.aboutMe.description}</p>
-            <p>{data[language].profileData.aboutMe.description}</p>
             <p>{data[language].profileData.aboutMe.description}</p>
           </span>
         </div>

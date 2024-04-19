@@ -8,7 +8,7 @@ import Footer from './components/footer';
 
 export default function App() {
   return (
-    <div className="flex flex-col h-screen bg-white dark:bg-dark  ">
+    <div className="flex flex-col h-screen overflow-x-hidden bg-white dark:bg-dark  ">
       <Mode />
       <Header />
       <Hero />

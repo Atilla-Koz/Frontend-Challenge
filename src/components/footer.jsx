@@ -6,10 +6,10 @@ export default function Footer() {
   const { language } = useContext(LanguageContext);
   return (
     <footer className="dark:rirle dark:bg-[#141414] flex flex-col justify-around bg-footer pt-10 pb-10">
-      <h2 className="dark:text-titleDark font-semibold text-[42px] leading-[52.5px] text-title w-[540px] h-[106px] md:pl-[126px] pl-4">
+      <h2 className="dark:text-titleDark font-semibold text-[18px] sm:text-[42px] leading-[52.5px] text-title w-[540px] h-[106px] md:pl-[126px] pl-4">
         {data[language].footerData.title}
       </h2>
-      <div className="flex md:flex-row justify-around text-title md:pt-20  flex-col items-center pt-8">
+      <div className="flex md:flex-row justify-around text-title md:pt-20  flex-col items-center pt-0">
         <a
           className="dark:text-[#BAB2E7] w-[296px] h-[24px] text-[24px] leading-[24.2px] text-[#af0c48] underline"
           href={`mailto:${data[language].footerData.email}`}

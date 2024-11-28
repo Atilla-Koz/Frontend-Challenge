@@ -38,17 +38,131 @@ export const data = {
         {
           title: 'JavaScript',
           description:
-            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'Powerful and versatile programming language primarily used for web development.',
         },
         {
-          title: 'React',
+          title: 'React.js',
           description:
-            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'A JavaScript library for building fast and interactive user interfaces.',
         },
         {
-          title: 'Node.js',
+          title: 'Hooks',
           description:
-            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'React features that allow state and lifecycle management in functional components.',
+        },
+        {
+          title: 'Context API',
+          description:
+            'A React structure for managing global application state effectively.',
+        },
+        {
+          title: 'Redux',
+          description:
+            'A predictable state container for JavaScript apps, often used with React.',
+        },
+        {
+          title: 'Axios',
+          description:
+            'A library for making HTTP requests in JavaScript applications.',
+        },
+        {
+          title: 'Jest',
+          description:
+            'A JavaScript testing framework designed to ensure correctness of code.',
+        },
+        {
+          title: 'Cypress',
+          description:
+            'A powerful testing framework for end-to-end testing of web applications.',
+        },
+        {
+          title: 'HTML',
+          description: 'The standard markup language for creating web pages.',
+        },
+        {
+          title: 'CSS',
+          description:
+            'A style sheet language used to describe the presentation of a document written in HTML.',
+        },
+        {
+          title: 'Tailwind CSS',
+          description:
+            'A utility-first CSS framework for rapid UI development.',
+        },
+        {
+          title: 'Reactstrap',
+          description: 'A library for easily integrating Bootstrap with React.',
+        },
+        {
+          title: 'Java',
+          description:
+            'A high-level programming language used for building robust applications.',
+        },
+        {
+          title: 'OOP',
+          description:
+            'A programming paradigm based on the concept of objects.',
+        },
+        {
+          title: 'Data Structures',
+          description:
+            'Fundamental ways of organizing and manipulating data efficiently.',
+        },
+        {
+          title: 'Design Patterns',
+          description: 'Proven solutions to common software design problems.',
+        },
+        {
+          title: 'Maven',
+          description:
+            'A build automation tool used primarily for Java projects.',
+        },
+        {
+          title: 'Spring Core',
+          description:
+            'A foundational module for building enterprise-level Java applications.',
+        },
+        {
+          title: 'Spring Boot',
+          description:
+            'A framework for building stand-alone, production-grade Spring applications.',
+        },
+        {
+          title: 'Spring Data JPA',
+          description:
+            'A library to simplify data access layer implementation in Spring apps.',
+        },
+        {
+          title: 'Spring Security',
+          description:
+            'A security framework for securing Spring-based Java applications.',
+        },
+        {
+          title: 'SQL',
+          description:
+            'A language for managing and querying relational databases.',
+        },
+        {
+          title: 'PostgreSQL',
+          description: 'A powerful open-source relational database system.',
+        },
+        {
+          title: 'JUnit',
+          description: 'A popular testing framework for Java applications.',
+        },
+        {
+          title: 'Mockito',
+          description: 'A Java-based library for mocking and testing.',
+        },
+        {
+          title: 'Git',
+          description:
+            'A distributed version control system for tracking code changes.',
+        },
+        {
+          title: '.Net',
+          description:
+            'A framework for building Windows applications and services.',
         },
       ],
     },
@@ -168,17 +282,135 @@ export const data = {
         {
           title: 'JavaScript',
           description:
-            "Proident olmayan cupidatat'ın dolayı, laborum bu işlerden vazgeçenlerin suçluluk duygusuyla doludur, bu, laborum'dur.",
+            'Web geliştirme için yaygın olarak kullanılan güçlü ve esnek bir programlama dili.',
         },
         {
-          title: 'React',
+          title: 'React.js',
           description:
-            "Proident olmayan cupidatat'ın dolayı, laborum bu işlerden vazgeçenlerin suçluluk duygusuyla doludur, bu, laborum'dur.",
+            'Hızlı ve etkileşimli kullanıcı arayüzleri oluşturmak için bir JavaScript kütüphanesi.',
         },
         {
-          title: 'Node.js',
+          title: 'Hooks',
           description:
-            "Proident olmayan cupidatat'ın dolayı, laborum bu işlerden vazgeçenlerin suçluluk duygusuyla doludur, bu, laborum'dur.",
+            'React bileşenlerinde durum ve yaşam döngüsü yönetimi sağlayan özellikler.',
+        },
+        {
+          title: 'Context API',
+          description:
+            'React ile uygulama genelinde durum yönetimini kolaylaştıran bir yapı.',
+        },
+        {
+          title: 'Redux',
+          description:
+            'JavaScript uygulamaları için tahmin edilebilir bir durum konteyneri.',
+        },
+        {
+          title: 'Axios',
+          description:
+            'JavaScript uygulamalarında HTTP istekleri yapmak için kullanılan bir kütüphane.',
+        },
+        {
+          title: 'Jest',
+          description:
+            "Kodun doğruluğunu sağlamak için tasarlanmış bir JavaScript test framework'ü.",
+        },
+        {
+          title: 'Cypress',
+          description:
+            'Web uygulamalarının uçtan uca test edilmesi için güçlü bir framework.',
+        },
+        {
+          title: 'HTML',
+          description:
+            'Web sayfalarını oluşturmak için standart işaretleme dili.',
+        },
+        {
+          title: 'CSS',
+          description:
+            'HTML ile yazılmış belgelerin görsel sunumunu tanımlayan bir stil dili.',
+        },
+        {
+          title: 'Tailwind CSS',
+          description:
+            'Hızlı UI geliştirme için yardımcı sınıf tabanlı bir CSS framework.',
+        },
+        {
+          title: 'Reactstrap',
+          description:
+            'React ile Bootstrap entegrasyonunu kolaylaştıran bir kütüphane.',
+        },
+        {
+          title: 'Java',
+          description:
+            'Sağlam uygulamalar oluşturmak için kullanılan yüksek seviyeli bir programlama dili.',
+        },
+        {
+          title: 'OOP',
+          description: 'Nesne kavramına dayalı bir programlama paradigması.',
+        },
+        {
+          title: 'Veri Yapıları',
+          description:
+            'Verilerin verimli bir şekilde düzenlenmesi ve işlenmesi için temel yöntemler.',
+        },
+        {
+          title: 'Tasarım Desenleri',
+          description:
+            'Yaygın yazılım tasarım sorunlarına kanıtlanmış çözümler.',
+        },
+        {
+          title: 'Maven',
+          description:
+            'Genellikle Java projeleri için kullanılan bir yapı otomasyon aracı.',
+        },
+        {
+          title: 'Spring Core',
+          description:
+            'Kurumsal seviyedeki Java uygulamaları için temel bir modül.',
+        },
+        {
+          title: 'Spring Boot',
+          description:
+            'Tek başına, üretim kalitesinde Spring uygulamaları oluşturmak için bir framework.',
+        },
+        {
+          title: 'Spring Data JPA',
+          description:
+            'Spring uygulamalarında veri erişim katmanını basitleştiren bir kütüphane.',
+        },
+        {
+          title: 'Spring Security',
+          description:
+            "Spring tabanlı Java uygulamaları için bir güvenlik framework'ü.",
+        },
+        {
+          title: 'SQL',
+          description:
+            'İlişkisel veritabanlarını yönetmek ve sorgulamak için bir dil.',
+        },
+        {
+          title: 'PostgreSQL',
+          description:
+            'Güçlü ve açık kaynaklı bir ilişkisel veritabanı sistemi.',
+        },
+        {
+          title: 'JUnit',
+          description: "Java uygulamaları için popüler bir test framework'ü.",
+        },
+        {
+          title: 'Mockito',
+          description:
+            'Mocking ve test işlemleri için Java tabanlı bir kütüphane.',
+        },
+        {
+          title: 'Git',
+          description:
+            'Kod değişikliklerini izlemek için dağıtık bir versiyon kontrol sistemi.',
+        },
+        {
+          title: '.Net',
+          description:
+            'Windows uygulamaları ve servisleri oluşturmak için bir framework.',
         },
       ],
     },

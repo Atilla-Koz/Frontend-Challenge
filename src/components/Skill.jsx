@@ -18,7 +18,7 @@ export default function Skill() {
     autoplaySpeed: 2000,
     responsive: [
       {
-        breakpoint: 1024, // Tablet ve küçük cihazlar
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -27,13 +27,20 @@ export default function Skill() {
         },
       },
       {
-        breakpoint: 768, // Mobil cihazlar
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
     ],
+    appendDots: (dots) => (
+      <div style={{ marginTop: '2rem' }}>
+        {' '}
+        {/* Kartların altına boşluk ekler */}
+        <ul style={{ display: 'flex', justifyContent: 'center' }}>{dots}</ul>
+      </div>
+    ),
   };
 
   return (
@@ -55,7 +62,7 @@ export default function Skill() {
           </div>
         ))}
       </Slider>
-      <hr className="m-20 border border-line" />
+      <hr className="my-16 border-t border-line" />
     </section>
   );
 }

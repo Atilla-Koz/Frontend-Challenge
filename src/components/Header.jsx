@@ -3,13 +3,12 @@ import Logo from '../assets/header/Ellipse 9.png';
 import { useContext } from 'react';
 import { LanguageContext } from '../globalState/LanguageContext';
 import { data } from './data';
-export default function Header() {
+
+export default function Header({ skillsRef, projectsRef }) {
   const { language } = useContext(LanguageContext);
-  const handleScroll = (scrollAmount) => {
-    window.scrollBy({
-      top: scrollAmount,
-      behavior: 'smooth',
-    });
+
+  const handleScroll = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -21,13 +20,13 @@ export default function Header() {
       <section className="flex flex-row sm:gap-16 gap-6 items-center">
         <button
           className="dark:text-customGray"
-          onClick={() => handleScroll(400)}
+          onClick={() => handleScroll(skillsRef)}
         >
           {data[language].headerData.skills}
         </button>
         <button
           className="dark:text-customGray"
-          onClick={() => handleScroll(2000)}
+          onClick={() => handleScroll(projectsRef)}
         >
           {data[language].headerData.projects}
         </button>

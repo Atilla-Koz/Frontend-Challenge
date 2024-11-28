@@ -37,23 +37,37 @@ export default function Profile() {
           <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-4">
             {data[language].profileData.aboutMe.title}
           </h3>
-          <p
-            className={`dark:text-darkFont text-justify ${
-              isExpanded ? 'line-clamp-none' : 'line-clamp-3'
-            }`}
-          >
+          <p className="dark:text-darkFont text-justify line-clamp-3">
             {data[language].profileData.aboutMe.description}
           </p>
           <button
             className="mt-4 text-customPurple1 font-medium underline"
             onClick={toggleDescription}
           >
-            {isExpanded
-              ? data[language].profileData.readMore.collapse
-              : data[language].profileData.readMore.expand}
+            {data[language].profileData.readMore.expand}
           </button>
         </div>
       </section>
+
+      {isExpanded && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-dark p-8 rounded-lg shadow-lg max-w-lg w-full">
+            <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium mb-4">
+              {data[language].profileData.aboutMe.title}
+            </h3>
+            <p className="dark:text-darkFont text-justify">
+              {data[language].profileData.aboutMe.description}
+            </p>
+            <button
+              className="mt-4 text-customPurple1 font-medium underline"
+              onClick={toggleDescription}
+            >
+              {data[language].profileData.readMore.collapse}
+            </button>
+          </div>
+        </div>
+      )}
+
       <hr className="my-16 border-t border-line" />
     </div>
   );

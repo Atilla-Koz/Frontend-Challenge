@@ -16,7 +16,6 @@ export default function Profile() {
         {data[language].profileData.title}
       </h2>
       <section className="flex flex-col md:flex-row justify-around gap-12 px-28">
-        {/* Sol Kısım */}
         <div className="flex-1">
           <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-4">
             {data[language].profileData.title}
@@ -34,7 +33,6 @@ export default function Profile() {
           </ul>
         </div>
 
-        {/* Sağ Kısım */}
         <div className="flex-1">
           <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-4">
             {data[language].profileData.aboutMe.title}
@@ -46,7 +44,6 @@ export default function Profile() {
           >
             {data[language].profileData.aboutMe.description}
           </p>
-          {/* Okumaya devam et butonu */}
           <button
             className="mt-4 text-customPurple1 font-medium underline"
             onClick={toggleDescription}

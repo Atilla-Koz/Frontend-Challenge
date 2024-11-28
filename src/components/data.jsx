@@ -83,6 +83,10 @@ export const data = {
           solutions. Eager to make a meaningful impact in the industry through continual growth
           and self-improvement.`,
       },
+      readMore: {
+        expand: 'Read More',
+        collapse: 'Close',
+      },
     },
     projectTitle: 'Projects',
     projecktsData: [
@@ -204,6 +208,10 @@ export const data = {
         Teknolojiye ve sürekli öğrenmeye tutkulu, odaklı bir Full Stack Geliştirici.
         React, Java, JavaScript ve modern framework'lerde deneyimli. Hem frontend hem de backend geliştirme konusunda çok yönlü, güçlü problem çözme yeteneğine sahip. Projeye dayalı öğrenme ve iş etiğine bağlılığını gösterir.
         Unity ile oyun geliştirme konusunda önceki deneyim, teknolojiye yaratıcı bir bakış açısı getirir. Yeni teknolojileri ustalaşma ve yenilikçi çözümler sunma konusunda kararlı. Sürekli büyüme ve kendini geliştirme yoluyla endüstride anlamlı bir etki yaratmaya hevesli.`,
+      },
+      readMore: {
+        expand: 'Okumaya devam et',
+        collapse: 'Kapat',
       },
     },
     projectTitle: 'Projelerim',

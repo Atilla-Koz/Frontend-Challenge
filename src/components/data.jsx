@@ -247,6 +247,7 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
     projectButtons: {
       seeMore: 'See More',
       close: 'Close',
+      readMore: 'Read More',
     },
     projecktsData: [
       {
@@ -565,6 +566,7 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
     projectButtons: {
       seeMore: 'Daha Fazla Gör',
       close: 'Kapat',
+      readMore: 'Devamını Oku',
     },
     projecktsData: [
       {

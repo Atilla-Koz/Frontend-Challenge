@@ -35,33 +35,33 @@ export default function Skill() {
       },
     ],
     appendDots: (dots) => (
-      <div style={{ marginTop: '2rem' }}>
-        {' '}
-        {/* Kartların altına boşluk ekler */}
-        <ul style={{ display: 'flex', justifyContent: 'center' }}>{dots}</ul>
+      <div className="custom-dots-container">
+        <ul className="flex justify-center space-x-2">{dots}</ul>
       </div>
     ),
   };
 
   return (
-    <section className="bg-white dark:bg-dark pt-16">
-      <h2 className="dark:text-darkSubTitle text-title font-semibold text-5xl leading-12 mb-8">
+    <section className="bg-white dark:bg-dark pt-16 overflow-hidden">
+      <h2 className="dark:text-darkSubTitle text-title font-semibold text-5xl leading-12 mb-8 text-center">
         {data[language].skillData.title}
       </h2>
-      <Slider {...settings}>
-        {data[language].skillData.skills.map((skill, index) => (
-          <div key={index} className="p-4">
-            <div className="skillsCard w-72 h-auto bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-              <h3 className="dark:text-darkSubTitle font-medium text-customPurple1 text-2xl py-2">
-                {skill.title}
-              </h3>
-              <p className="dark:text-darkFont text-gray-700 font-normal text-base">
-                {skill.description}
-              </p>
+      <div className="container mx-auto px-4">
+        <Slider {...settings}>
+          {data[language].skillData.skills.map((skill, index) => (
+            <div key={index} className="p-4">
+              <div className="skillsCard mx-auto h-auto bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                <h3 className="dark:text-darkSubTitle font-medium text-customPurple1 text-2xl py-2">
+                  {skill.title}
+                </h3>
+                <p className="dark:text-darkFont text-gray-700 font-normal text-base">
+                  {skill.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
       <hr className="my-16 border-t border-line" />
     </section>
   );

@@ -6,7 +6,7 @@ export default function Projeckts() {
   const { language } = useContext(LanguageContext);
   return (
     <section className=" bg-white dark:bg-dark">
-      <h2 className="dark:text-darkSubTitle text-title  font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
+      <h2 className="dark:text-darkSubTitle text-title  font-semibold text-5xl leading-12  mx-auto h-64 ml-left-5">
         {data[language].projectTitle}
       </h2>
       <div className="flex md:flex-row justify-around md:gap-20 ml-left-5 mr-right-5 text-title flex-col items-center gap-8 ">

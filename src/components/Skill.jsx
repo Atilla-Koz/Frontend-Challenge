@@ -50,7 +50,13 @@ export default function Skill() {
         <Slider {...settings}>
           {data[language].skillData.skills.map((skill, index) => (
             <div key={index} className="p-4">
-              <div className="skillsCard mx-auto h-auto bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="skillsCard relative mx-auto h-auto bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                {/* Icon in the top-right corner */}
+                <img
+                  src={skill.icon}
+                  alt={`${skill.title} icon`}
+                  className="absolute top-4 right-4 w-8 h-8"
+                />
                 <h3 className="dark:text-darkSubTitle font-medium text-customPurple1 text-2xl py-2">
                   {skill.title}
                 </h3>

@@ -5,7 +5,7 @@ import { data } from './data';
 export default function Skill() {
   const { language } = useContext(LanguageContext);
   return (
-    <section className=" bg-white dark:bg-dark">
+    <section className=" bg-white dark:bg-dark pt-16">
       <h2 className="dark:text-darkSubTitle text-title font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
         {data[language].skillData.title}
       </h2>

@@ -8,14 +8,16 @@ import Footer from './components/footer';
 
 export default function App() {
   return (
-    <div className="flex flex-col h-screen overflow-x-hidden bg-white dark:bg-dark  ">
-      <Mode />
-      <Header />
-      <Hero />
-      <Skill />
-      <Profile />
-      <Projeckts />
-      <Footer />
+    <div className="bg-white dark:bg-dark">
+      <div className="container mx-auto  max-w-screen-2xl px-4">
+        <Mode />
+        <Header />
+        <Hero />
+        <Skill />
+        <Profile />
+        <Projeckts />
+        <Footer />
+      </div>
     </div>
   );
 }

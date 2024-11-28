@@ -54,7 +54,7 @@ export default function Hero() {
 
         <div className="flex-row-reverse md:pr-[20rem] pr-[0]">
           <img
-            className="w-96 rounded-full"
+            className="w-auto rounded-full shadow-lg"
             src={data[language].heroData.heroImage}
             alt="hero"
           />

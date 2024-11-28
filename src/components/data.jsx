@@ -1,10 +1,13 @@
-import projecktImg from '../assets/Projeckts/projeckt.png';
-import projecktImg1 from '../assets/Projeckts/work.png';
-import projecktImg2 from '../assets/Projeckts/jon.png';
 import img from '../assets/hero/me.png';
 import git from '../assets/hero/github.png';
 import linkedin from '../assets/hero/LinkedIn.png';
 import line from '../assets/hero/Line 11.png';
+import ecom from '../assets/P.PNG/ecom.png';
+import pizza from '../assets/P.PNG/pizza.png';
+import portf from '../assets/P.PNG/portf.png';
+import portf2 from '../assets/P.PNG/portf2.png';
+import val from '../assets/P.PNG/val.png';
+import vam from '../assets/P.PNG/vam.png';
 
 export const data = {
   en: {
@@ -251,25 +254,17 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
         description:
           'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg1,
+        image: ecom,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
-      {
-        title: 'Random Jokes',
-        description:
-          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
-        technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg,
-        githubLink: 'https://github.com/Atilla-Koz',
-        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
-      },
+
       {
         title: 'Journey',
         description:
           'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg2,
+        image: pizza,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
@@ -278,7 +273,7 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
         description:
           'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg1,
+        image: portf,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
@@ -287,7 +282,7 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
         description:
           'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg1,
+        image: portf2,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
@@ -296,7 +291,16 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
         description:
           'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg1,
+        image: val,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        title: 'Workintech',
+        description:
+          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: vam,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
@@ -569,25 +573,17 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
         description:
           'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg1,
+        image: ecom,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
-      {
-        title: 'Rastgele Fıkralar',
-        description:
-          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
-        technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg,
-        githubLink: 'https://github.com/Atilla-Koz',
-        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
-      },
+
       {
         title: 'Seyahat',
         description:
           'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg2,
+        image: pizza,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
@@ -597,7 +593,7 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
         description:
           'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg1,
+        image: portf,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
@@ -607,7 +603,27 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
         description:
           'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
         technologies: ['React', 'Redux', 'Axios'],
-        image: projecktImg1,
+        image: portf2,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        bigTitle: 'projelerim',
+        title: 'Workintech',
+        description:
+          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: val,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        bigTitle: 'projelerim',
+        title: 'Workintech',
+        description:
+          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: vam,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },

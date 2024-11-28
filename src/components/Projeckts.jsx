@@ -43,7 +43,7 @@ export default function Projeckts() {
         {visibleProjects.map((project, index) => (
           <div key={index} className="flex flex-col">
             <img
-              className="md:w-300 md:h-180 w-full h-auto"
+              className="md:w-300 md:h-180 w-full h-auto border border-gray-300 rounded-lg"
               src={project.image}
               alt={project.title}
             />
@@ -116,7 +116,7 @@ export default function Projeckts() {
               {allProjects.map((project, index) => (
                 <div key={index} className="flex flex-col">
                   <img
-                    className="md:w-300 md:h-180 w-full h-auto"
+                    className="md:w-300 md:h-180 w-full h-auto border border-gray-300 rounded-lg"
                     src={project.image}
                     alt={project.title}
                   />

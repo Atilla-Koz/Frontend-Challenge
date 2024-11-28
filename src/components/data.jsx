@@ -215,14 +215,25 @@ export const data = {
       ],
       aboutMe: {
         title: 'About Me',
-        description: `Focused Full Stack Developer with a passion for technology and continuous learning.
-          Experienced in React, Java, JavaScript, and modern frameworks. Versatile in both
-          frontend and backend development, with a strong problem-solving ability. Demonstrates
-          a dedicated work ethic and commitment to project-based learning.
-          Previous experience in game development with Unity, bringing a creative mindset to
-          technology. Committed to mastering new technologies and delivering innovative
-          solutions. Eager to make a meaningful impact in the industry through continual growth
-          and self-improvement.`,
+        description: `Hello! I'm Atilla, a dedicated full stack developer with a passion for technology and continuous learning.
+
+Focused Development:
+During my Full Stack Bootcamp, I've worked intensively with React,Spring boot, Java, JavaScript, and modern frameworks. I've honed my problem-solving skills and quickly adapted to new technologies in a fast-paced environment.
+
+Versatile Skills:
+I have experience in both frontend and backend development, deepening my expertise in React and Java. My work with diverse frameworks has broadened my skills for various projects and platforms.
+
+Dedicated Work Ethic:
+I've demonstrated a strong work ethic, committing to full-time hours and prioritizing project-based learning. I embrace daily opportunities to learn and apply new knowledge to real-world challenges.
+
+Game Development Experience:
+Before full stack development, I gained experience in game programming with Unity, giving me a creative mindset and a unique perspective on problem-solving.
+
+Vision for the Future:
+I aim to establish myself as a leading figure in the tech industry, continuously growing and mastering new technologies to solve real-world problems. My goal is to make a meaningful impact by delivering creative and effective solutions.
+
+In conclusion, I am a technology enthusiast dedicated to self-improvement and growth. With my bootcamp experience and game development background, I am a versatile developer ready to contribute to future projects.
+`,
       },
       readMore: {
         expand: 'Read More',
@@ -491,9 +502,24 @@ export const data = {
       aboutMe: {
         title: 'Hakkımda',
         description: `
-        Teknolojiye ve sürekli öğrenmeye tutkulu, odaklı bir Full Stack Geliştirici.
-        React, Java, JavaScript ve modern framework'lerde deneyimli. Hem frontend hem de backend geliştirme konusunda çok yönlü, güçlü problem çözme yeteneğine sahip. Projeye dayalı öğrenme ve iş etiğine bağlılığını gösterir.
-        Unity ile oyun geliştirme konusunda önceki deneyim, teknolojiye yaratıcı bir bakış açısı getirir. Yeni teknolojileri ustalaşma ve yenilikçi çözümler sunma konusunda kararlı. Sürekli büyüme ve kendini geliştirme yoluyla endüstride anlamlı bir etki yaratmaya hevesli.`,
+        Merhaba! Ben Atilla, teknolojiye ve sürekli öğrenmeye tutku duyan bir full stack geliştiriciyim.
+
+Odaklı Gelişim:
+Full Stack Bootcamp sürecimde React, Spring Boot, Java, JavaScript ve modern framework'ler ile yoğun bir şekilde çalıştım. Hızlı tempolu bir ortamda problem çözme becerilerimi geliştirdim ve yeni teknolojilere hızla adapte oldum.
+
+Çok Yönlü Beceriler:
+Hem frontend hem de backend geliştirme alanlarında deneyim sahibiyim. React ve Java konularında derinlemesine bilgi edinirken, farklı framework'lerle çalışarak çeşitli projeler ve platformlar için becerilerimi genişlettim.
+
+Adanmış Çalışma Disiplini:
+Tam zamanlı bir şekilde çalışarak ve proje odaklı öğrenmeyi önceliklendirerek güçlü bir çalışma disiplini sergiledim. Günlük olarak yeni şeyler öğrenme ve bunları gerçek dünyadaki problemlere uygulama fırsatlarını memnuniyetle benimsedim.
+
+Oyun Geliştirme Deneyimi:
+Full stack geliştirme öncesinde, Unity ile oyun programlama deneyimi kazandım. Bu süreç, bana yaratıcı bir bakış açısı ve problem çözmede farklı bir perspektif kazandırdı.
+
+Gelecek Vizyonu:
+Kendimi teknoloji sektöründe öne çıkan bir figür olarak konumlandırmayı hedefliyorum. Sürekli gelişerek ve yeni teknolojileri öğrenerek gerçek dünyadaki sorunlara etkili çözümler üretmeyi amaçlıyorum. Hedefim, yaratıcı ve etkili çözümler sunarak anlamlı bir etki yaratmak.
+
+Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliştirmeye ve büyümeye adadım. Bootcamp deneyimim ve oyun geliştirme geçmişimle, gelecekteki projelere katkıda bulunmaya hazır, çok yönlü bir geliştiriciyim.`,
       },
       readMore: {
         expand: 'Okumaya devam et',

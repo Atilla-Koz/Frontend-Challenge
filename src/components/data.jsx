@@ -250,9 +250,9 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
     },
     projecktsData: [
       {
-        title: 'Workintech',
+        title: 'E-Commerce',
         description:
-          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+          'This project is a modern e-commerce web application developed using React and Vite. It integrates modern web development tools to deliver a user-friendly experience. Tailwind CSS was used for styling, React Router for navigation, and Swiper for creating modern slider components. The use of ESLint ensures the code quality adheres to the standards.',
         technologies: ['React', 'Redux', 'Axios'],
         image: ecom,
         githubLink: 'https://github.com/Atilla-Koz',
@@ -260,18 +260,18 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
       },
 
       {
-        title: 'Journey',
+        title: 'Pizza Order App',
         description:
-          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+          'This project is a web application for users to order pizza. It is developed using React.js and modern web development techniques. The app offers a user-friendly design with features like form validation and API integration.',
         technologies: ['React', 'Redux', 'Axios'],
         image: pizza,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
       {
-        title: 'Workintech',
+        title: ' Portfolio',
         description:
-          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+          "This project is a React application for building a personal portfolio website. It showcases the user's skills, projects, and personal details. It supports multiple languages, built with React and Tailwind CSS. useLocalStorage hook stores language and dark mode preferences. It is initialized with Vite and uses ESLint for error checking.",
         technologies: ['React', 'Redux', 'Axios'],
         image: portf,
         githubLink: 'https://github.com/Atilla-Koz',
@@ -569,29 +569,28 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
     projecktsData: [
       {
         bigTitle: 'projelerim',
-        title: 'Workintech',
+        title: 'E-Ticaret',
         description:
-          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
-        technologies: ['React', 'Redux', 'Axios'],
+          'Bu proje, React ve Vite kullanılarak modern bir e-ticaret web sitesi oluşturmak için geliştirilmiştir. Tailwind CSS ile hızlı ve özelleştirilebilir tasarımlar oluşturulmuş, React Router ile uygulama içinde yönlendirme sağlanmıştır. Slider bileşenleri için Swiper kullanılmış ve kod kalitesi ESLint ile artırılmıştır. Proje, kullanıcı deneyimini ön planda tutarak modern web geliştirme standartlarına uygun olarak yapılandırılmıştır.',
+        technologies: ['Reacts', 'Redux', 'Axios'],
         image: ecom,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
 
       {
-        title: 'Seyahat',
+        title: 'Pizza Order App',
         description:
-          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
+          'Bu proje, kullanıcıların pizza siparişi verebileceği bir web uygulamasıdır. React.js ve modern web geliştirme teknikleri kullanılarak geliştirilmiştir. Kullanıcı dostu bir tasarımla, form doğrulaması ve API entegrasyonu özellikleri sunar.',
         technologies: ['React', 'Redux', 'Axios'],
         image: pizza,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
       {
-        bigTitle: 'projelerim',
-        title: 'Workintech',
+        title: ' Portfolio',
         description:
-          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
+          "Bu proje, bir kişisel portföy web sitesi oluşturmak için geliştirilmiş bir React uygulamasıdır. Kullanıcının yeteneklerini, projelerini ve kişisel bilgilerini sergiler. Çok dilli destek sunar, React ve Tailwind CSS ile oluşturulmuştur. useLocalStorage hook'u ile dil ve dark mode tercihleri saklanır, Vite ile başlatılmış ve ESLint ile denetim yapılmıştır.",
         technologies: ['React', 'Redux', 'Axios'],
         image: portf,
         githubLink: 'https://github.com/Atilla-Koz',

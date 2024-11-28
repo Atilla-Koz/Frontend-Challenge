@@ -24,7 +24,7 @@ export default function Profile() {
             {data[language].profileData.details.map((detail, index) => (
               <li
                 key={index}
-                className="flex md:flex-row flex-col items-start md:items-center font-semibold mb-2"
+                className="flex md:flex-row flex-col items-start md:items-center font-semibold mb-2 dark:text-white"
               >
                 {detail.label}
                 <span className="font-normal ml-2">{detail.value}</span>

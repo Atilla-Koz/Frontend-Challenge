@@ -4,6 +4,7 @@ import { data } from './data';
 
 export default function Hero() {
   const { language } = useContext(LanguageContext);
+
   return (
     <div className="dark:bg-dark flex flex-col gap-4 pb-4">
       <section className="dark:bg-dark flex flex-row justify-center items-center flex-wrap-reverse lg:flex-nowrap">
@@ -26,10 +27,23 @@ export default function Hero() {
           </p>
 
           <section className="flex md:flex-row md:pt-10 md:justify-center items-center gap-4 pt-8 flex-col">
-            <button className="text-white bg-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2 dark:bg-[#E1E1FF] dark:text-[#000000]">
-              {data[language].heroData.hireMeButton}
-            </button>
-            <a href={data[language].heroData.githubLink}>
+            {/* Hire Me Button */}
+            <a
+              href="https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?tab=t.0#heading=h.88hjc8sweuxg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="text-white bg-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2 dark:bg-[#E1E1FF] dark:text-[#000000]">
+                {data[language].heroData.hireMeButton}
+              </button>
+            </a>
+
+            {/* GitHub Button */}
+            <a
+              href={data[language].heroData.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="dark:text-[#E1E1FF] flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2">
                 <img
                   className="mr-1"
@@ -39,7 +53,13 @@ export default function Hero() {
                 {data[language].heroData.githubLabel}
               </button>
             </a>
-            <a href={data[language].heroData.linkedinLink}>
+
+            {/* LinkedIn Button */}
+            <a
+              href={data[language].heroData.linkedinLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="dark:text-[#E1E1FF] flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-5 py-2">
                 <img
                   className="mr-1"

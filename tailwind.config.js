@@ -4,6 +4,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      spacing: {
+        '7rem': '7rem',
+        '5rem': '5rem',
+      },
       colors: {
         customPurple: '#3730a3',
         customPurple1: '#4338ca',

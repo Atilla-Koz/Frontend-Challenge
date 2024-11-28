@@ -5,37 +5,38 @@ import { data } from './data';
 export default function Profile() {
   const { language } = useContext(LanguageContext);
   return (
-    <div className=" bg-white dark:bg-dark">
-      <h2 className="dark:text-darkSubTitle text-title  font-semibold text-5xl leading-12 w-1039 h-64 ml-left-5">
+    <div className="bg-white dark:bg-dark">
+      <h2 className="dark:text-darkSubTitle text-title font-semibold text-5xl leading-12 mb-12 ml-left-5">
         {data[language].profileData.title}
       </h2>
-      <section className="dark:text-darkFont flex md:flex-row justify-around gap-4 pl-[7rem] pr-[5rem]  text-title  flex-col  ">
-        <div className="flex-1 flex flex-col">
-          <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-2">
+      <section className="flex flex-col md:flex-row justify-around gap-12 px-28">
+        <div className="flex-1">
+          <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-4">
             {data[language].profileData.title}
           </h3>
-          {data[language].profileData.details.map((detail, index) => (
-            <p
-              key={index}
-              className="flex md:flex-row flex-col items-center font-semibold"
-            >
-              {detail.label}{' '}
-              <span className="font-normal ">
-                &nbsp;&nbsp;&nbsp;{detail.value}
-              </span>
-            </p>
-          ))}
+          <ul>
+            {data[language].profileData.details.map((detail, index) => (
+              <li
+                key={index}
+                className="flex md:flex-row flex-col items-start md:items-center font-semibold mb-2"
+              >
+                {detail.label}
+                <span className="font-normal ml-2">{detail.value}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+
         <div className="flex-1">
-          <h2 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-2">
+          <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium pb-4">
             {data[language].profileData.aboutMe.title}
-          </h2>
-          <span className="flex flex-col justify-around items-center">
-            <p>{data[language].profileData.aboutMe.description}</p>
-          </span>
+          </h3>
+          <p className="dark:text-darkFont">
+            {data[language].profileData.aboutMe.description}
+          </p>
         </div>
       </section>
-      <hr className="m-20 border border-line " />
+      <hr className="my-16 border-t border-line" />
     </div>
   );
 }

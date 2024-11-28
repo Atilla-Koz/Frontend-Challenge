@@ -30,9 +30,14 @@ export default function Header({ skillsRef, projectsRef }) {
         >
           {data[language].headerData.projects}
         </button>
-        <button className="flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 sm:px-5 px-1 py-2 dark:bg-white">
+        <a
+          href="https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 sm:px-5 px-1 py-2 dark:bg-white"
+        >
           {data[language].headerData.hireMe}
-        </button>
+        </a>
       </section>
     </header>
   );

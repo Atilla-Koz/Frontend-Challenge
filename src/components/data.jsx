@@ -241,6 +241,10 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
       },
     },
     projectTitle: 'Projects',
+    projectButtons: {
+      seeMore: 'See More',
+      close: 'Close',
+    },
     projecktsData: [
       {
         title: 'Workintech',
@@ -266,6 +270,33 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
           'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
         technologies: ['React', 'Redux', 'Axios'],
         image: projecktImg2,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        title: 'Workintech',
+        description:
+          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: projecktImg1,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        title: 'Workintech',
+        description:
+          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: projecktImg1,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        title: 'Workintech',
+        description:
+          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: projecktImg1,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },
@@ -527,6 +558,10 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
       },
     },
     projectTitle: 'Projelerim',
+    projectButtons: {
+      seeMore: 'Daha Fazla Gör',
+      close: 'Kapat',
+    },
     projecktsData: [
       {
         bigTitle: 'projelerim',
@@ -553,6 +588,26 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
           'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
         technologies: ['React', 'Redux', 'Axios'],
         image: projecktImg2,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        bigTitle: 'projelerim',
+        title: 'Workintech',
+        description:
+          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: projecktImg1,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+      },
+      {
+        bigTitle: 'projelerim',
+        title: 'Workintech',
+        description:
+          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
+        technologies: ['React', 'Redux', 'Axios'],
+        image: projecktImg1,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       },

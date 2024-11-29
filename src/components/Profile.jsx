@@ -51,7 +51,7 @@ export default function Profile() {
 
       {isExpanded && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-dark p-8 rounded-lg shadow-lg max-w-lg w-full">
+          <div className="bg-white dark:bg-dark p-8 rounded-lg shadow-lg w-full max-w-lg max-h-[80vh] sm:max-h-[70vh] md:max-h-[60vh] overflow-y-auto">
             <h3 className="dark:text-darkSubTitle text-3xl text-customPurple1 font-medium mb-4">
               {data[language].profileData.aboutMe.title}
             </h3>

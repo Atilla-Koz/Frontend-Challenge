@@ -116,7 +116,6 @@ export default function ContactForm() {
           {contactData.submitButton}
         </button>
       </form>
-      <ToastContainer />
     </section>
   );
 }

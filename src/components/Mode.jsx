@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { ModeContext } from '../globalState/ModeContext';
 import { LanguageContext } from '../globalState/LanguageContext';
+import { toast } from 'react-toastify';
 
 import axios from 'axios';
 
@@ -9,13 +10,13 @@ export default function Mode() {
   const { language, toggleLanguage } = useContext(LanguageContext);
 
   useEffect(() => {
-    // Dark mode durumu değiştiğinde, bu durumu local storage'a kaydet
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
     if (isDarkMode) {
       document.body.classList.add('dark');
     } else {
       document.body.classList.remove('dark');
     }
+
     axios
       .post('https://reqres.in/api/pizza', { language, isDarkMode })
       .then((response) => {
@@ -24,7 +25,25 @@ export default function Mode() {
       .catch((error) => {
         console.error('API Request Error:', error);
       });
-  }, [isDarkMode, language]);
+
+    toast.info(isDarkMode ? 'Dark Mode activated.' : 'Light Mode activated.', {
+      position: 'top-right',
+      autoClose: 2000,
+    });
+  }, [isDarkMode]);
+
+  const handleLanguageToggle = () => {
+    toggleLanguage();
+    toast.success(
+      language === 'en'
+        ? "Dil Türkçe'ye çevrildi."
+        : 'Language changed to English.',
+      {
+        position: 'top-right',
+        autoClose: 2000,
+      }
+    );
+  };
 
   return (
     <div className="flex flex-row justify-around pt-4 pb-4">
@@ -44,7 +63,7 @@ export default function Mode() {
           </span>
         </label>
         <button
-          onClick={toggleLanguage}
+          onClick={handleLanguageToggle}
           className="text-sm text-gray-500 dark:text-gray-400"
         >
           {language === 'en' ? "Türkçe'ye Çevir" : 'Translate to English'}

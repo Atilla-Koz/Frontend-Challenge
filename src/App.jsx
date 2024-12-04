@@ -7,6 +7,7 @@ import Projeckts from './components/Projeckts';
 import Skill from './components/Skill';
 import Footer from './components/footer';
 import ContactForm from './components/ContactForm';
+import { ToastContainer } from 'react-toastify';
 
 export default function App() {
   const skillsRef = useRef(null);
@@ -39,6 +40,7 @@ export default function App() {
         </div>
       </div>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

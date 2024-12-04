@@ -42,7 +42,7 @@ export default function ContactForm() {
           toast.success(
             'Thank you for reaching out! I will get back to you soon.',
             {
-              position: 'top-right', // Sağ üst köşe
+              position: 'top-right',
               autoClose: 3000,
               hideProgressBar: false,
               closeOnClick: true,
@@ -51,11 +51,17 @@ export default function ContactForm() {
               progress: undefined,
             }
           );
+          setFormData({
+            fullName: '',
+            email: '',
+            phone: '',
+            note: '',
+          });
         },
         (error) => {
           console.error('Error:', error.text);
           toast.error('Failed to send your message. Please try again later.', {
-            position: 'top-right', // Sağ üst köşe
+            position: 'top-right',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -114,7 +120,6 @@ export default function ContactForm() {
           {contactData.submitButton}
         </button>
       </form>
-      {/* Toastify Container */}
       <ToastContainer />
     </section>
   );

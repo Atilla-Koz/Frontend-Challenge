@@ -24,6 +24,9 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Gönderim sırasında loading bildirimi göster
+    const loadingToastId = toast.loading('Sending your message...');
+
     emailjs
       .send(
         'service_q8ppv8h', // EmailJS Service ID
@@ -39,18 +42,13 @@ export default function ContactForm() {
       .then(
         (result) => {
           console.log('Email sent:', result.text);
-          toast.success(
-            'Thank you for reaching out! I will get back to you soon.',
-            {
-              position: 'top-right',
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            }
-          );
+          // Loading toast'ı güncelle ve başarılı mesaj göster
+          toast.update(loadingToastId, {
+            render: 'Thank you for reaching out! I will get back to you soon.',
+            type: 'success',
+            isLoading: false,
+            autoClose: 3000,
+          });
           setFormData({
             fullName: '',
             email: '',
@@ -60,14 +58,12 @@ export default function ContactForm() {
         },
         (error) => {
           console.error('Error:', error.text);
-          toast.error('Failed to send your message. Please try again later.', {
-            position: 'top-right',
+          // Loading toast'ı güncelle ve hata mesajı göster
+          toast.update(loadingToastId, {
+            render: 'Failed to send your message. Please try again later.',
+            type: 'error',
+            isLoading: false,
             autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
           });
         }
       );

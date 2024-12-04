@@ -18,7 +18,38 @@ export const data = {
     headerData: {
       skills: 'Skills',
       projects: 'Projects',
-      hireMe: 'Hire me',
+      contact: 'Contact',
+      hireMe: 'Hire Me',
+      about: 'About Me',
+    },
+    contactFormData: {
+      title: 'Contact Me',
+      successMessage:
+        'Thank you for reaching out! I will get back to you soon.',
+      fields: [
+        { name: 'fullName', label: 'Full Name', type: 'text', required: true },
+        {
+          name: 'email',
+          label: 'Email',
+          type: 'email',
+          required: true,
+          placeholder: 'example@example.com',
+        },
+        {
+          name: 'phone',
+          label: 'Phone Number',
+          type: 'tel',
+          required: true,
+          placeholder: '123-456-78-90',
+        },
+        {
+          name: 'note',
+          label: 'Note',
+          type: 'textarea',
+          required: false,
+        },
+      ],
+      submitButton: 'Submit',
     },
     heroData: {
       name: 'Atilla Köz',
@@ -332,8 +363,34 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
     },
     headerData: {
       skills: 'Yetenekler',
-      projects: 'Projelerim',
+      projects: 'Projeler',
+      contact: 'İletişim',
       hireMe: 'Beni İşe Al',
+      about: 'Hakkımda',
+    },
+    contactFormData: {
+      title: 'İletişime Geçin',
+      successMessage:
+        'Mesajınız için teşekkür ederim! En kısa sürede size geri dönüş yapacağım.',
+      fields: [
+        { name: 'fullName', label: 'Ad Soyad', type: 'text', required: true },
+        {
+          name: 'email',
+          label: 'E-posta',
+          type: 'email',
+          required: true,
+          placeholder: 'ornek@ornek.com',
+        },
+        {
+          name: 'phone',
+          label: 'Telefon Numarası',
+          type: 'tel',
+          required: true,
+          placeholder: '123-456-7890',
+        },
+        { name: 'note', label: 'Not', type: 'textarea', required: false },
+      ],
+      submitButton: 'Gönder',
     },
     heroData: {
       name: 'Atilla Köz',

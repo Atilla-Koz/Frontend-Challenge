@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, forwardRef } from 'react';
 import { LanguageContext } from '../globalState/LanguageContext';
 import { data } from './data';
 
-export default function Profile() {
+const Profile = forwardRef((props, ref) => {
   const { language } = useContext(LanguageContext);
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   return (
-    <section id="about" className="relative bg-gradient-to-b from-white via-purple-50/50 to-white dark:from-dark dark:via-purple-900/5 dark:to-dark py-20 overflow-hidden">
+    <section ref={ref} id="about" className="relative bg-gradient-to-b from-white via-purple-50/50 to-white dark:from-dark dark:via-purple-900/5 dark:to-dark py-20 overflow-hidden">
       {/* Dekoratif arka plan elementleri */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-30" />
@@ -18,7 +18,7 @@ export default function Profile() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-customPurple to-customPurple1 dark:from-purple-400 dark:to-purple-600">
-              {data[language].headerData.about}
+              {data[language].profileData.title}
             </span>
           </h2>
 
@@ -125,4 +125,8 @@ export default function Profile() {
       )}
     </section>
   );
-}
+});
+
+Profile.displayName = 'Profile';
+
+export default Profile;

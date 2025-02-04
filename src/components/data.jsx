@@ -61,6 +61,8 @@ export const data = {
       githubLabel: 'GitHub',
       linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       linkedinLabel: 'LinkedIn',
+      cvLink: 'https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?tab=t.0#heading=h.88hjc8sweuxg',
+      cvLabel: 'Resume',
       heroImage: img,
       githubIcon: git,
       linkedinIcon: linkedin,
@@ -228,31 +230,13 @@ export const data = {
       ],
     },
     profileData: {
-      title: 'Profile',
-      details: [
-        {
-          label: 'Date of Birth',
-          value: '20.10.1998',
-        },
-        {
-          label: 'city of residence',
-          value: 'Istanbul',
-        },
-        {
-          label: 'Education status',
-          value: 'Istanbul Kultur University',
-        },
-        {
-          label: 'preffered role',
-          value: 'Frontend',
-        },
-      ],
-      aboutMe: {
-        title: 'About Me',
-        description: `Hello! I'm Atilla, a dedicated full stack developer with a passion for technology and continuous learning.
+      personalInfo: {
+        title: "Personal Information",
+        description: "Hi, I'm Atilla. I'm a full-stack developer with expertise in modern web technologies. I specialize in creating responsive and user-friendly applications using React.js and related technologies.",
+        fullDescription: `Hello! I'm Atilla, a dedicated full stack developer with a passion for technology and continuous learning.
 
 Focused Development:
-During my Full Stack Bootcamp, I've worked intensively with React,Spring boot, Java, JavaScript, and modern frameworks. I've honed my problem-solving skills and quickly adapted to new technologies in a fast-paced environment.
+During my Full Stack Bootcamp at Workintech, I've worked intensively with React, Spring Boot, Java, JavaScript, and modern frameworks. I've honed my problem-solving skills and quickly adapted to new technologies in a fast-paced environment.
 
 Versatile Skills:
 I have experience in both frontend and backend development, deepening my expertise in React and Java. My work with diverse frameworks has broadened my skills for various projects and platforms.
@@ -260,19 +244,50 @@ I have experience in both frontend and backend development, deepening my experti
 Dedicated Work Ethic:
 I've demonstrated a strong work ethic, committing to full-time hours and prioritizing project-based learning. I embrace daily opportunities to learn and apply new knowledge to real-world challenges.
 
-Game Development Experience:
-Before full stack development, I gained experience in game programming with Unity, giving me a creative mindset and a unique perspective on problem-solving.
-
 Vision for the Future:
 I aim to establish myself as a leading figure in the tech industry, continuously growing and mastering new technologies to solve real-world problems. My goal is to make a meaningful impact by delivering creative and effective solutions.
 
-In conclusion, I am a technology enthusiast dedicated to self-improvement and growth. With my bootcamp experience and game development background, I am a versatile developer ready to contribute to future projects.
-`,
+In conclusion, I am a technology enthusiast dedicated to self-improvement and growth. With my bootcamp experience and diverse background, I am a versatile developer ready to contribute to future projects.`
       },
-      readMore: {
-        expand: 'Read More',
-        collapse: 'Close',
+      experience: {
+        title: "Experience",
+        items: [
+          {
+            role: "Software Developer",
+            company: "Workintech",
+            period: "2023 - Present"
+          },
+          {
+            role: "Software Developer",
+            company: "Freelance",
+            period: "2021 - Present"
+          }
+        ]
       },
+      education: {
+        title: "Education",
+        items: [
+          {
+            degree: "Web Design and Coding",
+            school: "Anadolu University",
+            period: "2022 - 2024"
+          },
+          {
+            degree: "International Trade and Finance",
+            school: "Istanbul Kultur University",
+            period: "2016 - 2021"
+          },
+          {
+            degree: "Web Development Bootcamp",
+            school: "Workintech",
+            period: "2023"
+          }
+        ]
+      },
+      interests: {
+        title: "Interests",
+        items: ["Web Development", "UI/UX Design", "Mobile Development", "Cloud Computing", "Artificial Intelligence"]
+      }
     },
     projectTitle: 'Projects',
     projectButtons: {
@@ -407,6 +422,8 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
       githubLabel: 'GitHub',
       linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
       linkedinLabel: 'LinkedIn',
+      cvLink: 'https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?tab=t.0#heading=h.88hjc8sweuxg',
+      cvLabel: 'CV',
       heroImage: img,
       githubIcon: git,
       linkedinIcon: linkedin,
@@ -578,32 +595,13 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
       ],
     },
     profileData: {
-      title: 'Profil',
-      details: [
-        {
-          label: 'Doğum Tarihi',
-          value: '20.10.1998',
-        },
-        {
-          label: 'Yaşadığı Şehir',
-          value: 'İstanbul',
-        },
-        {
-          label: 'Eğitim Durumu',
-          value: 'İstanbul Kültür Üniversitesi',
-        },
-        {
-          label: 'Tercih Edilen Rol',
-          value: 'Ön Uç',
-        },
-      ],
-      aboutMe: {
-        title: 'Hakkımda',
-        description: `
-        Merhaba! Ben Atilla, teknolojiye ve sürekli öğrenmeye tutku duyan bir full stack geliştiriciyim.
+      personalInfo: {
+        title: "Kişisel Bilgiler",
+        description: "Merhaba, ben Atilla. Modern web teknolojilerinde uzmanlaşmış bir full-stack geliştiriciyim. React.js ve ilgili teknolojileri kullanarak duyarlı ve kullanıcı dostu uygulamalar oluşturma konusunda uzmanım.",
+        fullDescription: `Merhaba! Ben Atilla, teknolojiye ve sürekli öğrenmeye tutkuyla bağlı bir full stack geliştiriciyim.
 
 Odaklı Gelişim:
-Full Stack Bootcamp sürecimde React, Spring Boot, Java, JavaScript ve modern framework'ler ile yoğun bir şekilde çalıştım. Hızlı tempolu bir ortamda problem çözme becerilerimi geliştirdim ve yeni teknolojilere hızla adapte oldum.
+Workintech'teki Full Stack Bootcamp sürecimde React, Spring Boot, Java, JavaScript ve modern framework'ler ile yoğun bir şekilde çalıştım. Hızlı tempolu bir ortamda problem çözme becerilerimi geliştirdim ve yeni teknolojilere hızla adapte oldum.
 
 Çok Yönlü Beceriler:
 Hem frontend hem de backend geliştirme alanlarında deneyim sahibiyim. React ve Java konularında derinlemesine bilgi edinirken, farklı framework'lerle çalışarak çeşitli projeler ve platformlar için becerilerimi genişlettim.
@@ -611,18 +609,50 @@ Hem frontend hem de backend geliştirme alanlarında deneyim sahibiyim. React ve
 Adanmış Çalışma Disiplini:
 Tam zamanlı bir şekilde çalışarak ve proje odaklı öğrenmeyi önceliklendirerek güçlü bir çalışma disiplini sergiledim. Günlük olarak yeni şeyler öğrenme ve bunları gerçek dünyadaki problemlere uygulama fırsatlarını memnuniyetle benimsedim.
 
-Oyun Geliştirme Deneyimi:
-Full stack geliştirme öncesinde, Unity ile oyun programlama deneyimi kazandım. Bu süreç, bana yaratıcı bir bakış açısı ve problem çözmede farklı bir perspektif kazandırdı.
-
 Gelecek Vizyonu:
 Kendimi teknoloji sektöründe öne çıkan bir figür olarak konumlandırmayı hedefliyorum. Sürekli gelişerek ve yeni teknolojileri öğrenerek gerçek dünyadaki sorunlara etkili çözümler üretmeyi amaçlıyorum. Hedefim, yaratıcı ve etkili çözümler sunarak anlamlı bir etki yaratmak.
 
-Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliştirmeye ve büyümeye adadım. Bootcamp deneyimim ve oyun geliştirme geçmişimle, gelecekteki projelere katkıda bulunmaya hazır, çok yönlü bir geliştiriciyim.`,
+Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliştirmeye ve büyümeye adadım. Bootcamp deneyimim ve çeşitli geçmişimle, gelecekteki projelere katkıda bulunmaya hazır, çok yönlü bir geliştiriciyim.`
       },
-      readMore: {
-        expand: 'Okumaya devam et',
-        collapse: 'Kapat',
+      experience: {
+        title: "Deneyim",
+        items: [
+          {
+            role: "Yazılım Geliştirici",
+            company: "Workintech",
+            period: "2023 - Günümüz"
+          },
+          {
+            role: "Yazılım Geliştirici",
+            company: "Serbest",
+            period: "2021 - Günümüz"
+          }
+        ]
       },
+      education: {
+        title: "Eğitim",
+        items: [
+          {
+            degree: "Web Tasarımı ve Kodlama",
+            school: "Anadolu Üniversitesi",
+            period: "2022 - 2024"
+          },
+          {
+            degree: "Uluslararası Ticaret ve Finans",
+            school: "İstanbul Kültür Üniversitesi",
+            period: "2016 - 2021"
+          },
+          {
+            degree: "Web Geliştirme Bootcamp",
+            school: "Workintech",
+            period: "2023"
+          }
+        ]
+      },
+      interests: {
+        title: "İlgi Alanları",
+        items: ["Web Geliştirme", "UI/UX Tasarım", "Mobil Geliştirme", "Bulut Bilişim", "Yapay Zeka"]
+      }
     },
     projectTitle: 'Projelerim',
     projectButtons: {

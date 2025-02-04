@@ -1,74 +1,77 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { ModeContext } from '../globalState/ModeContext';
 import { LanguageContext } from '../globalState/LanguageContext';
 import { toast } from 'react-toastify';
 
-import axios from 'axios';
-
 export default function Mode() {
-  const { isDarkMode, toggleDarkMode } = useContext(ModeContext);
+  const { mode, setMode } = useContext(ModeContext);
   const { language, toggleLanguage } = useContext(LanguageContext);
 
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    if (isDarkMode) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-
-    axios
-      .post('https://reqres.in/api/pizza', { language, isDarkMode })
-      .then((response) => {
-        console.log('API Response:', response.data);
-      })
-      .catch((error) => {
-        console.error('API Request Error:', error);
-      });
-
-    toast.info(isDarkMode ? 'Dark Mode activated.' : 'Light Mode activated.', {
-      position: 'top-right',
-      autoClose: 2000,
-    });
-  }, [isDarkMode]);
+  const handleModeToggle = () => {
+    const newMode = mode === 'light' ? 'dark' : 'light';
+    setMode(newMode);
+    
+    toast.success(
+      language === 'tr' 
+        ? `${newMode === 'dark' ? 'Karanlık' : 'Aydınlık'} tema aktif` 
+        : `${newMode === 'dark' ? 'Dark' : 'Light'} theme activated`, 
+      {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored"
+      }
+    );
+  };
 
   const handleLanguageToggle = () => {
     toggleLanguage();
     toast.success(
-      language === 'en'
-        ? "Dil Türkçe'ye çevrildi."
-        : 'Language changed to English.',
+      language === 'en' 
+        ? 'Türkçeye geçildi'
+        : 'Switched to English', 
       {
-        position: 'top-right',
+        position: "bottom-right",
         autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored"
       }
     );
   };
 
   return (
-    <div className="flex flex-row justify-around pt-4 pb-4">
-      <div></div>
-      <div className="flex flex-row gap-4">
-        <label className="inline-flex items-center cursor-pointer">
-          <input
-            type="checkbox"
-            value=""
-            className="sr-only peer"
-            defaultChecked={isDarkMode}
-            onChange={toggleDarkMode}
-          />
-          <div className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-customPurple"></div>
-          <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-            {isDarkMode ? 'Dark Mode' : 'Light Mode'}
-          </span>
-        </label>
-        <button
-          onClick={handleLanguageToggle}
-          className="text-sm text-gray-500 dark:text-gray-400"
-        >
-          {language === 'en' ? "Türkçe'ye Çevir" : 'Translate to English'}
-        </button>
-      </div>
+    <div className="flex flex-col gap-2">
+      {/* Dil değiştirme butonu */}
+      <button
+        onClick={handleLanguageToggle}
+        className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-gray-800 dark:text-white"
+        aria-label={language === 'tr' ? 'Switch to English' : 'Türkçeye geç'}
+      >
+        {language === 'tr' ? 'EN' : 'TR'}
+      </button>
+
+      {/* Dark mode butonu */}
+      <button
+        onClick={handleModeToggle}
+        className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+        aria-label={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        {mode === 'dark' ? (
+          <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+          </svg>
+        ) : (
+          <svg className="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+          </svg>
+        )}
+      </button>
     </div>
   );
 }

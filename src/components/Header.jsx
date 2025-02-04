@@ -1,130 +1,184 @@
-import Text from '../assets/header/A.png';
-import Logo from '../assets/header/Ellipse 9.png';
-import { useContext, useState, useEffect, useRef } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { LanguageContext } from '../globalState/LanguageContext';
 import { data } from './data';
+import { toast } from 'react-toastify';
 
-export default function Header({
-  skillsRef,
-  projectsRef,
-  contactRef,
-  profileRef,
-}) {
+export default function Header({ skillsRef, projectsRef, contactRef, profileRef }) {
   const { language } = useContext(LanguageContext);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null); // Açılır menüye referans
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleScroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-    setMenuOpen(false);
-  };
-
-  // Açılır menüyü kapatmak için dış tıklamayı algıla
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (ref) => {
+    if (ref && ref.current) {
+      const headerOffset = 80;
+      const elementPosition = ref.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Scroll sonrası toast bildirimi
+      const sectionName = 
+        ref === skillsRef ? data[language].headerData.skills :
+        ref === projectsRef ? data[language].headerData.projects :
+        ref === profileRef ? data[language].headerData.about :
+        ref === contactRef ? data[language].headerData.contact : '';
+
+      toast.success(`${sectionName} ${language === 'tr' ? 'bölümüne geçildi' : 'section loaded'}`, {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored"
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleHireMeClick = () => {
+    toast.info(language === 'tr' ? 'CV açılıyor...' : 'Opening CV...', {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored"
+    });
+  };
+
   return (
-    <header className="relative pb-12">
-      <div className="flex justify-between items-center px-4 sm:px-8">
-        <section className="relative">
-          <img className="hLogo" src={Logo} alt="Logo" />
-          <img className="absolute top-1/3 left-5" src={Text} alt="Text" />
-        </section>
+    <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <nav className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src="/A.png"
+              alt="Logo"
+              className="h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity duration-300"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                toast.success(language === 'tr' ? 'Ana sayfaya dönüldü' : 'Back to home', {
+                  position: "bottom-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  theme: "colored"
+                });
+              }}
+            />
+          </div>
 
-        <button
-          className="sm:hidden text-customPurple text-2xl dark:text-white"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
-
-        <section className="hidden sm:flex flex-row sm:gap-16 gap-6 items-center">
-          <button
-            className="dark:text-customGray hover:text-customPurple transition"
-            onClick={() => handleScroll(skillsRef)}
-          >
-            {data[language].headerData.skills}
-          </button>
-          <button
-            className="dark:text-customGray hover:text-customPurple transition"
-            onClick={() => handleScroll(projectsRef)}
-          >
-            {data[language].headerData.projects}
-          </button>
-          <button
-            className="dark:text-customGray hover:text-customPurple transition"
-            onClick={() => handleScroll(contactRef)}
-          >
-            {data[language].headerData.contact}
-          </button>
-          <button
-            className="dark:text-customGray hover:text-customPurple transition"
-            onClick={() => handleScroll(profileRef)}
-          >
-            {data[language].headerData.about}
-          </button>
-          <a
-            href="https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-row text-customPurple border-2 border-customPurple rounded-lg text-lg font-medium leading-7 sm:px-5 px-1 py-2 dark:bg-white"
-          >
-            {data[language].headerData.hireMe}
-          </a>
-        </section>
-      </div>
-
-      {menuOpen && (
-        <div
-          className="absolute top-0 left-0 w-full bg-black bg-opacity-50 z-50 sm:hidden flex justify-center items-center"
-          ref={menuRef}
-        >
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg w-11/12 max-w-md py-6 px-4">
+          {/* Navigation Links */}
+          <div className="hidden md:flex items-center space-x-8">
             <button
-              className="block w-full text-center text-customPurple dark:text-white mb-4 text-lg font-medium hover:text-customPurple transition"
-              onClick={() => handleScroll(skillsRef)}
+              onClick={() => scrollToSection(skillsRef)}
+              className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
             >
               {data[language].headerData.skills}
             </button>
             <button
-              className="block w-full text-center text-customPurple dark:text-white mb-4 text-lg font-medium hover:text-customPurple transition"
-              onClick={() => handleScroll(projectsRef)}
+              onClick={() => scrollToSection(projectsRef)}
+              className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
             >
               {data[language].headerData.projects}
             </button>
             <button
-              className="block w-full text-center text-customPurple dark:text-white mb-4 text-lg font-medium hover:text-customPurple transition"
-              onClick={() => handleScroll(contactRef)}
-            >
-              {data[language].headerData.contact}
-            </button>
-            <button
-              className="block w-full text-center text-customPurple dark:text-white mb-4 text-lg font-medium hover:text-customPurple transition"
-              onClick={() => handleScroll(profileRef)}
+              onClick={() => scrollToSection(profileRef)}
+              className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
             >
               {data[language].headerData.about}
             </button>
+            <button
+              onClick={() => scrollToSection(contactRef)}
+              className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
+            >
+              {data[language].headerData.contact}
+            </button>
             <a
-              href="https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?usp=drive_link"
+              href={data[language].socialLinks.cv}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center text-customPurple dark:text-white border-2 border-customPurple rounded-lg text-lg font-medium leading-7 px-4 py-2 mt-4 hover:bg-customPurple hover:text-white transition"
+              onClick={handleHireMeClick}
+              className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-customPurple to-customPurple1 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
             >
               {data[language].headerData.hireMe}
             </a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
-      )}
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 space-y-4">
+            <button
+              onClick={() => scrollToSection(skillsRef)}
+              className="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
+            >
+              {data[language].headerData.skills}
+            </button>
+            <button
+              onClick={() => scrollToSection(projectsRef)}
+              className="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
+            >
+              {data[language].headerData.projects}
+            </button>
+            <button
+              onClick={() => scrollToSection(profileRef)}
+              className="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
+            >
+              {data[language].headerData.about}
+            </button>
+            <button
+              onClick={() => scrollToSection(contactRef)}
+              className="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-300"
+            >
+              {data[language].headerData.contact}
+            </button>
+            <a
+              href={data[language].socialLinks.cv}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleHireMeClick}
+              className="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-customPurple to-customPurple1 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
+            >
+              {data[language].headerData.hireMe}
+            </a>
+          </div>
+        )}
+      </nav>
     </header>
   );
 }

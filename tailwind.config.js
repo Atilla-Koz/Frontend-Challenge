@@ -1,5 +1,6 @@
 // tailwind.config.js
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
@@ -7,6 +8,7 @@ module.exports = {
       spacing: {
         '7rem': '7rem',
         '5rem': '5rem',
+        '5p': '5%',
       },
       colors: {
         customPurple: '#3730a3',
@@ -27,10 +29,6 @@ module.exports = {
         'left-5': '5%',
         'right-5': '5%',
       },
-
-      spacing: {
-        '5p': '5%',
-      },
       width: {
         1039: '1039px',
         236: '236px',
@@ -43,4 +41,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}

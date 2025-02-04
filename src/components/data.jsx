@@ -6,8 +6,8 @@ import ecom from '../assets/P.PNG/ecom.png';
 import pizza from '../assets/P.PNG/pizza.png';
 import portf from '../assets/P.PNG/portf.png';
 import portf2 from '../assets/P.PNG/portf2.png';
-import val from '../assets/P.PNG/val.png';
-import vam from '../assets/P.PNG/vam.png';
+import spor from '../assets/P.PNG/spor.png';
+import fashion from '../assets/P.PNG/fashion.png';
 
 export const data = {
   en: {
@@ -282,63 +282,68 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
     },
     projecktsData: [
       {
-        title: 'E-Commerce',
+        title: 'Gym Management System',
         description:
-          'This project is a modern e-commerce web application developed using React and Vite. It integrates modern web development tools to deliver a user-friendly experience. Tailwind CSS was used for styling, React Router for navigation, and Swiper for creating modern slider components. The use of ESLint ensures the code quality adheres to the standards.',
+          'A modern gym management system developed using React and Node.js. Features include membership management, class schedules, trainer appointments, and online payment systems. Modern UI designed with Material-UI and Tailwind CSS.',
+        technologies: ['React', 'Node.js', 'Material-UI', 'MongoDB', 'Express'],
+        image: spor,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://hysk.netlify.app/',
+      },
+      {
+        title: 'FashionTV Career Portal',
+        description:
+          'A comprehensive career portal for FashionTV. Built with Next.js and TypeScript, featuring an intuitive job application system, resume builder, and applicant tracking. Includes features like real-time application status updates, interview scheduling, and automated email notifications. Enhanced with AI-powered resume parsing and job matching algorithms.',
+        technologies: ['Next.js', 'TypeScript', 'Redux', 'AI/ML', 'Tailwind'],
+        image: fashion,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://www.missandmrfashiontv.com/',
+      },
+      {
+        title: 'E-Commerce Platform',
+        description:
+          'A modern e-commerce web application developed using React and Vite. Features include product catalog, shopping cart, user authentication, and responsive design. Built with Tailwind CSS and React Router.',
         technologies: ['React', 'Redux', 'Axios'],
         image: ecom,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://e-commerce-website-tau-seven.vercel.app/',
       },
-
       {
         title: 'Pizza Order App',
         description:
-          'This project is a web application for users to order pizza. It is developed using React.js and modern web development techniques. The app offers a user-friendly design with features like form validation and API integration.',
+          'A web application for ordering pizza online. Built with React.js and modern web development techniques. Features include a user-friendly interface, form validation, and API integration.',
         technologies: ['React', 'Redux', 'Axios'],
         image: pizza,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://soft-gecko-f582bb.netlify.app/',
       },
       {
-        title: ' Portfolio',
+        title: 'Portfolio Website',
         description:
-          "This project is a React application for building a personal portfolio website. It showcases the user's skills, projects, and personal details. It supports multiple languages, built with React and Tailwind CSS. useLocalStorage hook stores language and dark mode preferences. It is initialized with Vite and uses ESLint for error checking.",
+          'A personal portfolio website built with React. Features include dark mode, multi-language support, responsive design, and modern UI components. Styled with Tailwind CSS.',
         technologies: ['React', 'Redux', 'Axios'],
         image: portf,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://atillakoz.com',
       },
       {
-        title: 'Workintech',
+        title: 'Workintech Project',
         description:
-          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
+          'A customizable cookie consent plugin with minimal setup. Built with vanilla JavaScript and SCSS. Features include customizable themes and user preferences management.',
         technologies: ['React', 'Redux', 'Axios'],
         image: portf2,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
-      },
-      {
-        title: 'Workintech',
-        description:
-          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
-        technologies: ['React', 'Redux', 'Axios'],
-        image: val,
-        githubLink: 'https://github.com/Atilla-Koz',
-        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
-      },
-      {
-        title: 'Workintech',
-        description:
-          'A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible',
-        technologies: ['React', 'Redux', 'Axios'],
-        image: vam,
-        githubLink: 'https://github.com/Atilla-Koz',
-        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://atillakoz.com',
       },
     ],
     footerData: {
-      title: 'Let’s work together on your next product.',
+      title: "Let's work together on your next product.",
       email: 'atillakoz@hotmail.com',
       links: [
         {
@@ -359,13 +364,13 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
   tr: {
     modeData: {
       darkModeLabel: 'Karanlık Mod',
-      translationText: "Türkçe'ye Çevir",
+      translationText: 'İngilizceye Çevir',
     },
     headerData: {
       skills: 'Yetenekler',
       projects: 'Projeler',
       contact: 'İletişim',
-      hireMe: 'Beni İşe Al',
+      hireMe: 'İşe Al',
       about: 'Hakkımda',
     },
     contactFormData: {
@@ -627,63 +632,64 @@ Sonuç olarak, teknoloji tutkunu bir geliştirici olarak kendimi sürekli geliş
     },
     projecktsData: [
       {
-        bigTitle: 'projelerim',
+        title: 'Spor Salonu Yönetim Sistemi',
+        description:
+          'Modern bir spor salonu yönetim sistemi. React ve Node.js kullanılarak geliştirildi. Üyelik yönetimi, ders programları, antrenör randevuları ve online ödeme sistemleri entegre edildi. Material-UI ve Tailwind CSS ile modern bir arayüz tasarlandı.',
+        technologies: ['React', 'Node.js', 'Material-UI', 'MongoDB', 'Express'],
+        image: spor,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://hysk.netlify.app/',
+      },
+      {
+        title: 'FashionTV Kariyer Portalı',
+        description:
+          'FashionTV için geliştirilmiş kapsamlı bir kariyer portalı. Next.js ve TypeScript kullanılarak oluşturuldu. Sezgisel iş başvuru sistemi, özgeçmiş oluşturucu ve aday takip sistemi içeriyor. Gerçek zamanlı başvuru durumu güncellemeleri, mülakat planlama ve otomatik e-posta bildirimleri gibi özellikler barındırıyor. Yapay zeka destekli özgeçmiş analizi ve iş eşleştirme algoritmaları ile güçlendirildi.',
+        technologies: ['Next.js', 'TypeScript', 'Redux', 'AI/ML', 'Tailwind'],
+        image: fashion,
+        githubLink: 'https://github.com/Atilla-Koz',
+        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://www.missandmrfashiontv.com/',
+      },
+      {
         title: 'E-Ticaret',
         description:
-          'Bu proje, React ve Vite kullanılarak modern bir e-ticaret web sitesi oluşturmak için geliştirilmiştir. Tailwind CSS ile hızlı ve özelleştirilebilir tasarımlar oluşturulmuş, React Router ile uygulama içinde yönlendirme sağlanmıştır. Slider bileşenleri için Swiper kullanılmış ve kod kalitesi ESLint ile artırılmıştır. Proje, kullanıcı deneyimini ön planda tutarak modern web geliştirme standartlarına uygun olarak yapılandırılmıştır.',
-        technologies: ['Reacts', 'Redux', 'Axios'],
+          'Bu proje, React ve Vite kullanılarak modern bir e-ticaret web sitesi oluşturmak için geliştirilmiştir. Tailwind CSS ile hızlı ve özelleştirilebilir tasarımlar oluşturulmuş, React Router ile uygulama içinde yönlendirme sağlanmıştır.',
+        technologies: ['React', 'Redux', 'Axios'],
         image: ecom,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://e-commerce-website-tau-seven.vercel.app/',
       },
-
       {
-        title: 'Pizza Order App',
+        title: 'Pizza Sipariş Uygulaması',
         description:
           'Bu proje, kullanıcıların pizza siparişi verebileceği bir web uygulamasıdır. React.js ve modern web geliştirme teknikleri kullanılarak geliştirilmiştir. Kullanıcı dostu bir tasarımla, form doğrulaması ve API entegrasyonu özellikleri sunar.',
         technologies: ['React', 'Redux', 'Axios'],
         image: pizza,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://soft-gecko-f582bb.netlify.app/',
       },
       {
-        title: ' Portfolio',
+        title: 'Portföy',
         description:
-          "Bu proje, bir kişisel portföy web sitesi oluşturmak için geliştirilmiş bir React uygulamasıdır. Kullanıcının yeteneklerini, projelerini ve kişisel bilgilerini sergiler. Çok dilli destek sunar, React ve Tailwind CSS ile oluşturulmuştur. useLocalStorage hook'u ile dil ve dark mode tercihleri saklanır, Vite ile başlatılmış ve ESLint ile denetim yapılmıştır.",
+          'Bu proje, bir kişisel portföy web sitesi oluşturmak için geliştirilmiş bir React uygulamasıdır. Kullanıcının yeteneklerini, projelerini ve kişisel bilgilerini sergiler. Çok dilli destek sunar, React ve Tailwind CSS ile oluşturulmuştur.',
         technologies: ['React', 'Redux', 'Axios'],
         image: portf,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://atillakoz.com',
       },
       {
-        bigTitle: 'projelerim',
         title: 'Workintech',
         description:
-          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
+          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur.',
         technologies: ['React', 'Redux', 'Axios'],
         image: portf2,
         githubLink: 'https://github.com/Atilla-Koz',
         linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
-      },
-      {
-        bigTitle: 'projelerim',
-        title: 'Workintech',
-        description:
-          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
-        technologies: ['React', 'Redux', 'Axios'],
-        image: val,
-        githubLink: 'https://github.com/Atilla-Koz',
-        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
-      },
-      {
-        bigTitle: 'projelerim',
-        title: 'Workintech',
-        description:
-          'Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve NPM paketi olarak mevcuttur. Git deposu, kod ve temalar üzerinde her türlü özelleştirmeye izin verir.',
-        technologies: ['React', 'Redux', 'Axios'],
-        image: vam,
-        githubLink: 'https://github.com/Atilla-Koz',
-        linkedinLink: 'https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/',
+        projectLink: 'https://atillakoz.com',
       },
     ],
     footerData: {

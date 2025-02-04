@@ -87,7 +87,7 @@ export const data = {
           title: 'Hooks',
           description:
             'React features that allow state and lifecycle management in functional components.',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', // React logosu kullanılabilir
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
         },
         {
           title: 'Context API',
@@ -139,7 +139,7 @@ export const data = {
         {
           title: 'Reactstrap',
           description: 'A library for easily integrating Bootstrap with React.',
-          icon: 'https://react-bootstrap.netlify.app/img/logo.svg', // React-Bootstrap logosu
+          icon: 'https://react-bootstrap.netlify.app/img/logo.svg',
         },
         {
           title: 'Java',
@@ -151,18 +151,18 @@ export const data = {
           title: 'OOP',
           description:
             'A programming paradigm based on the concept of objects.',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', // Java için kullanılabilir
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'Data Structures',
           description:
             'Fundamental ways of organizing and manipulating data efficiently.',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', // Genel Java logosu kullanılabilir
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'Design Patterns',
           description: 'Proven solutions to common software design problems.',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', // Java için aynı
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'Maven',
@@ -198,7 +198,7 @@ export const data = {
           title: 'SQL',
           description:
             'A language for managing and querying relational databases.',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', // SQL için MySQL logosu kullanılabilir
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
         },
         {
           title: 'PostgreSQL',
@@ -208,7 +208,7 @@ export const data = {
         {
           title: 'JUnit',
           description: 'A popular testing framework for Java applications.',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', // JUnit için genel Java logosu
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'Mockito',
@@ -434,162 +434,137 @@ In conclusion, I am a technology enthusiast dedicated to self-improvement and gr
       skills: [
         {
           title: 'JavaScript',
-          description:
-            'Web geliştirme için yaygın olarak kullanılan güçlü ve esnek bir programlama dili.',
+          description: 'Web geliştirme için kullanılan güçlü ve çok yönlü bir programlama dili.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
         },
         {
           title: 'React.js',
-          description:
-            'Hızlı ve etkileşimli kullanıcı arayüzleri oluşturmak için bir JavaScript kütüphanesi.',
+          description: 'Hızlı ve etkileşimli kullanıcı arayüzleri oluşturmak için bir JavaScript kütüphanesi.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
         },
         {
           title: 'Hooks',
-          description:
-            'React bileşenlerinde durum ve yaşam döngüsü yönetimi sağlayan özellikler.',
+          description: 'Fonksiyonel bileşenlerde durum ve yaşam döngüsü yönetimini sağlayan React özellikleri.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
         },
         {
           title: 'Context API',
-          description:
-            'React ile uygulama genelinde durum yönetimini kolaylaştıran bir yapı.',
+          description: 'Global uygulama durumunu etkili bir şekilde yönetmek için bir React yapısı.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
         },
         {
           title: 'Redux',
-          description:
-            'JavaScript uygulamaları için tahmin edilebilir bir durum konteyneri.',
+          description: 'JavaScript uygulamaları için öngörülebilir bir durum konteynerı, genellikle React ile kullanılır.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
         },
         {
           title: 'Axios',
-          description:
-            'JavaScript uygulamalarında HTTP istekleri yapmak için kullanılan bir kütüphane.',
+          description: 'JavaScript uygulamalarında HTTP istekleri yapmak için bir kütüphane.',
           icon: 'https://www.vectorlogo.zone/logos/axios/axios-icon.svg',
         },
         {
           title: 'Jest',
-          description:
-            "Kodun doğruluğunu sağlamak için tasarlanmış bir JavaScript test framework'ü.",
+          description: 'Kodun doğruluğunu sağlamak için tasarlanmış bir JavaScript test çerçevesi.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg',
         },
         {
           title: 'Cypress',
-          description:
-            'Web uygulamalarının uçtan uca test edilmesi için güçlü bir framework.',
+          description: 'Web uygulamalarının uçtan uca testi için güçlü bir test çerçevesi.',
           icon: 'https://cdn.brandfetch.io/idIq_kF0rb/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B',
         },
         {
           title: 'HTML',
-          description:
-            'Web sayfalarını oluşturmak için standart işaretleme dili.',
+          description: 'Web sayfaları oluşturmak için standart işaretleme dili.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
         },
         {
           title: 'CSS',
-          description:
-            'HTML ile yazılmış belgelerin görsel sunumunu tanımlayan bir stil dili.',
+          description: 'HTML ile yazılmış bir belgenin sunumunu tanımlamak için kullanılan stil sayfası dili.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
         },
         {
           title: 'Tailwind CSS',
-          description:
-            'Hızlı UI geliştirme için yardımcı sınıf tabanlı bir CSS framework.',
+          description: 'Hızlı UI geliştirme için utility-first bir CSS çerçevesi.',
           icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
         },
         {
           title: 'Reactstrap',
-          description:
-            'React ile Bootstrap entegrasyonunu kolaylaştıran bir kütüphane.',
+          description: 'Bootstrap\'i React ile kolayca entegre etmek için bir kütüphane.',
           icon: 'https://react-bootstrap.netlify.app/img/logo.svg',
         },
         {
           title: 'Java',
-          description:
-            'Sağlam uygulamalar oluşturmak için kullanılan yüksek seviyeli bir programlama dili.',
+          description: 'Sağlam uygulamalar oluşturmak için kullanılan üst düzey bir programlama dili.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'OOP',
-          description: 'Nesne kavramına dayalı bir programlama paradigması.',
+          description: 'Nesneler kavramına dayalı bir programlama paradigması.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
-          title: 'Veri Yapıları',
-          description:
-            'Verilerin verimli bir şekilde düzenlenmesi ve işlenmesi için temel yöntemler.',
+          title: 'Data Structures',
+          description: 'Veriyi etkili bir şekilde organize etme ve manipüle etmenin temel yolları.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
-          title: 'Tasarım Desenleri',
-          description:
-            'Yaygın yazılım tasarım sorunlarına kanıtlanmış çözümler.',
+          title: 'Design Patterns',
+          description: 'Yaygın yazılım tasarım problemlerine kanıtlanmış çözümler.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'Maven',
-          description:
-            'Genellikle Java projeleri için kullanılan bir yapı otomasyon aracı.',
+          description: 'Öncelikle Java projeleri için kullanılan bir derleme otomasyon aracı.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg',
         },
         {
           title: 'Spring Core',
-          description:
-            'Kurumsal seviyedeki Java uygulamaları için temel bir modül.',
+          description: 'Kurumsal düzeyde Java uygulamaları oluşturmak için temel bir modül.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
         },
         {
           title: 'Spring Boot',
-          description:
-            'Tek başına, üretim kalitesinde Spring uygulamaları oluşturmak için bir framework.',
+          description: 'Bağımsız, üretim düzeyinde Spring uygulamaları oluşturmak için bir çerçeve.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
         },
         {
           title: 'Spring Data JPA',
-          description:
-            'Spring uygulamalarında veri erişim katmanını basitleştiren bir kütüphane.',
+          description: 'Spring uygulamalarında veri erişim katmanı uygulamasını basitleştiren bir kütüphane.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
         },
         {
           title: 'Spring Security',
-          description:
-            "Spring tabanlı Java uygulamaları için bir güvenlik framework'ü.",
+          description: 'Spring tabanlı Java uygulamalarını güvenli hale getirmek için bir güvenlik çerçevesi.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
         },
         {
           title: 'SQL',
-          description:
-            'İlişkisel veritabanlarını yönetmek ve sorgulamak için bir dil.',
+          description: 'İlişkisel veritabanlarını yönetmek ve sorgulamak için bir dil.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
         },
         {
           title: 'PostgreSQL',
-          description:
-            'Güçlü ve açık kaynaklı bir ilişkisel veritabanı sistemi.',
+          description: 'Güçlü bir açık kaynaklı ilişkisel veritabanı sistemi.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
         },
         {
           title: 'JUnit',
-          description: "Java uygulamaları için popüler bir test framework'ü.",
+          description: 'Java uygulamaları için popüler bir test çerçevesi.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'Mockito',
-          description:
-            'Mocking ve test işlemleri için Java tabanlı bir kütüphane.',
+          description: 'Java tabanlı bir mock ve test kütüphanesi.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
         },
         {
           title: 'Git',
-          description:
-            'Kod değişikliklerini izlemek için dağıtık bir versiyon kontrol sistemi.',
+          description: 'Kod değişikliklerini takip etmek için dağıtık bir versiyon kontrol sistemi.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
         },
         {
           title: '.Net',
-          description:
-            'Windows uygulamaları ve servisleri oluşturmak için bir framework.',
+          description: 'Windows uygulamaları ve servisleri oluşturmak için bir çerçeve.',
           icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg',
         },
       ],

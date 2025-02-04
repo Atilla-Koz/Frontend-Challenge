@@ -25,78 +25,52 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-purple-50/50 to-white dark:from-dark dark:via-purple-900/5 dark:to-dark py-20 overflow-hidden">
-      {/* Dekoratif arka plan elementleri */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-3xl opacity-30" />
-        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-30" />
-      </div>
-
-      <div className="container mx-auto px-4 relative">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-customPurple to-customPurple1 dark:from-purple-400 dark:to-purple-600">
-              {data[language].contactFormData.title}
-            </span>
-          </h2>
-
-          {isSubmitted ? (
-            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-6 text-center">
-              <p className="text-green-700 dark:text-green-300 text-lg">
-                {data[language].contactFormData.successMessage}
-              </p>
+    <section className="bg-white dark:bg-dark pt-16 overflow-hidden">
+      <h2 className="dark:text-darkSubTitle text-title font-semibold text-5xl leading-12 mb-8 text-center">
+        {data[language].contactFormData.title}
+      </h2>
+      <div className="container mx-auto px-4">
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
+          {data[language].contactFormData.fields.map((field) => (
+            <div key={field.name} className="mb-6">
+              <label
+                htmlFor={field.name}
+                className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
+              >
+                {field.label}
+                {field.required && <span className="text-red-500">*</span>}
+              </label>
+              {field.type === 'textarea' ? (
+                <textarea
+                  id={field.name}
+                  name={field.name}
+                  required={field.required}
+                  placeholder={field.placeholder}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 dark:focus:ring-purple-800 outline-none transition-all duration-200 resize-none min-h-[120px]"
+                />
+              ) : (
+                <input
+                  type={field.type}
+                  id={field.name}
+                  name={field.name}
+                  required={field.required}
+                  placeholder={field.placeholder}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 dark:focus:ring-purple-800 outline-none transition-all duration-200"
+                />
+              )}
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {data[language].contactFormData.fields.map((field) => (
-                <div key={field.name} className="space-y-2">
-                  <label
-                    htmlFor={field.name}
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    {field.label}
-                  </label>
-                  {field.type === 'textarea' ? (
-                    <textarea
-                      id={field.name}
-                      name={field.name}
-                      value={formData[field.name]}
-                      onChange={handleChange}
-                      required={field.required}
-                      placeholder={field.placeholder}
-                      rows={4}
-                      className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500"
-                    />
-                  ) : (
-                    <input
-                      type={field.type}
-                      id={field.name}
-                      name={field.name}
-                      value={formData[field.name]}
-                      onChange={handleChange}
-                      required={field.required}
-                      placeholder={field.placeholder}
-                      className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500"
-                    />
-                  )}
-                </div>
-              ))}
-
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  className="group relative w-full px-8 py-4 bg-gradient-to-r from-customPurple to-customPurple1 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transform hover:scale-[1.02] transition-all duration-300"
-                >
-                  <span className="relative z-10">
-                    {data[language].contactFormData.submitButton}
-                  </span>
-                  <div className="absolute inset-0 bg-white rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                </button>
-              </div>
-            </form>
-          )}
-        </div>
+          ))}
+          <div className="text-center">
+            <button
+              type="submit"
+              className="px-8 py-3 bg-customPurple1 text-white font-semibold rounded-full hover:bg-customPurple transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+            >
+              {data[language].contactFormData.submitButton}
+            </button>
+          </div>
+        </form>
       </div>
+      <hr className="my-16 border-t border-line" />
     </section>
   );
 }

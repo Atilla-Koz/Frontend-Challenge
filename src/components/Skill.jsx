@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { LanguageContext } from '../globalState/LanguageContext';
-import { data } from './data';
+import { data } from './data.jsx';
 
 export default function Skill() {
   const { language } = useContext(LanguageContext);
@@ -79,7 +79,7 @@ export default function Skill() {
             className="px-10 py-4 bg-customPurple1 text-white font-semibold rounded-full hover:bg-customPurple transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2"
             onClick={() => setShowAllSkills(true)}
           >
-            {data[language].skillData.seeAll}
+            {language === 'tr' ? 'Tümünü Gör' : 'See All'}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
@@ -128,7 +128,7 @@ export default function Skill() {
                   className="px-8 py-3 bg-customPurple1 text-white font-semibold rounded-full hover:bg-customPurple transition-colors duration-200 transform hover:scale-105"
                   onClick={handleCloseModal}
                 >
-                  {data[language].projectButtons.close}
+                  {language === 'tr' ? 'Kapat' : 'Close'}
                 </button>
               </div>
             </div>

@@ -47,7 +47,7 @@ export const data = {
         title: "Spor Salonu Yönetim Sistemi",
         description: "Modern bir spor salonu yönetim sistemi. React ve Node.js kullanılarak geliştirildi. Üyelik yönetimi, ders programları, antrenör randevuları ve online ödeme sistemleri entegre edildi. Material-UI ve Tailwind CSS ile modern bir arayüz tasarlandı.",
         technologies: ["React", "Node.js", "Material-UI", "MongoDB", "Express"],
-        image: "/src/assets/P.PNG/spor.png",
+        image: "/assets/P.PNG/spor.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://hysk.netlify.app/"
@@ -56,7 +56,7 @@ export const data = {
         title: "FashionTV Kariyer Portalı",
         description: "FashionTV için geliştirilmiş kapsamlı bir kariyer portalı. Next.js ve TypeScript kullanılarak oluşturuldu. Sezgisel iş başvuru sistemi, özgeçmiş oluşturucu ve aday takip sistemi içeriyor. Gerçek zamanlı başvuru durumu güncellemeleri, mülakat planlama ve otomatik e-posta bildirimleri gibi özellikler barındırıyor. Yapay zeka destekli özgeçmiş analizi ve iş eşleştirme algoritmaları ile güçlendirildi.",
         technologies: ["Next.js", "TypeScript", "Redux", "AI/ML", "Tailwind"],
-        image: "/src/assets/P.PNG/fashion.png",
+        image: "/assets/P.PNG/fashion.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://www.missandmrfashiontv.com/"
@@ -65,7 +65,7 @@ export const data = {
         title: "E-Ticaret",
         description: "Bu proje, React ve Vite kullanılarak modern bir e-ticaret web sitesi oluşturmak için geliştirilmiştir. Tailwind CSS ile hızlı ve özelleştirilebilir tasarımlar oluşturulmuş, React Router ile uygulama içinde yönlendirme sağlanmıştır.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/ecom.png",
+        image: "/assets/P.PNG/ecom.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://e-commerce-website-tau-seven.vercel.app/"
@@ -74,7 +74,7 @@ export const data = {
         title: "Pizza Sipariş Uygulaması",
         description: "Bu proje, kullanıcıların pizza siparişi verebileceği bir web uygulamasıdır. React.js ve modern web geliştirme teknikleri kullanılarak geliştirilmiştir. Kullanıcı dostu bir tasarımla, form doğrulaması ve API entegrasyonu özellikleri sunar.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/pizza.png",
+        image: "/assets/P.PNG/pizza.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://soft-gecko-f582bb.netlify.app/"
@@ -83,7 +83,7 @@ export const data = {
         title: "Portföy",
         description: "Bu proje, bir kişisel portföy web sitesi oluşturmak için geliştirilmiş bir React uygulamasıdır. Kullanıcının yeteneklerini, projelerini ve kişisel bilgilerini sergiler. Çok dilli destek sunar, React ve Tailwind CSS ile oluşturulmuştur.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/portf.png",
+        image: "/assets/P.PNG/portf.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://atillakoz.com"
@@ -92,7 +92,7 @@ export const data = {
         title: "Workintech",
         description: "Basit, özelleştirilebilir, minimal bir kurulum çerez eklentisi. Kullanıcılarınızın kabul etmek veya reddetmek istediği çerezleri seçmelerine izin verir. Bu, vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/portf2.png",
+        image: "/assets/P.PNG/portf2.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://atillakoz.com"
@@ -229,7 +229,7 @@ export const data = {
         title: "Gym Management System",
         description: "A modern gym management system developed using React and Node.js. Features include membership management, class schedules, trainer appointments, and online payment systems. Modern UI designed with Material-UI and Tailwind CSS.",
         technologies: ["React", "Node.js", "Material-UI", "MongoDB", "Express"],
-        image: "/src/assets/P.PNG/spor.png",
+        image: "/assets/P.PNG/spor.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://hysk.netlify.app/"
@@ -238,7 +238,7 @@ export const data = {
         title: "FashionTV Career Portal",
         description: "A comprehensive career portal for FashionTV. Built with Next.js and TypeScript, featuring an intuitive job application system, resume builder, and applicant tracking. Includes features like real-time application status updates, interview scheduling, and automated email notifications. Enhanced with AI-powered resume parsing and job matching algorithms.",
         technologies: ["Next.js", "TypeScript", "Redux", "AI/ML", "Tailwind"],
-        image: "/src/assets/P.PNG/fashion.png",
+        image: "/assets/P.PNG/fashion.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://www.missandmrfashiontv.com/"
@@ -247,7 +247,7 @@ export const data = {
         title: "E-Commerce Platform",
         description: "This project was developed to create a modern e-commerce website using React and Vite. Fast and customizable designs were created with Tailwind CSS, and routing within the application was provided with React Router.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/ecom.png",
+        image: "/assets/P.PNG/ecom.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://e-commerce-website-tau-seven.vercel.app/"
@@ -256,7 +256,7 @@ export const data = {
         title: "Pizza Order App",
         description: "This project is a web application where users can order pizza. Developed using React.js and modern web development techniques. It offers form validation and API integration features with a user-friendly design.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/pizza.png",
+        image: "/assets/P.PNG/pizza.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://soft-gecko-f582bb.netlify.app/"
@@ -265,7 +265,7 @@ export const data = {
         title: "Portfolio",
         description: "This project is a React application developed to create a personal portfolio website. It showcases the user's skills, projects, and personal information. It offers multilingual support and was built with React and Tailwind CSS.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/portf.png",
+        image: "/assets/P.PNG/portf.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://atillakoz.com"
@@ -274,7 +274,7 @@ export const data = {
         title: "Workintech Project",
         description: "A simple, customizable, minimal setup cookie plugin. Allows your users to choose which cookies they want to accept or reject. This was built with vanilla JS, SCSS, and Parcel Bundler.",
         technologies: ["React", "Redux", "Axios"],
-        image: "/src/assets/P.PNG/portf2.png",
+        image: "/assets/P.PNG/portf2.png",
         githubLink: "https://github.com/Atilla-Koz",
         linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
         projectLink: "https://atillakoz.com"

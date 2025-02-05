@@ -8,8 +8,8 @@ export const data = {
       hireMe: "İşe Al"
     },
     heroData: {
-      title: "Merhaba, Ben Atilla Köz",
-      description: "Frontend geliştirici olarak modern ve kullanıcı dostu web uygulamaları geliştiriyorum."
+      title: "Atilla Köz",
+      description: "Merhaba, ben Atilla. Bir full-stack geliştiriciyim. Eğer sağlam ve ölçeklenebilir ön uç ürünlerini harika kullanıcı deneyimleri ile oluşturmak için bir Geliştirici arıyorsanız, benimle el sıkışalım."
     },
     skillsData: {
       title: "Yeteneklerim",
@@ -190,8 +190,8 @@ export const data = {
       hireMe: "Hire Me"
     },
     heroData: {
-      title: "Hi, I'm Atilla Köz",
-      description: "I develop modern and user-friendly web applications as a Frontend Developer."
+      title: "Atilla Köz",
+      description: "Hi, I'm Atilla. I'm a full-stack developer. If you are looking for a Developer who to craft solid and scalable frontend products with great user experiences. Let's shake hands with me."
     },
     skillsData: {
       title: "My Skills",
@@ -359,7 +359,7 @@ export const data = {
       links: [
         { label: "GitHub", url: "https://github.com/Atilla-Koz" },
         { label: "LinkedIn", url: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/" },
-        { label: "Resume", url: "https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?tab=t.0#heading=h.88hjc8sweuxg" }
+        { label: "CV", url: "https://docs.google.com/document/d/1AOdGKgLxDlR3bpVKO4yO4SaCUEaHVF9ix4kqB6e2t88/edit?tab=t.0#heading=h.88hjc8sweuxg" }
       ]
     },
   }

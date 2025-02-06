@@ -44,6 +44,15 @@ export const data = {
     },
     projecktsData: [
       {
+        title: "Gezi Blog",
+        description: "Modern bir gezi blog platformu. Gezginlerin deneyimlerini paylaşabildiği, fotoğraf ve hikayelerini yükleyebildiği interaktif bir platform. React ve Node.js ile geliştirildi. Kullanıcılar kendi profillerini oluşturabiliyor, gezi rotaları paylaşabiliyor ve diğer gezginlerle etkileşime geçebiliyor.",
+        technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+        image: "/assets/P.PNG/blog.png",
+        githubLink: "https://github.com/Atilla-Koz",
+        linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
+        projectLink: "https://blogati.netlify.app/"
+      },
+      {
         title: "Spor Salonu Yönetim Sistemi",
         description: "Modern bir spor salonu yönetim sistemi. React ve Node.js kullanılarak geliştirildi. Üyelik yönetimi, ders programları, antrenör randevuları ve online ödeme sistemleri entegre edildi. Material-UI ve Tailwind CSS ile modern bir arayüz tasarlandı.",
         technologies: ["React", "Node.js", "Material-UI", "MongoDB", "Express"],
@@ -225,6 +234,15 @@ export const data = {
       ]
     },
     projecktsData: [
+      {
+        title: "Travel Blog",
+        description: "A modern travel blog platform. An interactive platform where travelers can share their experiences, upload photos and stories. Developed with React and Node.js. Users can create their own profiles, share travel routes and interact with other travelers.",
+        technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+        image: "/assets/P.PNG/blog.png",
+        githubLink: "https://github.com/Atilla-Koz",
+        linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
+        projectLink: "https://blogati.netlify.app/"
+      },
       {
         title: "Gym Management System",
         description: "A modern gym management system developed using React and Node.js. Features include membership management, class schedules, trainer appointments, and online payment systems. Modern UI designed with Material-UI and Tailwind CSS.",

@@ -60,6 +60,18 @@ export default function Header({ skillsRef, projectsRef, contactRef, profileRef 
     });
   };
 
+  const handleBlogClick = () => {
+    toast.info(language === 'tr' ? 'Blog açılıyor...' : 'Opening Blog...', {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored"
+    });
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
       <nav className="container mx-auto px-4 py-4">
@@ -120,6 +132,19 @@ export default function Header({ skillsRef, projectsRef, contactRef, profileRef 
             >
               {data[language].headerData.hireMe}
             </a>
+            <a
+              href="https://ephemeral-bubblegum-9c1eb9.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleBlogClick}
+              className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-customPurple to-customPurple1 text-white rounded-full hover:shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
+              title={data[language].headerData.blog}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -167,15 +192,30 @@ export default function Header({ skillsRef, projectsRef, contactRef, profileRef 
             >
               {data[language].headerData.contact}
             </button>
-            <a
-              href={data[language].socialLinks.cv}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleHireMeClick}
-              className="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-customPurple to-customPurple1 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
-            >
-              {data[language].headerData.hireMe}
-            </a>
+            <div className="flex flex-col space-y-4">
+              <a
+                href={data[language].socialLinks.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleHireMeClick}
+                className="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-customPurple to-customPurple1 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
+              >
+                {data[language].headerData.hireMe}
+              </a>
+              <a
+                href="https://ephemeral-bubblegum-9c1eb9.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleBlogClick}
+                className="inline-flex items-center justify-center w-10 h-10 mx-auto bg-gradient-to-r from-customPurple to-customPurple1 text-white rounded-full hover:shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
+                title={data[language].headerData.blog}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         )}
       </nav>

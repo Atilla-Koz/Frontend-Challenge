@@ -5,7 +5,8 @@ export const data = {
       projects: "Projeler",
       about: "Hakkımda",
       contact: "İletişim",
-      hireMe: "İşe Al"
+      hireMe: "İşe Al",
+      blog: "Blog"
     },
     heroData: {
       title: "Atilla Köz",
@@ -196,7 +197,8 @@ export const data = {
       projects: "Projects",
       about: "About",
       contact: "Contact",
-      hireMe: "Hire Me"
+      hireMe: "Hire Me",
+      blog: "Blog"
     },
     heroData: {
       title: "Atilla Köz",

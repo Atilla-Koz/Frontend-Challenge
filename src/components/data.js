@@ -45,6 +45,15 @@ export const data = {
     },
     projecktsData: [
       {
+        title: "Canyoning Teams",
+        description: "Türkiye'deki kanyoning kulüplerini ve topluluklarını tek bir platformda bir araya getiren modern bir web uygulaması. React ve TypeScript ile geliştirildi. Kulüplerin detaylı profillerini, şehir bazlı filtreleme özelliğini ve kullanıcı dostu kayıt sistemini içeriyor. EmailJS entegrasyonu ile otomatik bildirim sistemi, SEO optimizasyonu ve responsive tasarım özellikleriyle modern bir platform sunuyor.",
+        technologies: ["React", "TypeScript", "CSS Modules", "EmailJS", "SEO"],
+        image: "/assets/P.PNG/canyon.png",
+        githubLink: "https://github.com/Atilla-Koz",
+        linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
+        projectLink: "https://canyoningteams.com"
+      },
+      {
         title: "Gezi Blog",
         description: "Modern bir gezi blog platformu. Gezginlerin deneyimlerini paylaşabildiği, fotoğraf ve hikayelerini yükleyebildiği interaktif bir platform. React ve Node.js ile geliştirildi. Kullanıcılar kendi profillerini oluşturabiliyor, gezi rotaları paylaşabiliyor ve diğer gezginlerle etkileşime geçebiliyor.",
         technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
@@ -236,6 +245,15 @@ export const data = {
       ]
     },
     projecktsData: [
+      {
+        title: "Canyoning Teams",
+        description: "A modern web application that brings together canyoning clubs and communities in Turkey on a single platform. Developed with React and TypeScript. Features detailed club profiles, city-based filtering, and a user-friendly registration system. Offers a modern platform with EmailJS integration for automatic notifications, SEO optimization, and responsive design features.",
+        technologies: ["React", "TypeScript", "CSS Modules", "EmailJS", "SEO"],
+        image: "/assets/P.PNG/canyon.png",
+        githubLink: "https://github.com/Atilla-Koz",
+        linkedinLink: "https://www.linkedin.com/in/atilla-k%C3%B6z-9b1841194/",
+        projectLink: "https://canyoningteams.com"
+      },
       {
         title: "Travel Blog",
         description: "A modern travel blog platform. An interactive platform where travelers can share their experiences, upload photos and stories. Developed with React and Node.js. Users can create their own profiles, share travel routes and interact with other travelers.",

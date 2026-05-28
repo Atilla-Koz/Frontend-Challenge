@@ -23,9 +23,9 @@ const galleryItems = [
 ];
 
 const videoItems = [
-  { id: 1, cloudinaryId: null, title: 'Kurumsal Tanıtım Filmi', duration: '2:34', category: 'Commercial' },
-  { id: 2, cloudinaryId: null, title: 'Düğün Hikayesi',         duration: '4:12', category: 'Event'      },
-  { id: 3, cloudinaryId: null, title: 'Doğa Belgeseli',         duration: '3:55', category: 'Nature'     },
+  { id: 1, instagramId: 'DQ4qf6sjKsq', title: 'Film I',   category: 'Film' },
+  { id: 2, instagramId: 'DQPZOwbDOOU', title: 'Film II',  category: 'Film' },
+  { id: 3, instagramId: 'DMdX7dWoQTp', title: 'Film III', category: 'Film' },
 ];
 
 const CATEGORIES = ['all', 'portrait', 'landscape', 'event', 'commercial'];
@@ -155,40 +155,34 @@ function EditorialBlock({ item, index }) {
   );
 }
 
-function VideoPlaceholder({ item }) {
+function VideoCard({ item }) {
   return (
-    <div className="group relative aspect-video bg-gradient-to-br from-[#0f0f0f] to-[#1a1412] rounded-xl overflow-hidden cursor-pointer flex-shrink-0 w-72 md:w-80">
-      {item.cloudinaryId ? (
-        <video
-          src={cloudinaryUrl(item.cloudinaryId, 'video')}
-          className="w-full h-full object-cover"
-          muted
-          loop
-          playsInline
-          onMouseEnter={e => e.target.play()}
-          onMouseLeave={e => { e.target.pause(); e.target.currentTime = 0; }}
+    <div className="flex flex-col">
+      <div className="overflow-hidden rounded-2xl bg-[#0a0a0a] border border-[#1a1a1a]">
+        <iframe
+          src={`https://www.instagram.com/p/${item.instagramId}/embed/`}
+          className="w-full block border-0"
+          height="620"
+          allowTransparency="true"
+          allowFullScreen
+          loading="lazy"
+          title={item.title}
+          scrolling="no"
         />
-      ) : (
-        <div className="w-full h-full flex flex-col items-center justify-center">
-          <div className="absolute inset-0 opacity-10"
-            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")` }}
-          />
-          {/* Play button */}
-          <div className="w-14 h-14 rounded-full border border-[#c9a85440] flex items-center justify-center group-hover:border-[#c9a854] group-hover:bg-[#c9a85410] transition-all duration-300">
-            <svg className="w-5 h-5 text-[#c9a85460] group-hover:text-[#c9a854] ml-1 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-        </div>
-      )}
-
-      {/* Info overlay */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <p className="text-white text-sm font-light">{item.title}</p>
-        <div className="flex items-center gap-3 mt-1">
-          <span className="text-[#c9a854] text-[10px] tracking-widest uppercase">{item.category}</span>
-          <span className="text-gray-500 text-[10px]">{item.duration}</span>
-        </div>
+      </div>
+      <div className="mt-4 flex items-center justify-between px-1">
+        <p className="text-white font-thin text-sm tracking-wide">{item.title}</p>
+        <a
+          href={`https://www.instagram.com/p/${item.instagramId}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[10px] tracking-[0.4em] text-gray-600 hover:text-[#c9a854] uppercase transition-colors duration-300 flex items-center gap-1"
+        >
+          Instagram
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
       </div>
     </div>
   );
@@ -378,17 +372,16 @@ export default function PhotoPortfolio() {
       </section>
 
       {/* ── Video Work ────────────────────────────────────────── */}
-      <section id="video" className="py-24 bg-[#050505] border-t border-[#0f0f0f]">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="mb-12">
-            <p className="text-[10px] tracking-[0.6em] text-[#c9a85480] uppercase mb-3">Sinema &amp; Film</p>
-            <h2 className="text-3xl md:text-4xl font-thin text-white">Video Çalışmalar</h2>
+      <section id="video" className="py-32 px-6 md:px-16 lg:px-24 bg-[#050505] border-t border-[#0f0f0f]">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-16">
+            <p className="text-[10px] tracking-[0.6em] text-[#c9a85480] uppercase mb-4">Sinema &amp; Film</p>
+            <h2 className="text-3xl md:text-5xl font-thin text-white mb-4">Video Çalışmalar</h2>
+            <p className="text-gray-600 text-sm font-light">Hareket eden kareler, duran anlar.</p>
           </div>
-          {/* Horizontal scroll on mobile, grid on desktop */}
-          <div className="flex gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible
-            scrollbar-none [&::-webkit-scrollbar]:hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {videoItems.map((v) => (
-              <VideoPlaceholder key={v.id} item={v} />
+              <VideoCard key={v.id} item={v} />
             ))}
           </div>
         </div>

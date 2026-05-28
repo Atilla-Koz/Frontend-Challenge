@@ -4,17 +4,17 @@ import emailjs from '@emailjs/browser';
 
 // ─── Cloudinary config ────────────────────────────────────────────────────────
 // Cloudinary yükleme sonrası CLOUD_NAME değişkenini kendi hesabınla güncelle
-const CLOUD_NAME = 'YOUR_CLOUD_NAME';
+const CLOUD_NAME = 'djenodye6';
 const cloudinaryUrl = (id, type = 'image') =>
   `https://res.cloudinary.com/${CLOUD_NAME}/${type}/upload/q_auto,f_auto/${id}`;
 
 // ─── Gallery data ─────────────────────────────────────────────────────────────
 // cloudinaryId doldurunca placeholder kaybolur, gerçek fotoğraf gösterilir
 const galleryItems = [
-  { id: 1, cloudinaryId: null, category: 'portrait',    title: 'Golden Hour',      aspect: 'portrait'  },
-  { id: 2, cloudinaryId: null, category: 'landscape',   title: 'Mountain Mist',    aspect: 'landscape' },
-  { id: 3, cloudinaryId: null, category: 'event',       title: 'Night Lights',     aspect: 'square'    },
-  { id: 4, cloudinaryId: null, category: 'commercial',  title: 'Product Story',    aspect: 'landscape' },
+  { id: 1, cloudinaryId: 'v1779980714/DSCF3032_ialrd0.jpg',  category: 'landscape',   title: 'Sokak Manzarası',    aspect: 'portrait'  },
+  { id: 2, cloudinaryId: 'v1779980616/DSCF4406-3_qm1lwt.jpg', category: 'landscape',  title: 'Metro Penceresi',    aspect: 'portrait'  },
+  { id: 3, cloudinaryId: 'v1779980047/DSCF4102_eeucbf.jpg',  category: 'landscape',   title: 'Ağaç Manzarası',     aspect: 'portrait'  },
+  { id: 4, cloudinaryId: 'v1779980047/DSCF3089_gpwtjm.jpg',  category: 'landscape',   title: 'Deniz Manzarası',    aspect: 'landscape' },
   { id: 5, cloudinaryId: null, category: 'portrait',    title: 'Soft Shadows',     aspect: 'portrait'  },
   { id: 6, cloudinaryId: null, category: 'landscape',   title: 'Dawn Horizon',     aspect: 'landscape' },
   { id: 7, cloudinaryId: null, category: 'commercial',  title: 'Brand Identity',   aspect: 'square'    },

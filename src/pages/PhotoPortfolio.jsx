@@ -390,16 +390,15 @@ export default function PhotoPortfolio() {
       {/* ── About ─────────────────────────────────────────────── */}
       <section id="about" className="py-24 px-6 md:px-12 border-t border-[#0f0f0f]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* Photo placeholder */}
+          {/* Profile photo */}
           <div className="relative">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-[#141008] to-[#1a150a] flex items-center justify-center">
-              <div className="text-center">
-                <svg className="w-12 h-12 text-[#c9a85430] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <p className="text-[#c9a85440] text-[10px] tracking-[0.3em] uppercase">Fotoğraf Yakında</p>
-              </div>
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden">
+              <img
+                src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1779983668/Bu%CC%88yu%CC%88k_DSCF5025_f5uhr8.jpg"
+                alt="Atilla Köz"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
             {/* Gold accent border */}
             <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-[#c9a85420] -z-10" />

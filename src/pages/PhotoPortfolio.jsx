@@ -291,11 +291,14 @@ export default function PhotoPortfolio() {
 
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Placeholder background — replace with Cloudinary hero image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0d0b08] via-[#120e08] to-[#080808]">
-          <div className="absolute inset-0 opacity-20"
-            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")` }}
+        {/* Hero background — TODO: replace with own Cloudinary image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1779984253/Ekran_Resmi_2026-05-28_19.03.41_acgzxs.png"
+            alt=""
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
         {/* Gold accent lines */}
         <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#c9a85430] to-transparent" />
@@ -394,7 +397,7 @@ export default function PhotoPortfolio() {
           <div className="relative">
             <div className="aspect-[3/4] rounded-2xl overflow-hidden">
               <img
-                src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1779983668/Bu%CC%88yu%CC%88k_DSCF5025_f5uhr8.jpg"
+                src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1779984355/Bu%CC%88yu%CC%88k_DSCF5027_kopyas%C4%B1_s9iei2.jpg"
                 alt="Atilla Köz"
                 className="w-full h-full object-cover"
                 loading="lazy"

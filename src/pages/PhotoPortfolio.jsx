@@ -11,15 +11,15 @@ const cloudinaryUrl = (id, type = 'image') =>
 // ─── Gallery data ─────────────────────────────────────────────────────────────
 // cloudinaryId doldurunca placeholder kaybolur, gerçek fotoğraf gösterilir
 const galleryItems = [
-  { id: 1, cloudinaryId: 'v1779980714/DSCF3032_ialrd0.jpg',  category: 'landscape',   title: 'Sokak Manzarası',    aspect: 'portrait'  },
-  { id: 2, cloudinaryId: 'v1779980616/DSCF4406-3_qm1lwt.jpg', category: 'landscape',  title: 'Metro Penceresi',    aspect: 'portrait'  },
-  { id: 3, cloudinaryId: 'v1779980047/DSCF4102_eeucbf.jpg',  category: 'landscape',   title: 'Ağaç Manzarası',     aspect: 'portrait'  },
-  { id: 4, cloudinaryId: 'v1779980047/DSCF3089_gpwtjm.jpg',  category: 'landscape',   title: 'Deniz Manzarası',    aspect: 'landscape' },
-  { id: 5, cloudinaryId: null, category: 'portrait',    title: 'Soft Shadows',     aspect: 'portrait'  },
-  { id: 6, cloudinaryId: null, category: 'landscape',   title: 'Dawn Horizon',     aspect: 'landscape' },
-  { id: 7, cloudinaryId: null, category: 'commercial',  title: 'Brand Identity',   aspect: 'square'    },
-  { id: 8, cloudinaryId: null, category: 'event',       title: 'Candid Moments',   aspect: 'portrait'  },
-  { id: 9, cloudinaryId: null, category: 'landscape',   title: 'Silent Valley',    aspect: 'landscape' },
+  { id: 1, cloudinaryId: 'v1779980714/DSCF3032_ialrd0.jpg',   category: 'landscape', title: 'Sokak Manzarası',  aspect: 'portrait',  layout: 'left',   location: 'İzmir, Türkiye',    caption: 'Yağmur sonrası ıslak kaldırımlar, boş bir sokağın sessizliği. Her adımda geçmişin izleri.' },
+  { id: 2, cloudinaryId: 'v1779980616/DSCF4406-3_qm1lwt.jpg', category: 'landscape', title: 'Metro Penceresi', aspect: 'portrait',  layout: 'right',  location: 'İstanbul, Türkiye', caption: 'Cam arkasından süzülen mor ışık. Şehrin sesi, bir kareye sığan sonsuzluk.' },
+  { id: 3, cloudinaryId: 'v1779980047/DSCF4102_eeucbf.jpg',   category: 'landscape', title: 'Ağaç Manzarası',  aspect: 'portrait',  layout: 'center', location: 'Türkiye',           caption: 'Dalların arasından süzülen ışık. Doğanın sessiz dili, yaprakların fısıltısı.' },
+  { id: 4, cloudinaryId: 'v1779980047/DSCF3089_gpwtjm.jpg',   category: 'landscape', title: 'Deniz Manzarası', aspect: 'landscape', layout: 'full',   location: 'Ege, Türkiye',      caption: 'Ufukta kaybolan mavi. Sonsuz bir derinlik, sakin bir güç.' },
+  { id: 5, cloudinaryId: null, category: 'portrait',   title: 'Soft Shadows',   aspect: 'portrait',  layout: 'left',   location: null, caption: null },
+  { id: 6, cloudinaryId: null, category: 'landscape',  title: 'Dawn Horizon',   aspect: 'landscape', layout: 'right',  location: null, caption: null },
+  { id: 7, cloudinaryId: null, category: 'commercial', title: 'Brand Identity', aspect: 'square',    layout: 'center', location: null, caption: null },
+  { id: 8, cloudinaryId: null, category: 'event',      title: 'Candid Moments', aspect: 'portrait',  layout: 'left',   location: null, caption: null },
+  { id: 9, cloudinaryId: null, category: 'landscape',  title: 'Silent Valley',  aspect: 'landscape', layout: 'full',   location: null, caption: null },
 ];
 
 const videoItems = [
@@ -43,48 +43,114 @@ const aspectClasses = { portrait: 'aspect-[3/4]', landscape: 'aspect-[4/3]', squ
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function PhotoPlaceholder({ item }) {
-  const [hovered, setHovered] = useState(false);
+function EditorialPhoto({ item }) {
+  const hasImage = !!item.cloudinaryId;
   const grad = gradients[item.category] || gradients.commercial;
   const aspect = aspectClasses[item.aspect] || aspectClasses.landscape;
-  const hasImage = !!item.cloudinaryId;
 
   return (
-    <div
-      className={`relative overflow-hidden rounded-xl cursor-pointer group ${aspect}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <div className={`relative overflow-hidden rounded-2xl group ${aspect}`}>
       {hasImage ? (
         <img
           src={cloudinaryUrl(item.cloudinaryId)}
           alt={item.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           loading="lazy"
         />
       ) : (
         <div className={`w-full h-full bg-gradient-to-br ${grad} flex flex-col items-center justify-center`}>
-          {/* Film grain overlay */}
-          <div className="absolute inset-0 opacity-20"
-            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")` }}
-          />
-          {/* Camera icon */}
-          <svg className="w-8 h-8 text-[#c9a85440] mb-3 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-[#c9a85430] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
               d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
-          <p className="text-[#c9a85450] text-[10px] tracking-[0.3em] uppercase relative z-10">Coming Soon</p>
+          <p className="text-[#c9a85440] text-[9px] tracking-[0.3em] uppercase">Coming Soon</p>
         </div>
       )}
+    </div>
+  );
+}
 
-      {/* Hover overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-400 ${hovered ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <p className="text-white font-light text-sm tracking-wide">{item.title}</p>
-          <p className="text-[#c9a854] text-[10px] tracking-widest uppercase mt-1">{categoryLabel[item.category]}</p>
+function EditorialBlock({ item, index }) {
+  const num = String(index + 1).padStart(2, '0');
+
+  const photo = <EditorialPhoto item={item} />;
+
+  const textBlock = (
+    <div className="space-y-6">
+      <span className="text-[96px] md:text-[128px] font-thin text-[#c9a85406] leading-none select-none block -mb-2">{num}</span>
+      <div>
+        <h3 className="text-2xl md:text-3xl font-thin text-white tracking-wide">{item.title}</h3>
+        {item.location && (
+          <p className="text-[10px] tracking-[0.5em] text-[#c9a85470] uppercase mt-2">{item.location}</p>
+        )}
+      </div>
+      {item.caption && (
+        <p className="text-gray-500 text-sm leading-relaxed font-light max-w-[260px]">{item.caption}</p>
+      )}
+      <div className="flex items-center gap-4 pt-2">
+        <div className="h-px w-8 bg-[#c9a85440]" />
+        <p className="text-[10px] tracking-[0.4em] text-gray-700 uppercase">{categoryLabel[item.category]}</p>
+      </div>
+    </div>
+  );
+
+  if (item.layout === 'left') {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-10 md:gap-20 items-center">
+        {photo}
+        {textBlock}
+      </div>
+    );
+  }
+
+  if (item.layout === 'right') {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-10 md:gap-20 items-center">
+        <div className="order-2 md:order-1">{textBlock}</div>
+        <div className="order-1 md:order-2">{photo}</div>
+      </div>
+    );
+  }
+
+  if (item.layout === 'center') {
+    return (
+      <div className="max-w-sm mx-auto text-center">
+        <span className="text-[96px] font-thin text-[#c9a85406] leading-none select-none block -mb-2">{num}</span>
+        {photo}
+        <div className="mt-8 space-y-3">
+          <h3 className="text-2xl font-thin text-white tracking-wide">{item.title}</h3>
+          {item.location && (
+            <p className="text-[10px] tracking-[0.5em] text-[#c9a85470] uppercase">{item.location}</p>
+          )}
+          {item.caption && (
+            <p className="text-gray-500 text-sm leading-relaxed font-light mt-4">{item.caption}</p>
+          )}
         </div>
       </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="flex items-baseline gap-6 mb-10">
+        <span className="text-[96px] font-thin text-[#c9a85406] leading-none select-none">{num}</span>
+        <div>
+          <h3 className="text-2xl md:text-3xl font-thin text-white tracking-wide">{item.title}</h3>
+          {item.location && (
+            <p className="text-[10px] tracking-[0.5em] text-[#c9a85470] uppercase mt-1">{item.location}</p>
+          )}
+        </div>
+      </div>
+      <div className="max-w-4xl mx-auto">
+        {photo}
+      </div>
+      {item.caption && (
+        <div className="max-w-4xl mx-auto mt-6 flex items-start justify-between gap-8">
+          <p className="text-gray-500 text-sm leading-relaxed font-light max-w-sm">{item.caption}</p>
+          <p className="text-[10px] tracking-[0.4em] text-gray-700 uppercase flex-shrink-0 mt-1">{categoryLabel[item.category]}</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -130,15 +196,10 @@ function VideoPlaceholder({ item }) {
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function PhotoPortfolio() {
-  const [activeCategory, setActiveCategory] = useState('all');
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', service: '', message: '' });
   const [formStatus, setFormStatus] = useState('idle'); // idle | sending | sent | error
   const contactRef = useRef(null);
-
-  const filtered = activeCategory === 'all'
-    ? galleryItems
-    : galleryItems.filter(i => i.category === activeCategory);
 
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -283,40 +344,36 @@ export default function PhotoPortfolio() {
       </section>
 
       {/* ── Gallery ───────────────────────────────────────────── */}
-      <section id="gallery" className="py-24 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
+      <section id="gallery" className="py-32 px-6 md:px-16 lg:px-24">
+        <div className="max-w-5xl mx-auto">
           {/* Section header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <p className="text-[10px] tracking-[0.6em] text-[#c9a85480] uppercase mb-3">Portfolio</p>
-              <h2 className="text-3xl md:text-4xl font-thin text-white">Seçili Çalışmalar</h2>
-            </div>
-            {/* Category filters */}
-            <div className="flex flex-wrap gap-2">
-              {CATEGORIES.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-1.5 rounded-full text-[10px] tracking-widest uppercase transition-all duration-300 ${
-                    activeCategory === cat
-                      ? 'bg-[#c9a854] text-black'
-                      : 'border border-[#2a2a2a] text-gray-500 hover:border-[#c9a85440] hover:text-[#c9a854]'
-                  }`}
-                >
-                  {categoryLabel[cat]}
-                </button>
-              ))}
-            </div>
+          <div className="mb-24 md:mb-32">
+            <p className="text-[10px] tracking-[0.6em] text-[#c9a85480] uppercase mb-4">Portfolio</p>
+            <h2 className="text-3xl md:text-5xl font-thin text-white mb-4">Seçili Çalışmalar</h2>
+            <p className="text-gray-600 text-sm font-light">Az ama öz — her kare, bir anın özü.</p>
           </div>
 
-          {/* Masonry-style grid */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-            {filtered.map((item) => (
-              <div key={item.id} className="break-inside-avoid">
-                <PhotoPlaceholder item={item} />
-              </div>
+          {/* Editorial blocks */}
+          <div className="space-y-36 md:space-y-52">
+            {galleryItems.filter(i => i.cloudinaryId).map((item, index) => (
+              <EditorialBlock key={item.id} item={item} index={index} />
             ))}
           </div>
+
+          {/* Coming soon thumbnails */}
+          {galleryItems.some(i => !i.cloudinaryId) && (
+            <div className="mt-40 pt-16 border-t border-[#111111]">
+              <p className="text-[10px] tracking-[0.6em] text-[#c9a85428] uppercase mb-8">Yakında Eklenecek</p>
+              <div className="flex gap-2">
+                {galleryItems.filter(i => !i.cloudinaryId).map((item) => (
+                  <div
+                    key={item.id}
+                    className={`flex-1 bg-gradient-to-br ${gradients[item.category]} rounded-xl overflow-hidden opacity-20 ${aspectClasses[item.aspect] || 'aspect-[3/4]'}`}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

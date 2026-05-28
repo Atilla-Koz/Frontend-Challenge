@@ -1,49 +1,24 @@
-import { useRef } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Profile from './components/Profile';
-import Projeckts from './components/Projeckts';
-import Skill from './components/Skill';
-import Footer from './components/footer';
-import ContactForm from './components/ContactForm';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Landing from './pages/Landing.jsx';
+import SoftwarePortfolio from './pages/SoftwarePortfolio.jsx';
+import PhotoPortfolio from './pages/PhotoPortfolio.jsx';
 
 export default function App() {
-  const skillsRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
-  const profileRef = useRef(null);
-
   return (
-    <div className="bg-white dark:bg-[#0f0c1a]">
-      <div className="container mx-auto max-w-screen-2xl px-4">
-        <Header
-          skillsRef={skillsRef}
-          projectsRef={projectsRef}
-          contactRef={contactRef}
-          profileRef={profileRef}
-        />
-        <Hero />
-        <div ref={skillsRef}>
-          <Skill />
-        </div>
-        <div ref={profileRef}>
-          <Profile />
-        </div>
-        <div ref={projectsRef}>
-          <Projeckts />
-        </div>
-        <div ref={contactRef}>
-          <ContactForm />
-        </div>
-      </div>
-      <Footer />
+    <>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/software" component={SoftwarePortfolio} />
+        <Route path="/photo" component={PhotoPortfolio} />
+        <Redirect to="/" />
+      </Switch>
       <ToastContainer
         position="bottom-right"
         autoClose={2000}
         hideProgressBar={false}
-        newestOnTop={true}
+        newestOnTop
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
@@ -52,6 +27,6 @@ export default function App() {
         theme="colored"
         limit={3}
       />
-    </div>
+    </>
   );
 }

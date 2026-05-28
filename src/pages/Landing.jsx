@@ -104,7 +104,7 @@ export default function Landing() {
 
             {/* Category tags */}
             <div className="flex flex-wrap justify-center gap-2 mt-6">
-              {['Portre', 'Doğa', 'Etkinlik', 'Ürün'].map((tag) => (
+              {['Portrait', 'Nature', 'Event', 'Product'].map((tag) => (
                 <span
                   key={tag}
                   className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${
@@ -120,7 +120,7 @@ export default function Landing() {
 
             {/* CTA */}
             <div className={`mt-10 flex items-center gap-3 text-xs tracking-[0.4em] uppercase transition-all duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-700'}`}>
-              <span>Portfolio'ya Gir</span>
+              <span>Enter Portfolio</span>
               <span className={`transition-transform duration-300 ${hovered === 'photo' ? 'translate-x-2' : ''}`}>→</span>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function Landing() {
         {/* Horizontal divider (mobile) */}
         <div className="md:hidden flex items-center justify-center gap-4 py-4 px-8 flex-shrink-0">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#2a2a2a] to-transparent" />
-          <span className="text-[9px] tracking-widest text-gray-700 uppercase">veya</span>
+          <span className="text-[9px] tracking-widest text-gray-700 uppercase">or</span>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#2a2a2a] to-transparent" />
         </div>
 
@@ -197,7 +197,7 @@ export default function Landing() {
 
             {/* CTA */}
             <div className={`mt-10 flex items-center gap-3 text-xs tracking-[0.4em] uppercase transition-all duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-700'}`}>
-              <span>Portfolio'ya Gir</span>
+              <span>Enter Portfolio</span>
               <span className={`transition-transform duration-300 ${hovered === 'software' ? 'translate-x-2' : ''}`}>→</span>
             </div>
           </div>

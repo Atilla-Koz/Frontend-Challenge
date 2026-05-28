@@ -11,9 +11,9 @@ const cloudinaryUrl = (id, type = 'image') =>
 // ─── Gallery data ─────────────────────────────────────────────────────────────
 // cloudinaryId doldurunca placeholder kaybolur, gerçek fotoğraf gösterilir
 const galleryItems = [
-  { id: 1, cloudinaryId: 'v1779980714/DSCF3032_ialrd0.jpg',   category: 'landscape', title: 'Sokak Manzarası',  aspect: 'portrait',  layout: 'left',   location: 'İzmir, Türkiye',    caption: 'Yağmur sonrası ıslak kaldırımlar, boş bir sokağın sessizliği. Her adımda geçmişin izleri.' },
-  { id: 2, cloudinaryId: 'v1779980616/DSCF4406-3_qm1lwt.jpg', category: 'landscape', title: 'Metro Penceresi', aspect: 'portrait',  layout: 'right',  location: 'İstanbul, Türkiye', caption: 'Cam arkasından süzülen mor ışık. Şehrin sesi, bir kareye sığan sonsuzluk.' },
-  { id: 3, cloudinaryId: 'v1779980047/DSCF4102_eeucbf.jpg',   category: 'landscape', title: 'Ağaç Manzarası',  aspect: 'portrait',  layout: 'center', location: 'Türkiye',           caption: 'Dalların arasından süzülen ışık. Doğanın sessiz dili, yaprakların fısıltısı.' },
+  { id: 1, cloudinaryId: 'v1779980714/DSCF3032_ialrd0.jpg',   category: 'landscape', title: 'Sokak Manzarası',  aspect: 'portrait',  layout: 'left',   location: 'Marmaris, Türkiye',    caption: 'Yağmur sonrası ıslak kaldırımlar, boş bir sokağın sessizliği. Her adımda geçmişin izleri.' },
+  { id: 2, cloudinaryId: 'v1779980616/DSCF4406-3_qm1lwt.jpg', category: 'landscape', title: 'Metro Penceresi', aspect: 'portrait',  layout: 'right',  location: 'Yunanistan, Atina', caption: 'Cam arkasından süzülen mor ışık. Şehrin sesi, bir kareye sığan sonsuzluk.' },
+  { id: 3, cloudinaryId: 'v1779980047/DSCF4102_eeucbf.jpg',   category: 'landscape', title: 'Ağaç Manzarası',  aspect: 'portrait',  layout: 'center', location: 'Yunanistan',           caption: 'Dalların arasından süzülen ışık. Doğanın sessiz dili, yaprakların fısıltısı.' },
   { id: 4, cloudinaryId: 'v1779980047/DSCF3089_gpwtjm.jpg',   category: 'landscape', title: 'Deniz Manzarası', aspect: 'landscape', layout: 'full',   location: 'Ege, Türkiye',      caption: 'Ufukta kaybolan mavi. Sonsuz bir derinlik, sakin bir güç.' },
   { id: 5, cloudinaryId: null, category: 'portrait',   title: 'Soft Shadows',   aspect: 'portrait',  layout: 'left',   location: null, caption: null },
   { id: 6, cloudinaryId: null, category: 'landscape',  title: 'Dawn Horizon',   aspect: 'landscape', layout: 'right',  location: null, caption: null },

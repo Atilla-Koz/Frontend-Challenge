@@ -61,64 +61,147 @@ export default function Landing() {
         </div>
       </header>
 
-      {/* Selection panels */}
-      <main className="flex-1 flex flex-col md:flex-row relative z-10 min-h-0">
+      {/* ─── MOBILE layout: two full-width tap cards ─── */}
+      <main className="md:hidden flex-1 flex flex-col px-5 pb-5 gap-4 relative z-10">
+
+        {/* Photography card */}
+        <button
+          onClick={() => navigate('/photo')}
+          className="relative flex-1 rounded-2xl border border-[#c9a85430] overflow-hidden flex flex-col items-center justify-center gap-0 active:scale-[0.97] transition-transform duration-150 touch-manipulation"
+          style={{ WebkitTapHighlightColor: 'transparent' }}
+        >
+          {/* Ambient glow */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 h-40 bg-[#c9a854] blur-[80px] opacity-10 rounded-full" />
+          </div>
+          {/* Top accent line */}
+          <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#c9a85460] to-transparent" />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center text-center px-6">
+            <div className="w-12 h-12 mb-4 opacity-80">
+              <ApertureIcon color="#c9a854" />
+            </div>
+            <p className="text-[9px] tracking-[0.5em] text-[#c9a854] uppercase mb-2">
+              Visual Storytelling
+            </p>
+            <h2 className="text-2xl font-thin tracking-widest uppercase text-white">
+              Photography
+            </h2>
+            <p className="text-base font-thin tracking-widest uppercase text-[#c9a854] mt-0.5">
+              &amp; Film
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 mt-4">
+              {['Portrait', 'Nature', 'Event', 'Product'].map((tag) => (
+                <span key={tag} className="text-[9px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-[#c9a85435] text-[#c9a854]/70">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Enter button */}
+          <div className="relative z-10 mt-5 flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#c9a85450] bg-[#c9a85410]">
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#c9a854] font-medium">Enter Portfolio</span>
+            <span className="text-[#c9a854] text-sm">→</span>
+          </div>
+
+          {/* Bottom accent line */}
+          <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#c9a85430] to-transparent" />
+        </button>
+
+        {/* "or" divider */}
+        <div className="flex items-center justify-center gap-3 flex-shrink-0">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#2a2a2a] to-transparent" />
+          <span className="text-[9px] tracking-widest text-gray-700 uppercase">or</span>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#2a2a2a] to-transparent" />
+        </div>
+
+        {/* Software card */}
+        <button
+          onClick={() => navigate('/software')}
+          className="relative flex-1 rounded-2xl border border-violet-900/40 overflow-hidden flex flex-col items-center justify-center gap-0 active:scale-[0.97] transition-transform duration-150 touch-manipulation"
+          style={{ WebkitTapHighlightColor: 'transparent' }}
+        >
+          {/* Ambient glow */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 h-40 bg-violet-600 blur-[80px] opacity-10 rounded-full" />
+          </div>
+          {/* Top accent line */}
+          <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-violet-700/50 to-transparent" />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center text-center px-6">
+            <div className="w-12 h-12 mb-4 opacity-80">
+              <CodeIcon color="#a78bfa" />
+            </div>
+            <p className="text-[9px] tracking-[0.5em] text-violet-400 uppercase mb-2">
+              Full-Stack Engineering
+            </p>
+            <h2 className="text-2xl font-thin tracking-widest uppercase text-white">
+              Software
+            </h2>
+            <p className="text-base font-thin tracking-widest uppercase text-violet-400 mt-0.5">
+              Portfolio
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 mt-4">
+              {['React', 'Java', 'TypeScript', 'Node.js'].map((tag) => (
+                <span key={tag} className="text-[9px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-violet-800/40 text-violet-400/70">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Enter button */}
+          <div className="relative z-10 mt-5 flex items-center gap-2 px-5 py-2.5 rounded-full border border-violet-700/40 bg-violet-900/10">
+            <span className="text-[10px] tracking-[0.4em] uppercase text-violet-400 font-medium">Enter Portfolio</span>
+            <span className="text-violet-400 text-sm">→</span>
+          </div>
+
+          {/* Bottom accent line */}
+          <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-violet-800/30 to-transparent" />
+        </button>
+      </main>
+
+      {/* ─── DESKTOP layout: original side-by-side panels (unchanged) ─── */}
+      <main className="hidden md:flex flex-1 flex-row relative z-10 min-h-0">
 
         {/* Photography & Film */}
         <div
           className={`relative flex-1 flex flex-col items-center justify-center cursor-pointer overflow-hidden
-            transition-all duration-700 ease-out py-12 md:py-0
-            ${hovered === 'software' ? 'opacity-40 md:flex-[0.6]' : ''}
-            ${hovered === 'photo' ? 'md:flex-[1.4]' : ''}
-            ${hovered === null ? 'md:flex-1' : ''}
+            transition-all duration-700 ease-out
+            ${hovered === 'software' ? 'opacity-40 flex-[0.6]' : ''}
+            ${hovered === 'photo' ? 'flex-[1.4]' : ''}
+            ${hovered === null ? 'flex-1' : ''}
           `}
           onMouseEnter={() => setHovered('photo')}
           onMouseLeave={() => setHovered(null)}
           onClick={() => navigate('/photo')}
         >
-          {/* Warm ambient glow */}
           <div className={`absolute inset-0 transition-opacity duration-700 ${hovered === 'photo' ? 'opacity-100' : 'opacity-0'}`}>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-64 bg-[#c9a854] blur-[100px] opacity-15 rounded-full" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#b8860b] blur-[80px] opacity-10 rounded-full" />
           </div>
-
-          {/* Border */}
-          <div className={`absolute inset-0 border-r border-[#1a1a1a] md:border-r-[#2a2a2a] transition-colors duration-700 ${hovered === 'photo' ? 'border-r-[#c9a85420]' : ''}`} />
-
-          {/* Content */}
-          <div className="relative z-10 flex flex-col items-center text-center px-8 md:px-12 max-w-sm">
-            {/* Icon */}
+          <div className={`absolute inset-0 border-r border-[#2a2a2a] transition-colors duration-700 ${hovered === 'photo' ? 'border-r-[#c9a85420]' : ''}`} />
+          <div className="relative z-10 flex flex-col items-center text-center px-12 max-w-sm">
             <div className={`w-20 h-20 mb-8 transition-all duration-500 ${hovered === 'photo' ? 'scale-110 opacity-100' : 'opacity-50'}`}>
               <ApertureIcon color={hovered === 'photo' ? '#c9a854' : '#6b5a30'} />
             </div>
-
             <p className={`text-[10px] tracking-[0.5em] uppercase mb-3 transition-colors duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-600'}`}>
               Visual Storytelling
             </p>
-            <h2 className={`text-2xl md:text-3xl font-thin tracking-widest uppercase transition-colors duration-500 ${hovered === 'photo' ? 'text-white' : 'text-gray-400'}`}>
+            <h2 className={`text-3xl font-thin tracking-widest uppercase transition-colors duration-500 ${hovered === 'photo' ? 'text-white' : 'text-gray-400'}`}>
               Photography
             </h2>
-            <p className={`text-lg md:text-xl font-thin tracking-widest uppercase mt-1 transition-colors duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-600'}`}>
+            <p className={`text-xl font-thin tracking-widest uppercase mt-1 transition-colors duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-600'}`}>
               &amp; Film
             </p>
-
-            {/* Category tags */}
             <div className="flex flex-wrap justify-center gap-2 mt-6">
               {['Portrait', 'Nature', 'Event', 'Product'].map((tag) => (
-                <span
-                  key={tag}
-                  className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${
-                    hovered === 'photo'
-                      ? 'border-[#c9a85450] text-[#c9a854] bg-[#c9a85408]'
-                      : 'border-[#2a2a2a] text-gray-600'
-                  }`}
-                >
-                  {tag}
-                </span>
+                <span key={tag} className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${hovered === 'photo' ? 'border-[#c9a85450] text-[#c9a854] bg-[#c9a85408]' : 'border-[#2a2a2a] text-gray-600'}`}>{tag}</span>
               ))}
             </div>
-
-            {/* CTA */}
             <div className={`mt-10 flex items-center gap-3 text-xs tracking-[0.4em] uppercase transition-all duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-700'}`}>
               <span>Enter Portfolio</span>
               <span className={`transition-transform duration-300 ${hovered === 'photo' ? 'translate-x-2' : ''}`}>→</span>
@@ -126,76 +209,49 @@ export default function Landing() {
           </div>
         </div>
 
-        {/* Vertical divider (desktop) */}
-        <div className="hidden md:flex flex-col items-center justify-center w-px relative flex-shrink-0">
+        {/* Vertical divider */}
+        <div className="flex flex-col items-center justify-center w-px relative flex-shrink-0">
           <div className="flex-1 w-px bg-gradient-to-b from-transparent via-[#2a2a2a] to-transparent" />
-          <div className={`my-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${
-            hovered ? 'border-gray-700 bg-[#0f0f0f]' : 'border-[#1f1f1f] bg-[#0a0a0a]'
-          }`}>
+          <div className={`my-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${hovered ? 'border-gray-700 bg-[#0f0f0f]' : 'border-[#1f1f1f] bg-[#0a0a0a]'}`}>
             <span className="text-[9px] tracking-widest text-gray-700 uppercase">or</span>
           </div>
           <div className="flex-1 w-px bg-gradient-to-b from-transparent via-[#2a2a2a] to-transparent" />
         </div>
 
-        {/* Horizontal divider (mobile) */}
-        <div className="md:hidden flex items-center justify-center gap-4 py-4 px-8 flex-shrink-0">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#2a2a2a] to-transparent" />
-          <span className="text-[9px] tracking-widest text-gray-700 uppercase">or</span>
-          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#2a2a2a] to-transparent" />
-        </div>
-
         {/* Software Development */}
         <div
           className={`relative flex-1 flex flex-col items-center justify-center cursor-pointer overflow-hidden
-            transition-all duration-700 ease-out py-12 md:py-0
-            ${hovered === 'photo' ? 'opacity-40 md:flex-[0.6]' : ''}
-            ${hovered === 'software' ? 'md:flex-[1.4]' : ''}
-            ${hovered === null ? 'md:flex-1' : ''}
+            transition-all duration-700 ease-out
+            ${hovered === 'photo' ? 'opacity-40 flex-[0.6]' : ''}
+            ${hovered === 'software' ? 'flex-[1.4]' : ''}
+            ${hovered === null ? 'flex-1' : ''}
           `}
           onMouseEnter={() => setHovered('software')}
           onMouseLeave={() => setHovered(null)}
           onClick={() => navigate('/software')}
         >
-          {/* Purple ambient glow */}
           <div className={`absolute inset-0 transition-opacity duration-700 ${hovered === 'software' ? 'opacity-100' : 'opacity-0'}`}>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-64 bg-violet-600 blur-[100px] opacity-15 rounded-full" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-700 blur-[80px] opacity-10 rounded-full" />
           </div>
-
-          {/* Content */}
-          <div className="relative z-10 flex flex-col items-center text-center px-8 md:px-12 max-w-sm">
-            {/* Icon */}
+          <div className="relative z-10 flex flex-col items-center text-center px-12 max-w-sm">
             <div className={`w-20 h-20 mb-8 transition-all duration-500 ${hovered === 'software' ? 'scale-110 opacity-100' : 'opacity-50'}`}>
               <CodeIcon color={hovered === 'software' ? '#a78bfa' : '#4a3a7a'} />
             </div>
-
             <p className={`text-[10px] tracking-[0.5em] uppercase mb-3 transition-colors duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-600'}`}>
               Full-Stack Engineering
             </p>
-            <h2 className={`text-2xl md:text-3xl font-thin tracking-widest uppercase transition-colors duration-500 ${hovered === 'software' ? 'text-white' : 'text-gray-400'}`}>
+            <h2 className={`text-3xl font-thin tracking-widest uppercase transition-colors duration-500 ${hovered === 'software' ? 'text-white' : 'text-gray-400'}`}>
               Software
             </h2>
-            <p className={`text-lg md:text-xl font-thin tracking-widest uppercase mt-1 transition-colors duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-600'}`}>
+            <p className={`text-xl font-thin tracking-widest uppercase mt-1 transition-colors duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-600'}`}>
               Portfolio
             </p>
-
-            {/* Tags */}
             <div className="flex flex-wrap justify-center gap-2 mt-6">
               {['React', 'Java', 'TypeScript', 'Node.js'].map((tag) => (
-                <span
-                  key={tag}
-                  className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${
-                    hovered === 'software'
-                      ? 'border-violet-500/40 text-violet-300 bg-violet-900/10'
-                      : 'border-[#2a2a2a] text-gray-600'
-                  }`}
-                >
-                  {tag}
-                </span>
+                <span key={tag} className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${hovered === 'software' ? 'border-violet-500/40 text-violet-300 bg-violet-900/10' : 'border-[#2a2a2a] text-gray-600'}`}>{tag}</span>
               ))}
             </div>
-
-            {/* CTA */}
             <div className={`mt-10 flex items-center gap-3 text-xs tracking-[0.4em] uppercase transition-all duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-700'}`}>
               <span>Enter Portfolio</span>
               <span className={`transition-transform duration-300 ${hovered === 'software' ? 'translate-x-2' : ''}`}>→</span>

@@ -16,7 +16,7 @@ export default function App() {
   const profileRef = useRef(null);
 
   return (
-    <div className="bg-white dark:bg-dark">
+    <div className="bg-white dark:bg-[#0f0c1a]">
       <div className="container mx-auto max-w-screen-2xl px-4">
         <Header
           skillsRef={skillsRef}

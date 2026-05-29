@@ -249,7 +249,7 @@ export default function PhotoPortfolio() {
           <img
             src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1780050314/Generated_Image_May_29_2026_-_1_21PM_Arka_Plan%C4%B1_Silindi_qz35rj.png"
             alt="Atilla Köz Logo"
-            className="h-9 w-auto transition-all duration-300 group-hover:opacity-75 group-hover:scale-105"
+            className="h-14 w-auto transition-all duration-300 group-hover:opacity-75 group-hover:scale-105"
           />
         </Link>
 

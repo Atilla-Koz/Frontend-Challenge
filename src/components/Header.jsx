@@ -59,7 +59,7 @@ export default function Header({ skillsRef, projectsRef, contactRef, profileRef 
             <img
               src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1780050314/Generated_Image_May_29_2026_-_1_21PM_Arka_Plan%C4%B1_Silindi_qz35rj.png"
               alt="Atilla Köz Logo"
-              className="h-10 w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
+              className="h-16 w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
             />
           </div>
 

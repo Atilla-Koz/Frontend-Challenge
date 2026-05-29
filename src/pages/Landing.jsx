@@ -48,10 +48,14 @@ export default function Landing() {
 
       {/* Header */}
       <header className="flex-shrink-0 pt-10 pb-6 text-center relative z-10">
-        <p className="text-[10px] md:text-xs tracking-[0.5em] text-gray-600 uppercase mb-3">Welcome</p>
-        <h1 className="text-3xl md:text-5xl font-thin tracking-[0.25em] text-white uppercase">
-          Atilla Köz
-        </h1>
+        <p className="text-[10px] md:text-xs tracking-[0.5em] text-gray-600 uppercase mb-4">Welcome</p>
+        <div className="flex justify-center mb-1">
+          <img
+            src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1780050314/Generated_Image_May_29_2026_-_1_21PM_Arka_Plan%C4%B1_Silindi_qz35rj.png"
+            alt="Atilla Köz Logo"
+            className="h-16 md:h-20 w-auto"
+          />
+        </div>
         <div className="mt-3 flex items-center justify-center gap-3">
           <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#c9a854]" />
           <p className="text-[10px] md:text-xs tracking-[0.4em] text-gray-500 uppercase">

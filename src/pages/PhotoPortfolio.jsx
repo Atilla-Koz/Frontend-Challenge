@@ -245,13 +245,12 @@ export default function PhotoPortfolio() {
       {/* ── Header ────────────────────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-[#080808]/80 backdrop-blur-md border-b border-[#ffffff08]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 rounded-full bg-[#c9a854] flex items-center justify-center text-black font-semibold text-sm group-hover:bg-[#e8c87d] transition-colors duration-300">
-            AK
-          </div>
-          <span className="hidden sm:block text-xs tracking-[0.35em] text-gray-400 uppercase group-hover:text-white transition-colors duration-300">
-            Atilla Köz
-          </span>
+        <Link to="/" className="flex items-center group">
+          <img
+            src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1780050314/Generated_Image_May_29_2026_-_1_21PM_Arka_Plan%C4%B1_Silindi_qz35rj.png"
+            alt="Atilla Köz Logo"
+            className="h-9 w-auto transition-all duration-300 group-hover:opacity-75 group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop nav */}

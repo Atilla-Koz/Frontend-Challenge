@@ -53,7 +53,7 @@ export default function Landing() {
           <img
             src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1780050314/Generated_Image_May_29_2026_-_1_21PM_Arka_Plan%C4%B1_Silindi_qz35rj.png"
             alt="Atilla Köz Logo"
-            className="h-16 md:h-20 w-auto"
+            className="h-28 md:h-36 w-auto"
           />
         </div>
         <div className="mt-3 flex items-center justify-center gap-3">

@@ -12,7 +12,7 @@ const cloudinaryUrl = (id, type = 'image') =>
 const T = {
   tr: {
     nav:     { works: 'Fotoğraflar', video: 'Reels', about: 'Hakkımda', contact: 'İletişim', booking: 'Rezervasyon', home: 'Ana Sayfa', pro: 'Prodüksiyon' },
-    hero:    { eyebrow: 'Kişisel Portfolyo', title1: 'Işığı Yakala,', title2: 'Anı Hisset', desc: 'Işığın, anın ve duygunun peşinde — kişisel kareler ve seçili anlar.', cta: 'Fotoğrafları Gör', booking: 'Rezervasyon' },
+    hero:    { eyebrow: 'Kişisel Portfolyo', title1: 'Işığı Yakala,', title2: 'Anı Hisset', desc: 'Işığın, anın ve duygunun peşinde — kişisel kareler ve seçili anlar.', cta: 'Prodüksiyonu Gör', booking: 'Rezervasyon' },
     gallery: { eyebrow: 'Kişisel Galeri', title: 'Seçili Kareler', sub: 'Az ama öz — her kare, bir anın özü.', comingSoon: 'Yakında Eklenecek' },
     video:   { eyebrow: 'Kişisel Film', title: 'Reels & Kısa Film', sub: 'Hareket eden kareler, duran anlar.' },
     about:   { eyebrow: 'Hikayem', title1: 'Merhaba,', title2: 'Ben Atilla.', p1: 'Işığın, gölgenin ve anın yarattığı sihirle büyülendim. Her çekim, bir hikayenin başlangıcı; her kare, dondurulmuş bir duygu.', p2: 'Portre fotoğrafçılığından doğa çekimlerine, kurumsal filmlerden düğün hikayelerine uzanan geniş bir yelpazede çalışıyorum.', p3: 'Full-stack yazılım geliştirici geçmişim, görsel işler konusundaki teknik bakış açısını keskinleştiriyor — doğru ışık, doğru an, doğru post-prodüksiyon.', stats: [['3+', 'Yıl Deneyim'], ['100+', 'Proje'], ['∞', 'Tutku']], services: ['Portre', 'Doğa', 'Etkinlik', 'Ürün', 'Drone', 'Film'] },
@@ -21,7 +21,7 @@ const T = {
   },
   en: {
     nav:     { works: 'Photos', video: 'Reels', about: 'About', contact: 'Contact', booking: 'Booking', home: 'Home', pro: 'Production' },
-    hero:    { eyebrow: 'Personal Portfolio', title1: 'Capture Light,', title2: 'Feel the Moment', desc: 'Chasing light, moments and feeling — personal frames and selected instants.', cta: 'View Photos', booking: 'Booking' },
+    hero:    { eyebrow: 'Personal Portfolio', title1: 'Capture Light,', title2: 'Feel the Moment', desc: 'Chasing light, moments and feeling — personal frames and selected instants.', cta: 'View Production', booking: 'Booking' },
     gallery: { eyebrow: 'Personal Gallery', title: 'Selected Frames', sub: 'Few but refined — every frame, the essence of a moment.', comingSoon: 'Coming Soon' },
     video:   { eyebrow: 'Personal Film', title: 'Reels & Short Film', sub: 'Moving frames, still moments.' },
     about:   { eyebrow: 'My Story', title1: 'Hello,', title2: "I'm Atilla.", p1: "I've been captivated by the magic that light, shadow, and moments create. Every shoot is the start of a story; every frame, a frozen emotion.", p2: 'I work across a wide range from portrait photography to nature shoots, corporate films to wedding stories.', p3: 'My background in full-stack software development sharpens my technical eye for visual work — the right light, the right moment, the right post-production.', stats: [['3+', 'Years Exp.'], ['100+', 'Projects'], ['∞', 'Passion']], services: ['Portrait', 'Nature', 'Event', 'Product', 'Drone', 'Film'] },
@@ -378,12 +378,12 @@ export default function PhotoPortfolio() {
             {t.hero.desc}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
-            <button
-              onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+            <Link
+              to="/photo/works"
               className="px-8 py-3.5 bg-[#c9a854] text-black text-xs font-semibold tracking-widest uppercase rounded-full hover:bg-[#e8c87d] hover:scale-105 transition-all duration-300"
             >
               {t.hero.cta}
-            </button>
+            </Link>
             <button
               onClick={scrollToContact}
               className="px-8 py-3.5 border border-[#ffffff20] text-gray-300 text-xs tracking-widest uppercase rounded-full hover:border-[#c9a85440] hover:text-[#c9a854] transition-all duration-300"

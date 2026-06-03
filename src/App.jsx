@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Landing from './pages/Landing.jsx';
 import SoftwarePortfolio from './pages/SoftwarePortfolio.jsx';
 import PhotoPortfolio from './pages/PhotoPortfolio.jsx';
+import ProfessionalWorks from './pages/ProfessionalWorks.jsx';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/software" component={SoftwarePortfolio} />
-        <Route path="/photo" component={PhotoPortfolio} />
+        <Route exact path="/photo" component={PhotoPortfolio} />
+        <Route path="/photo/works" component={ProfessionalWorks} />
         <Redirect to="/" />
       </Switch>
       <ToastContainer

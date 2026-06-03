@@ -11,7 +11,7 @@ const cloudinaryUrl = (id, type = 'image') =>
 // ─── Translations ─────────────────────────────────────────────────────────────
 const T = {
   tr: {
-    nav:     { works: 'Çalışmalar', video: 'Video', about: 'Hakkımda', contact: 'İletişim', booking: 'Rezervasyon', home: 'Ana Sayfa' },
+    nav:     { works: 'Çalışmalar', video: 'Video', about: 'Hakkımda', contact: 'İletişim', booking: 'Rezervasyon', home: 'Ana Sayfa', pro: 'Profesyonel' },
     hero:    { eyebrow: 'Fotoğraf & Video', title1: 'Işığı Yakala,', title2: 'Anı Hisset', desc: 'Her kareye bir hikaye, her videoya bir duygu sığdırıyorum. Profesyonel portre, doğa ve kurumsal çekimler.', cta: 'Çalışmaları Gör', booking: 'Rezervasyon' },
     gallery: { eyebrow: 'Portfolio', title: 'Seçili Çalışmalar', sub: 'Az ama öz — her kare, bir anın özü.', comingSoon: 'Yakında Eklenecek' },
     video:   { eyebrow: 'Sinema & Film', title: 'Video Çalışmalar', sub: 'Hareket eden kareler, duran anlar.' },
@@ -20,7 +20,7 @@ const T = {
     catLabel: { landscape: 'Doğa', portrait: 'Portre', event: 'Etkinlik', commercial: 'Ürün / Reklam' },
   },
   en: {
-    nav:     { works: 'Works', video: 'Video', about: 'About', contact: 'Contact', booking: 'Booking', home: 'Home' },
+    nav:     { works: 'Works', video: 'Video', about: 'About', contact: 'Contact', booking: 'Booking', home: 'Home', pro: 'Professional' },
     hero:    { eyebrow: 'Photography & Film', title1: 'Capture Light,', title2: 'Feel the Moment', desc: 'Every frame holds a story, every video carries an emotion. Professional portrait, nature and commercial photography.', cta: 'View Work', booking: 'Booking' },
     gallery: { eyebrow: 'Portfolio', title: 'Selected Works', sub: 'Few but refined — every frame, the essence of a moment.', comingSoon: 'Coming Soon' },
     video:   { eyebrow: 'Cinema & Film', title: 'Video Works', sub: 'Moving frames, still moments.' },
@@ -264,6 +264,12 @@ export default function PhotoPortfolio() {
               {label}
             </button>
           ))}
+          <Link
+            to="/photo/works"
+            className="text-xs tracking-widest text-[#c9a854] uppercase border border-[#c9a85440] px-3 py-1 rounded-full hover:bg-[#c9a85415] transition-all duration-300"
+          >
+            {t.nav.pro}
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -316,6 +322,13 @@ export default function PhotoPortfolio() {
                 {label}
               </button>
             ))}
+            <Link
+              to="/photo/works"
+              onClick={() => setMenuOpen(false)}
+              className="text-xs tracking-widest text-[#c9a854] uppercase text-left"
+            >
+              {t.nav.pro} →
+            </Link>
           </div>
         )}
       </header>

@@ -60,20 +60,31 @@ const aspectClasses = { portrait: 'aspect-[3/4]', landscape: 'aspect-[4/3]', squ
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function EditorialPhoto({ item }) {
+function EditorialPhoto({ item, onClick }) {
   const hasImage = !!item.cloudinaryId;
   const grad = gradients[item.category] || gradients.commercial;
   const aspect = aspectClasses[item.aspect] || aspectClasses.landscape;
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl group ${aspect}`}>
+    <div
+      className={`relative overflow-hidden rounded-2xl group ${aspect} ${hasImage ? 'cursor-zoom-in' : ''}`}
+      onClick={hasImage ? onClick : undefined}
+    >
       {hasImage ? (
-        <img
-          src={cloudinaryUrl(item.cloudinaryId)}
-          alt={item.title}
-          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-          loading="lazy"
-        />
+        <>
+          <img
+            src={cloudinaryUrl(item.cloudinaryId)}
+            alt={item.title}
+            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            loading="lazy"
+          />
+          {/* Zoom hint */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+            <svg className="w-8 h-8 text-white/0 group-hover:text-white/70 transition-all duration-300 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </>
       ) : (
         <div className={`w-full h-full bg-gradient-to-br ${grad} flex flex-col items-center justify-center`}>
           <svg className="w-6 h-6 text-[#c9a85430] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,13 +99,13 @@ function EditorialPhoto({ item }) {
   );
 }
 
-function EditorialBlock({ item, index, lang }) {
+function EditorialBlock({ item, index, lang, onPhotoClick }) {
   const num = String(index + 1).padStart(2, '0');
   const t = T[lang];
   const title   = lang === 'en' ? (item.titleEn   || item.title)   : item.title;
   const caption = lang === 'en' ? (item.captionEn || item.caption) : item.caption;
 
-  const photo = <EditorialPhoto item={item} />;
+  const photo = <EditorialPhoto item={item} onClick={() => onPhotoClick(item)} />;
 
   const textBlock = (
     <div className="space-y-6">
@@ -213,12 +224,33 @@ function detectLang() {
   return (navigator.language || '').toLowerCase().startsWith('tr') ? 'tr' : 'en';
 }
 
+const realPhotos = galleryItems.filter(i => i.cloudinaryId);
+
 export default function PhotoPortfolio() {
   const [lang, setLang] = useState(detectLang);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', service: '', message: '' });
   const [formStatus, setFormStatus] = useState('idle');
+  const [lightboxItem, setLightboxItem] = useState(null);
   const contactRef = useRef(null);
+
+  // Lightbox helpers
+  const lbIdx = lightboxItem ? realPhotos.findIndex(i => i.id === lightboxItem.id) : -1;
+  const openLightbox  = (item) => setLightboxItem(item);
+  const closeLightbox = () => setLightboxItem(null);
+  const prevPhoto = () => setLightboxItem(realPhotos[(lbIdx - 1 + realPhotos.length) % realPhotos.length]);
+  const nextPhoto = () => setLightboxItem(realPhotos[(lbIdx + 1) % realPhotos.length]);
+
+  useEffect(() => {
+    if (!lightboxItem) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  prevPhoto();
+      if (e.key === 'ArrowRight') nextPhoto();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightboxItem, lbIdx]);
   const t = T[lang];
   useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
 
@@ -415,7 +447,7 @@ export default function PhotoPortfolio() {
           {/* Editorial blocks */}
           <div className="space-y-36 md:space-y-52">
             {galleryItems.filter(i => i.cloudinaryId).map((item, index) => (
-              <EditorialBlock key={item.id} item={item} index={index} lang={lang} />
+              <EditorialBlock key={item.id} item={item} index={index} lang={lang} onPhotoClick={openLightbox} />
             ))}
           </div>
 
@@ -653,6 +685,81 @@ export default function PhotoPortfolio() {
           <p className="text-[10px] text-gray-700">© {new Date().getFullYear()} Atilla Köz</p>
         </div>
       </footer>
+
+      {/* ── Lightbox ──────────────────────────────────────────── */}
+      {lightboxItem && (() => {
+        const lbTitle   = lang === 'en' ? (lightboxItem.titleEn   || lightboxItem.title)   : lightboxItem.title;
+        const lbCaption = lang === 'en' ? (lightboxItem.captionEn || lightboxItem.caption) : lightboxItem.caption;
+        return (
+          <div
+            className="fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center p-4 md:p-10"
+            onClick={closeLightbox}
+          >
+            {/* Close */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-5 right-6 text-gray-400 hover:text-white transition-colors z-10"
+              aria-label="Kapat"
+            >
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Counter */}
+            <p className="absolute top-6 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.4em] text-gray-600 uppercase">
+              {lbIdx + 1} / {realPhotos.length}
+            </p>
+
+            {/* Image */}
+            <div className="relative flex items-center justify-center w-full max-h-[75vh]" onClick={e => e.stopPropagation()}>
+              {/* Prev */}
+              <button
+                onClick={prevPhoto}
+                className="absolute left-0 md:-left-14 z-10 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-white transition-colors"
+                aria-label="Önceki"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <img
+                src={cloudinaryUrl(lightboxItem.cloudinaryId)}
+                alt={lbTitle}
+                className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl"
+              />
+
+              {/* Next */}
+              <button
+                onClick={nextPhoto}
+                className="absolute right-0 md:-right-14 z-10 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-white transition-colors"
+                aria-label="Sonraki"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Caption */}
+            <div className="mt-6 text-center max-w-lg" onClick={e => e.stopPropagation()}>
+              <p className="text-white font-thin text-lg tracking-wide">{lbTitle}</p>
+              {lightboxItem.location && (
+                <p className="text-[10px] tracking-[0.5em] text-[#c9a85470] uppercase mt-1">{lightboxItem.location}</p>
+              )}
+              {lbCaption && (
+                <p className="text-gray-500 text-sm leading-relaxed mt-3 font-light">{lbCaption}</p>
+              )}
+            </div>
+
+            {/* ESC hint */}
+            <p className="absolute bottom-5 text-[9px] tracking-[0.4em] text-gray-700 uppercase">
+              ESC {lang === 'tr' ? '— Kapat' : '— Close'} &nbsp;·&nbsp; ← → {lang === 'tr' ? '— Geçiş' : '— Navigate'}
+            </p>
+          </div>
+        );
+      })()}
 
       {/* ── Floating WhatsApp button ──────────────────────────── */}
       <a

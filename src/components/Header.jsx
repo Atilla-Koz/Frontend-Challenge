@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { LanguageContext } from '../globalState/LanguageContext';
 import { data } from './data.jsx';
 import { toast } from 'react-toastify';
@@ -109,6 +110,18 @@ export default function Header({ skillsRef, projectsRef, contactRef, profileRef 
             </a>
           </div>
 
+            {/* Back to home */}
+            <Link
+              to="/"
+              className="hidden md:flex items-center gap-1.5 text-[10px] tracking-widest text-gray-500 uppercase hover:text-amber-400 transition-colors duration-300"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              {language === 'tr' ? 'Ana Sayfa' : 'Home'}
+            </Link>
+          </div>
+
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -139,6 +152,16 @@ export default function Header({ skillsRef, projectsRef, contactRef, profileRef 
                 {label}
               </button>
             ))}
+            <Link
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-left text-gray-500 hover:text-amber-400 transition-colors duration-200 py-2 text-sm flex items-center gap-1.5"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              {language === 'tr' ? 'Ana Sayfa' : 'Home'}
+            </Link>
             <div className="pt-2 flex gap-3">
               <a
                 href={data[language].heroData.cvLink}

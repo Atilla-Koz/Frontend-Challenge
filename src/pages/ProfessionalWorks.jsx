@@ -96,8 +96,11 @@ function detectLang() {
 export default function ProfessionalWorks() {
   const [lang, setLang] = useState(detectLang);
   const [activeFilter, setActiveFilter] = useState('all');
+  const [playingIds, setPlayingIds] = useState(new Set());
   const t = T[lang];
   useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
+
+  const play = (id) => setPlayingIds(prev => new Set([...prev, id]));
 
   const filters = [
     { key: 'all',     label: t.filterAll },
@@ -200,17 +203,39 @@ export default function ProfessionalWorks() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {filtered.map((video) => (
             <div key={video.id} className="flex flex-col gap-3 group">
-              {/* Video embed — 9:16 */}
+              {/* Video — lazy: thumbnail until clicked */}
               <div className="relative w-full rounded-2xl overflow-hidden bg-[#111]"
                    style={{ paddingBottom: '177.78%' }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
-                  title={lang === 'tr' ? video.titleTr : video.titleEn}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
+                {playingIds.has(video.id) ? (
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
+                    title={lang === 'tr' ? video.titleTr : video.titleEn}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <button
+                    className="absolute inset-0 w-full h-full group/play"
+                    onClick={() => play(video.id)}
+                    aria-label="Oynat"
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                      alt={lang === 'tr' ? video.titleTr : video.titleEn}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    {/* Play overlay */}
+                    <div className="absolute inset-0 bg-black/30 group-hover/play:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover/play:scale-110 transition-transform duration-300">
+                        <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                )}
               </div>
               {/* Meta */}
               <div className="px-1">

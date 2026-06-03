@@ -91,8 +91,11 @@ export default function Landing() {
   const [lang, setLang] = useState(detectLang);
   const t = T[lang];
 
-  // Persist language choice
-  useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
+  // Persist language choice + sync html lang attribute
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const navigate = (path) => { history.push(path); };
 

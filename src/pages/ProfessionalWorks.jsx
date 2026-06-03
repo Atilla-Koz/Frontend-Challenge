@@ -98,7 +98,10 @@ export default function ProfessionalWorks() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [playingIds, setPlayingIds] = useState(new Set());
   const t = T[lang];
-  useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const play = (id) => setPlayingIds(prev => new Set([...prev, id]));
 

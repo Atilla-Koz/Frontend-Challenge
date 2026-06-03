@@ -252,7 +252,10 @@ export default function PhotoPortfolio() {
     return () => window.removeEventListener('keydown', onKey);
   }, [lightboxItem, lbIdx]);
   const t = T[lang];
-  useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: 'smooth' });

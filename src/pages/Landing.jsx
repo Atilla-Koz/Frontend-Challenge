@@ -87,7 +87,7 @@ export default function Landing() {
               <ApertureIcon color="#c9a854" />
             </div>
             <p className="text-[9px] tracking-[0.5em] text-[#c9a854] uppercase mb-2">
-              Visual Storytelling
+              Personal Portfolio
             </p>
             <h2 className="text-2xl font-thin tracking-widest uppercase text-white">
               Photography
@@ -96,7 +96,7 @@ export default function Landing() {
               &amp; Film
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {['Portrait', 'Nature', 'Event', 'Product'].map((tag) => (
+              {['Photos', 'Reels', 'Nature', 'Travel'].map((tag) => (
                 <span key={tag} className="text-[9px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-[#c9a85435] text-[#c9a854]/70">
                   {tag}
                 </span>
@@ -193,7 +193,7 @@ export default function Landing() {
               <ApertureIcon color={hovered === 'photo' ? '#c9a854' : '#6b5a30'} />
             </div>
             <p className={`text-[10px] tracking-[0.5em] uppercase mb-3 transition-colors duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-600'}`}>
-              Visual Storytelling
+              Personal Portfolio
             </p>
             <h2 className={`text-3xl font-thin tracking-widest uppercase transition-colors duration-500 ${hovered === 'photo' ? 'text-white' : 'text-gray-400'}`}>
               Photography
@@ -202,7 +202,7 @@ export default function Landing() {
               &amp; Film
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-6">
-              {['Portrait', 'Nature', 'Event', 'Product'].map((tag) => (
+              {['Photos', 'Reels', 'Nature', 'Travel'].map((tag) => (
                 <span key={tag} className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${hovered === 'photo' ? 'border-[#c9a85450] text-[#c9a854] bg-[#c9a85408]' : 'border-[#2a2a2a] text-gray-600'}`}>{tag}</span>
               ))}
             </div>

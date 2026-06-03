@@ -63,6 +63,24 @@ const videoItems = [
     titleEn: 'Venue Promotion',
     category: 'venue',
   },
+  {
+    id: 'mFId0sG_SoM',
+    titleTr: 'Amos Antik Kenti — Drone',
+    titleEn: 'Amos Ancient City — Drone',
+    category: 'venue',
+  },
+  {
+    id: 'DSdDeC694_o',
+    titleTr: 'Marmaris Taşlıca — Drone',
+    titleEn: 'Marmaris Taşlıca — Drone',
+    category: 'venue',
+  },
+  {
+    id: 'bDW6Z8KPtmw',
+    titleTr: 'Spil Dağı — Sülüklü Göl & Yarıkkaya Kanyonu',
+    titleEn: 'Spil Mountain — Leech Lake & Yarıkkaya Canyon',
+    category: 'extreme',
+  },
 ];
 
 const LOGO =

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 
@@ -207,13 +207,20 @@ function VideoCard({ item }) {
 }
 
 // ─── Main component ───────────────────────────────────────────────────────────
+function detectLang() {
+  const saved = localStorage.getItem('lang');
+  if (saved === 'tr' || saved === 'en') return saved;
+  return (navigator.language || '').toLowerCase().startsWith('tr') ? 'tr' : 'en';
+}
+
 export default function PhotoPortfolio() {
-  const [lang, setLang] = useState('tr');
+  const [lang, setLang] = useState(detectLang);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', service: '', message: '' });
   const [formStatus, setFormStatus] = useState('idle');
   const contactRef = useRef(null);
   const t = T[lang];
+  useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
 
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: 'smooth' });

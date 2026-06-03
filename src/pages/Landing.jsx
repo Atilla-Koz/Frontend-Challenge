@@ -1,5 +1,55 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+
+// ─── Translations ─────────────────────────────────────────────────────────────
+const T = {
+  tr: {
+    welcome: 'Hoş Geldiniz',
+    subtitle: 'Görsel Sanatçı & Yazılım Geliştirici',
+    or: 'veya',
+    photo: {
+      eyebrow: 'Kişisel Portfolyo',
+      title: 'Fotoğraf',
+      sub: '& Film',
+      tags: ['Fotoğraf', 'Reels', 'Doğa', 'Seyahat'],
+      cta: 'Portfolyoya Gir',
+    },
+    software: {
+      eyebrow: 'Full-Stack Mühendislik',
+      title: 'Yazılım',
+      sub: 'Portfolyo',
+      tags: ['React', 'Java', 'TypeScript', 'Node.js'],
+      cta: 'Portfolyoya Gir',
+    },
+  },
+  en: {
+    welcome: 'Welcome',
+    subtitle: 'Visual Artist & Software Developer',
+    or: 'or',
+    photo: {
+      eyebrow: 'Personal Portfolio',
+      title: 'Photography',
+      sub: '& Film',
+      tags: ['Photos', 'Reels', 'Nature', 'Travel'],
+      cta: 'Enter Portfolio',
+    },
+    software: {
+      eyebrow: 'Full-Stack Engineering',
+      title: 'Software',
+      sub: 'Portfolio',
+      tags: ['React', 'Java', 'TypeScript', 'Node.js'],
+      cta: 'Enter Portfolio',
+    },
+  },
+};
+
+// ─── Detect initial language ──────────────────────────────────────────────────
+function detectLang() {
+  const saved = localStorage.getItem('lang');
+  if (saved === 'tr' || saved === 'en') return saved;
+  const browser = (navigator.language || '').toLowerCase();
+  return browser.startsWith('tr') ? 'tr' : 'en';
+}
 
 function ApertureIcon({ color = '#c9a854' }) {
   return (
@@ -38,17 +88,32 @@ function CodeIcon({ color = '#8b5cf6' }) {
 export default function Landing() {
   const history = useHistory();
   const [hovered, setHovered] = useState(null);
+  const [lang, setLang] = useState(detectLang);
+  const t = T[lang];
 
-  const navigate = (path) => {
-    history.push(path);
-  };
+  // Persist language choice
+  useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
+
+  const navigate = (path) => { history.push(path); };
 
   return (
     <div className="min-h-screen w-full bg-[#080808] flex flex-col select-none overflow-hidden">
 
+      {/* TR/EN toggle — fixed top-right */}
+      <div className="fixed top-5 right-5 z-50 flex items-center border border-[#2a2a2a] rounded-full overflow-hidden">
+        <button
+          onClick={() => setLang('tr')}
+          className={`px-3 py-1.5 text-[10px] tracking-widest font-medium transition-all duration-300 ${lang === 'tr' ? 'bg-[#c9a854] text-black' : 'text-gray-500 hover:text-white'}`}
+        >TR</button>
+        <button
+          onClick={() => setLang('en')}
+          className={`px-3 py-1.5 text-[10px] tracking-widest font-medium transition-all duration-300 ${lang === 'en' ? 'bg-[#c9a854] text-black' : 'text-gray-500 hover:text-white'}`}
+        >EN</button>
+      </div>
+
       {/* Header */}
       <header className="flex-shrink-0 pt-10 pb-6 text-center relative z-10">
-        <p className="text-[10px] md:text-xs tracking-[0.5em] text-gray-600 uppercase mb-4">Welcome</p>
+        <p className="text-[10px] md:text-xs tracking-[0.5em] text-gray-600 uppercase mb-4">{t.welcome}</p>
         <div className="flex justify-center mb-1">
           <img
             src="https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1780050314/Generated_Image_May_29_2026_-_1_21PM_Arka_Plan%C4%B1_Silindi_qz35rj.png"
@@ -59,7 +124,7 @@ export default function Landing() {
         <div className="mt-3 flex items-center justify-center gap-3">
           <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#c9a854]" />
           <p className="text-[10px] md:text-xs tracking-[0.4em] text-gray-500 uppercase">
-            Visual Artist &amp; Software Developer
+            {t.subtitle}
           </p>
           <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#8b5cf6]" />
         </div>
@@ -87,16 +152,16 @@ export default function Landing() {
               <ApertureIcon color="#c9a854" />
             </div>
             <p className="text-[9px] tracking-[0.5em] text-[#c9a854] uppercase mb-2">
-              Personal Portfolio
+              {t.photo.eyebrow}
             </p>
             <h2 className="text-2xl font-thin tracking-widest uppercase text-white">
-              Photography
+              {t.photo.title}
             </h2>
             <p className="text-base font-thin tracking-widest uppercase text-[#c9a854] mt-0.5">
-              &amp; Film
+              {t.photo.sub}
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {['Photos', 'Reels', 'Nature', 'Travel'].map((tag) => (
+              {t.photo.tags.map((tag) => (
                 <span key={tag} className="text-[9px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-[#c9a85435] text-[#c9a854]/70">
                   {tag}
                 </span>
@@ -106,7 +171,7 @@ export default function Landing() {
 
           {/* Enter button */}
           <div className="relative z-10 mt-5 flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#c9a85450] bg-[#c9a85410]">
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#c9a854] font-medium">Enter Portfolio</span>
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#c9a854] font-medium">{t.photo.cta}</span>
             <span className="text-[#c9a854] text-sm">→</span>
           </div>
 
@@ -117,7 +182,7 @@ export default function Landing() {
         {/* "or" divider */}
         <div className="flex items-center justify-center gap-3 flex-shrink-0">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#2a2a2a] to-transparent" />
-          <span className="text-[9px] tracking-widest text-gray-700 uppercase">or</span>
+          <span className="text-[9px] tracking-widest text-gray-700 uppercase">{t.or}</span>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#2a2a2a] to-transparent" />
         </div>
 
@@ -140,16 +205,16 @@ export default function Landing() {
               <CodeIcon color="#a78bfa" />
             </div>
             <p className="text-[9px] tracking-[0.5em] text-violet-400 uppercase mb-2">
-              Full-Stack Engineering
+              {t.software.eyebrow}
             </p>
             <h2 className="text-2xl font-thin tracking-widest uppercase text-white">
-              Software
+              {t.software.title}
             </h2>
             <p className="text-base font-thin tracking-widest uppercase text-violet-400 mt-0.5">
-              Portfolio
+              {t.software.sub}
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {['React', 'Java', 'TypeScript', 'Node.js'].map((tag) => (
+              {t.software.tags.map((tag) => (
                 <span key={tag} className="text-[9px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-violet-800/40 text-violet-400/70">
                   {tag}
                 </span>
@@ -159,7 +224,7 @@ export default function Landing() {
 
           {/* Enter button */}
           <div className="relative z-10 mt-5 flex items-center gap-2 px-5 py-2.5 rounded-full border border-violet-700/40 bg-violet-900/10">
-            <span className="text-[10px] tracking-[0.4em] uppercase text-violet-400 font-medium">Enter Portfolio</span>
+            <span className="text-[10px] tracking-[0.4em] uppercase text-violet-400 font-medium">{t.software.cta}</span>
             <span className="text-violet-400 text-sm">→</span>
           </div>
 
@@ -193,21 +258,21 @@ export default function Landing() {
               <ApertureIcon color={hovered === 'photo' ? '#c9a854' : '#6b5a30'} />
             </div>
             <p className={`text-[10px] tracking-[0.5em] uppercase mb-3 transition-colors duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-600'}`}>
-              Personal Portfolio
+              {t.photo.eyebrow}
             </p>
             <h2 className={`text-3xl font-thin tracking-widest uppercase transition-colors duration-500 ${hovered === 'photo' ? 'text-white' : 'text-gray-400'}`}>
-              Photography
+              {t.photo.title}
             </h2>
             <p className={`text-xl font-thin tracking-widest uppercase mt-1 transition-colors duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-600'}`}>
-              &amp; Film
+              {t.photo.sub}
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-6">
-              {['Photos', 'Reels', 'Nature', 'Travel'].map((tag) => (
+              {t.photo.tags.map((tag) => (
                 <span key={tag} className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${hovered === 'photo' ? 'border-[#c9a85450] text-[#c9a854] bg-[#c9a85408]' : 'border-[#2a2a2a] text-gray-600'}`}>{tag}</span>
               ))}
             </div>
             <div className={`mt-10 flex items-center gap-3 text-xs tracking-[0.4em] uppercase transition-all duration-500 ${hovered === 'photo' ? 'text-[#c9a854]' : 'text-gray-700'}`}>
-              <span>Enter Portfolio</span>
+              <span>{t.photo.cta}</span>
               <span className={`transition-transform duration-300 ${hovered === 'photo' ? 'translate-x-2' : ''}`}>→</span>
             </div>
           </div>
@@ -217,7 +282,7 @@ export default function Landing() {
         <div className="flex flex-col items-center justify-center w-px relative flex-shrink-0">
           <div className="flex-1 w-px bg-gradient-to-b from-transparent via-[#2a2a2a] to-transparent" />
           <div className={`my-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${hovered ? 'border-gray-700 bg-[#0f0f0f]' : 'border-[#1f1f1f] bg-[#0a0a0a]'}`}>
-            <span className="text-[9px] tracking-widest text-gray-700 uppercase">or</span>
+            <span className="text-[9px] tracking-widest text-gray-700 uppercase">{t.or}</span>
           </div>
           <div className="flex-1 w-px bg-gradient-to-b from-transparent via-[#2a2a2a] to-transparent" />
         </div>
@@ -243,21 +308,21 @@ export default function Landing() {
               <CodeIcon color={hovered === 'software' ? '#a78bfa' : '#4a3a7a'} />
             </div>
             <p className={`text-[10px] tracking-[0.5em] uppercase mb-3 transition-colors duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-600'}`}>
-              Full-Stack Engineering
+              {t.software.eyebrow}
             </p>
             <h2 className={`text-3xl font-thin tracking-widest uppercase transition-colors duration-500 ${hovered === 'software' ? 'text-white' : 'text-gray-400'}`}>
-              Software
+              {t.software.title}
             </h2>
             <p className={`text-xl font-thin tracking-widest uppercase mt-1 transition-colors duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-600'}`}>
-              Portfolio
+              {t.software.sub}
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-6">
-              {['React', 'Java', 'TypeScript', 'Node.js'].map((tag) => (
+              {t.software.tags.map((tag) => (
                 <span key={tag} className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${hovered === 'software' ? 'border-violet-500/40 text-violet-300 bg-violet-900/10' : 'border-[#2a2a2a] text-gray-600'}`}>{tag}</span>
               ))}
             </div>
             <div className={`mt-10 flex items-center gap-3 text-xs tracking-[0.4em] uppercase transition-all duration-500 ${hovered === 'software' ? 'text-violet-400' : 'text-gray-700'}`}>
-              <span>Enter Portfolio</span>
+              <span>{t.software.cta}</span>
               <span className={`transition-transform duration-300 ${hovered === 'software' ? 'translate-x-2' : ''}`}>→</span>
             </div>
           </div>

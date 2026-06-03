@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // ─── Translations ─────────────────────────────────────────────────────────────
@@ -69,10 +69,17 @@ const LOGO =
   'https://res.cloudinary.com/djenodye6/image/upload/q_auto,f_auto/v1780050314/Generated_Image_May_29_2026_-_1_21PM_Arka_Plan%C4%B1_Silindi_qz35rj.png';
 
 // ─── Component ────────────────────────────────────────────────────────────────
+function detectLang() {
+  const saved = localStorage.getItem('lang');
+  if (saved === 'tr' || saved === 'en') return saved;
+  return (navigator.language || '').toLowerCase().startsWith('tr') ? 'tr' : 'en';
+}
+
 export default function ProfessionalWorks() {
-  const [lang, setLang] = useState('tr');
+  const [lang, setLang] = useState(detectLang);
   const [activeFilter, setActiveFilter] = useState('all');
   const t = T[lang];
+  useEffect(() => { localStorage.setItem('lang', lang); }, [lang]);
 
   const filters = [
     { key: 'all',     label: t.filterAll },

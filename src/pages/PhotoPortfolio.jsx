@@ -224,7 +224,18 @@ export default function PhotoPortfolio() {
     e.preventDefault();
     setFormStatus('sending');
     try {
-      await emailjs.send('service_q8ppv8h', 'template_jcj75rh', formData, '_qFwa_D48L5CJ4ZqH');
+      // Map photo form fields to the same template variables used by the software portfolio
+      await emailjs.send(
+        'service_q8ppv8h',
+        'template_jcj75rh',
+        {
+          fullName: formData.name,
+          email:    formData.email,
+          phone:    formData.service,   // hizmet türü → phone alanına
+          note:     formData.message,
+        },
+        '_qFwa_D48L5CJ4ZqH'
+      );
       setFormStatus('sent');
       setFormData({ name: '', email: '', service: '', message: '' });
     } catch {

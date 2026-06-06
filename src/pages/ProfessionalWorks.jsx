@@ -13,6 +13,8 @@ const T = {
     videoSection: 'Video Prodüksiyon',
     photoSection: 'Fotoğraf Prodüksiyon',
     comingSoon: 'Yakında eklenecek',
+    viewAll: 'Tüm Videoları Gör',
+    viewSlider: 'Slider Görünümü',
     categories: {
       extreme: 'Ekstrem Spor',
       event: 'Etkinlik',
@@ -29,6 +31,8 @@ const T = {
     videoSection: 'Video Production',
     photoSection: 'Photo Production',
     comingSoon: 'Coming soon',
+    viewAll: 'View All Videos',
+    viewSlider: 'Slider View',
     categories: {
       extreme: 'Extreme Sports',
       event: 'Event',
@@ -103,8 +107,10 @@ export default function ProfessionalWorks() {
   const [lang, setLang] = useState(detectLang);
   const [activeFilter, setActiveFilter] = useState('all');
   const [playingId, setPlayingId] = useState(null);   // single source of truth — only one video can play
-  const [activeIdx, setActiveIdx] = useState(0);
+  // Slider starts on a random video each page entry
+  const [activeIdx, setActiveIdx] = useState(() => Math.floor(Math.random() * videoItems.length));
   const [isMobile, setIsMobile] = useState(false);
+  const [viewMode, setViewMode] = useState('slider'); // 'slider' | 'grid'
   const t = T[lang];
 
   useEffect(() => {
@@ -136,11 +142,19 @@ export default function ProfessionalWorks() {
       ? videoItems
       : videoItems.filter((v) => v.category === activeFilter);
 
-  // Reset slider & playing state when filter changes
+  // Reset slider & playing state when filter changes (random valid start)
   useEffect(() => {
-    setActiveIdx(0);
+    setActiveIdx(Math.floor(Math.random() * Math.max(1, filtered.length)));
     setPlayingId(null);
   }, [activeFilter]);
+
+  // View-mode toggles
+  const enterGrid = () => { setPlayingId(null); setViewMode('grid'); };
+  const enterSlider = () => {
+    setPlayingId(null);
+    setActiveIdx(Math.floor(Math.random() * Math.max(1, filtered.length)));
+    setViewMode('slider');
+  };
 
   // Navigate and stop any playing video
   const navigateTo = (idx) => {
@@ -238,8 +252,8 @@ export default function ProfessionalWorks() {
           <div className="flex-1 h-px bg-gradient-to-r from-[#c9a85430] to-transparent" />
         </div>
 
-        {/* Category filters */}
-        <div className="flex flex-wrap gap-2 mb-12 px-6 md:px-12">
+        {/* Category filters + view toggle */}
+        <div className="flex flex-wrap items-center gap-2 mb-12 px-6 md:px-12">
           {filters.map(({ key, label }) => (
             <button
               key={key}
@@ -253,10 +267,32 @@ export default function ProfessionalWorks() {
               {label}
             </button>
           ))}
+
+          {/* View-mode toggle — pushed to the right */}
+          <button
+            onClick={viewMode === 'slider' ? enterGrid : enterSlider}
+            className="ml-auto flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] tracking-widest uppercase border border-[#c9a85440] text-[#c9a854] hover:bg-[#c9a85412] hover:border-[#c9a854] transition-all duration-300"
+          >
+            {viewMode === 'slider' ? (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+                {t.viewAll}
+              </>
+            ) : (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 5v14M16 5v14M3 12h18" />
+                </svg>
+                {t.viewSlider}
+              </>
+            )}
+          </button>
         </div>
 
         {/* ── 3D Coverflow Slider (desktop) ──────────────────── */}
-        {!isMobile && (
+        {viewMode === 'slider' && !isMobile && (
         <div>
           {/* Stage */}
           <div
@@ -387,7 +423,7 @@ export default function ProfessionalWorks() {
         )}
 
         {/* ── Mobile: single card + nav ───────────────────────── */}
-        {isMobile && (
+        {viewMode === 'slider' && isMobile && (
         <div className="px-6">
           {filtered[activeIdx] && (() => {
             const video = filtered[activeIdx];
@@ -464,6 +500,69 @@ export default function ProfessionalWorks() {
               </div>
             );
           })()}
+        </div>
+        )}
+
+        {/* ── Grid view — all videos ──────────────────────────── */}
+        {viewMode === 'grid' && (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-6 md:px-12">
+          {filtered.map((video) => (
+            <div key={video.id} className="flex flex-col gap-3">
+              {/* Video — lazy: thumbnail until clicked */}
+              <div className="relative w-full rounded-2xl overflow-hidden bg-[#0f0f0f] shadow-lg shadow-black/40"
+                   style={{ paddingBottom: '177.78%' }}>
+                {playingId === video.id ? (
+                  <>
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
+                      title={lang === 'tr' ? video.titleTr : video.titleEn}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                    <button
+                      onClick={() => stop()}
+                      className="absolute top-2 right-2 z-20 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-black/80 transition-all duration-200"
+                      aria-label="Durdur"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                      </svg>
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    className="absolute inset-0 w-full h-full group/play"
+                    onClick={() => play(video.id)}
+                    aria-label="Oynat"
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                      alt={lang === 'tr' ? video.titleTr : video.titleEn}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover/play:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover/play:scale-110 transition-transform duration-300">
+                        <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                )}
+              </div>
+              {/* Meta */}
+              <div className="px-1">
+                <span className="inline-block text-[8px] tracking-widest uppercase px-2 py-0.5 rounded-full border border-[#c9a85430] text-[#c9a854]/70 mb-1.5">
+                  {t.categories[video.category]}
+                </span>
+                <p className="text-xs text-gray-300 font-light leading-snug">
+                  {lang === 'tr' ? video.titleTr : video.titleEn}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
         )}
       </section>

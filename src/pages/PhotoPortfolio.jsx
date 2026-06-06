@@ -520,7 +520,7 @@ export default function PhotoPortfolio() {
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-4 mt-8 pt-8 border-t border-[#1a1a1a]">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mt-8 pt-8 border-t border-[#1a1a1a]">
               <a
                 href="https://www.instagram.com/atillakoz.shoot/"
                 target="_blank" rel="noopener noreferrer"

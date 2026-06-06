@@ -111,7 +111,8 @@ export default function ProfessionalWorks() {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const play = (id) => setPlayingIds(prev => new Set([...prev, id]));
+  const play  = (id) => setPlayingIds(prev => new Set([...prev, id]));
+  const stop  = (id) => setPlayingIds(prev => { const next = new Set(prev); next.delete(id); return next; });
 
   const filters = [
     { key: 'all',     label: t.filterAll },
@@ -270,13 +271,24 @@ export default function ProfessionalWorks() {
                     )}
 
                     {playingIds.has(video.id) && isActive ? (
-                      <iframe
-                        className="absolute inset-0 w-full h-full"
-                        src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
-                        title={lang === 'tr' ? video.titleTr : video.titleEn}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                      <>
+                        <iframe
+                          className="absolute inset-0 w-full h-full"
+                          src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
+                          title={lang === 'tr' ? video.titleTr : video.titleEn}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                        <button
+                          onClick={(e) => { e.stopPropagation(); stop(video.id); }}
+                          className="absolute top-2 right-2 z-20 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-black/80 transition-all duration-200"
+                          aria-label="Durdur"
+                        >
+                          <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                          </svg>
+                        </button>
+                      </>
                     ) : (
                       <button
                         className="absolute inset-0 w-full h-full group/play"
@@ -368,13 +380,24 @@ export default function ProfessionalWorks() {
                   style={{ paddingBottom: 'min(533px, 177.78%)' }}
                 >
                   {playingIds.has(video.id) ? (
-                    <iframe
-                      className="absolute inset-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
-                      title={lang === 'tr' ? video.titleTr : video.titleEn}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                    <>
+                      <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
+                        title={lang === 'tr' ? video.titleTr : video.titleEn}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                      <button
+                        onClick={() => stop(video.id)}
+                        className="absolute top-2 right-2 z-20 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-black/80 transition-all duration-200"
+                        aria-label="Durdur"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                      </button>
+                    </>
                   ) : (
                     <button
                       className="absolute inset-0 w-full h-full group/play"

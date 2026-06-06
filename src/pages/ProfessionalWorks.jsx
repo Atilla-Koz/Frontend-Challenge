@@ -102,8 +102,9 @@ function detectLang() {
 export default function ProfessionalWorks() {
   const [lang, setLang] = useState(detectLang);
   const [activeFilter, setActiveFilter] = useState('all');
-  const [playingIds, setPlayingIds] = useState(new Set());
+  const [playingId, setPlayingId] = useState(null);   // single source of truth — only one video can play
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const t = T[lang];
 
   useEffect(() => {
@@ -111,8 +112,17 @@ export default function ProfessionalWorks() {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const play  = (id) => setPlayingIds(prev => new Set([...prev, id]));
-  const stop  = (id) => setPlayingIds(prev => { const next = new Set(prev); next.delete(id); return next; });
+  // Track viewport so we only ever MOUNT one layout (prevents duplicate hidden iframe playing in background)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  const play = (id) => setPlayingId(id);
+  const stop = () => setPlayingId(null);
 
   const filters = [
     { key: 'all',     label: t.filterAll },
@@ -129,12 +139,12 @@ export default function ProfessionalWorks() {
   // Reset slider & playing state when filter changes
   useEffect(() => {
     setActiveIdx(0);
-    setPlayingIds(new Set());
+    setPlayingId(null);
   }, [activeFilter]);
 
   // Navigate and stop any playing video
   const navigateTo = (idx) => {
-    setPlayingIds(new Set());
+    setPlayingId(null);
     setActiveIdx(idx);
   };
   const prev = () => navigateTo(Math.max(0, activeIdx - 1));
@@ -246,7 +256,8 @@ export default function ProfessionalWorks() {
         </div>
 
         {/* ── 3D Coverflow Slider (desktop) ──────────────────── */}
-        <div className="hidden md:block">
+        {!isMobile && (
+        <div>
           {/* Stage */}
           <div
             className="relative flex items-center justify-center"
@@ -275,7 +286,7 @@ export default function ProfessionalWorks() {
                       <div className="absolute inset-0 bg-black/50 z-10 rounded-2xl pointer-events-none" />
                     )}
 
-                    {playingIds.has(video.id) && isActive ? (
+                    {playingId === video.id && isActive ? (
                       <>
                         <iframe
                           className="absolute inset-0 w-full h-full"
@@ -285,7 +296,7 @@ export default function ProfessionalWorks() {
                           allowFullScreen
                         />
                         <button
-                          onClick={(e) => { e.stopPropagation(); stop(video.id); }}
+                          onClick={(e) => { e.stopPropagation(); stop(); }}
                           className="absolute top-2 right-2 z-20 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-black/80 transition-all duration-200"
                           aria-label="Durdur"
                         >
@@ -306,7 +317,7 @@ export default function ProfessionalWorks() {
                           className="w-full h-full object-cover"
                           loading="lazy"
                         />
-                        {isActive && !playingIds.has(video.id) && (
+                        {isActive && (
                           <div className="absolute inset-0 bg-black/20 group-hover/play:bg-black/0 transition-all duration-300 flex items-center justify-center">
                             <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover/play:scale-110 transition-transform duration-300">
                               <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
@@ -352,7 +363,7 @@ export default function ProfessionalWorks() {
               {filtered.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setActiveIdx(i)}
+                  onClick={() => navigateTo(i)}
                   className={`rounded-full transition-all duration-300 ${
                     i === activeIdx
                       ? 'w-5 h-1.5 bg-[#c9a854]'
@@ -373,9 +384,11 @@ export default function ProfessionalWorks() {
             </button>
           </div>
         </div>
+        )}
 
         {/* ── Mobile: single card + nav ───────────────────────── */}
-        <div className="md:hidden px-6">
+        {isMobile && (
+        <div className="px-6">
           {filtered[activeIdx] && (() => {
             const video = filtered[activeIdx];
             return (
@@ -384,7 +397,7 @@ export default function ProfessionalWorks() {
                   className="relative w-full max-w-[300px] mx-auto rounded-2xl overflow-hidden bg-[#0f0f0f] shadow-2xl shadow-black/60"
                   style={{ paddingBottom: 'min(533px, 177.78%)' }}
                 >
-                  {playingIds.has(video.id) ? (
+                  {playingId === video.id ? (
                     <>
                       <iframe
                         className="absolute inset-0 w-full h-full"
@@ -394,7 +407,7 @@ export default function ProfessionalWorks() {
                         allowFullScreen
                       />
                       <button
-                        onClick={() => stop(video.id)}
+                        onClick={() => stop()}
                         className="absolute top-2 right-2 z-20 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-black/80 transition-all duration-200"
                         aria-label="Durdur"
                       >
@@ -441,7 +454,7 @@ export default function ProfessionalWorks() {
                   </button>
                   <div className="flex gap-2">
                     {filtered.map((_, i) => (
-                      <button key={i} onClick={() => setActiveIdx(i)} className={`rounded-full transition-all duration-300 ${i === activeIdx ? 'w-5 h-1.5 bg-[#c9a854]' : 'w-1.5 h-1.5 bg-[#2a2a2a]'}`} />
+                      <button key={i} onClick={() => navigateTo(i)} className={`rounded-full transition-all duration-300 ${i === activeIdx ? 'w-5 h-1.5 bg-[#c9a854]' : 'w-1.5 h-1.5 bg-[#2a2a2a]'}`} />
                     ))}
                   </div>
                   <button onClick={next} disabled={activeIdx === filtered.length - 1} className="w-10 h-10 rounded-full border border-[#2a2a2a] flex items-center justify-center text-gray-500 disabled:opacity-20 disabled:cursor-not-allowed hover:border-[#c9a85450] hover:text-[#c9a854] transition-all">
@@ -452,6 +465,7 @@ export default function ProfessionalWorks() {
             );
           })()}
         </div>
+        )}
       </section>
 
       {/* ── Photo works — coming soon ──────────────────────────── */}

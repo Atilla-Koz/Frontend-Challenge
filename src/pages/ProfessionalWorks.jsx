@@ -103,7 +103,9 @@ export default function ProfessionalWorks() {
   const [lang, setLang] = useState(detectLang);
   const [activeFilter, setActiveFilter] = useState('all');
   const [playingIds, setPlayingIds] = useState(new Set());
+  const [activeIdx, setActiveIdx] = useState(0);
   const t = T[lang];
+
   useEffect(() => {
     localStorage.setItem('lang', lang);
     document.documentElement.lang = lang;
@@ -122,6 +124,35 @@ export default function ProfessionalWorks() {
     activeFilter === 'all'
       ? videoItems
       : videoItems.filter((v) => v.category === activeFilter);
+
+  // Reset slider & playing state when filter changes
+  useEffect(() => {
+    setActiveIdx(0);
+    setPlayingIds(new Set());
+  }, [activeFilter]);
+
+  const prev = () => setActiveIdx(i => Math.max(0, i - 1));
+  const next = () => setActiveIdx(i => Math.min(filtered.length - 1, i + 1));
+
+  // 3D transform config per offset distance
+  const cardConfig = [
+    { txAbs: 0,   ryAbs: 0,  scale: 1,    opacity: 1,    z: 10 },
+    { txAbs: 238, ryAbs: 42, scale: 0.75, opacity: 0.55, z: 8  },
+    { txAbs: 420, ryAbs: 60, scale: 0.52, opacity: 0.25, z: 6  },
+  ];
+
+  const getStyle = (offset) => {
+    const abs = Math.abs(offset);
+    if (abs > 2) return null;
+    const { txAbs, ryAbs, scale, opacity, z } = cardConfig[abs];
+    const sign = offset >= 0 ? 1 : -1;
+    return {
+      transform: `translateX(${txAbs * sign}px) rotateY(${ryAbs * -sign}deg) scale(${scale})`,
+      opacity,
+      zIndex: z,
+      transition: 'all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    };
+  };
 
   return (
     <div className="bg-[#080808] text-[#f0f0f0] min-h-screen">
@@ -183,16 +214,16 @@ export default function ProfessionalWorks() {
       </section>
 
       {/* ── Videos ────────────────────────────────────────────── */}
-      <section className="px-6 md:px-12 pb-24">
+      <section className="pb-24">
 
         {/* Section title */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4 mb-8 px-6 md:px-12">
           <p className="text-[10px] tracking-[0.5em] text-[#c9a854] uppercase">{t.videoSection}</p>
           <div className="flex-1 h-px bg-gradient-to-r from-[#c9a85430] to-transparent" />
         </div>
 
         {/* Category filters */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div className="flex flex-wrap gap-2 mb-12 px-6 md:px-12">
           {filters.map(({ key, label }) => (
             <button
               key={key}
@@ -208,55 +239,190 @@ export default function ProfessionalWorks() {
           ))}
         </div>
 
-        {/* Video grid — 9:16 shorts cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {filtered.map((video) => (
-            <div key={video.id} className="flex flex-col gap-3 group">
-              {/* Video — lazy: thumbnail until clicked */}
-              <div className="relative w-full rounded-2xl overflow-hidden bg-[#111]"
-                   style={{ paddingBottom: '177.78%' }}>
-                {playingIds.has(video.id) ? (
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
-                    title={lang === 'tr' ? video.titleTr : video.titleEn}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                ) : (
-                  <button
-                    className="absolute inset-0 w-full h-full group/play"
-                    onClick={() => play(video.id)}
-                    aria-label="Oynat"
+        {/* ── 3D Coverflow Slider (desktop) ──────────────────── */}
+        <div className="hidden md:block">
+          {/* Stage */}
+          <div
+            className="relative flex items-center justify-center"
+            style={{ height: '480px', perspective: '1100px' }}
+          >
+            {filtered.map((video, i) => {
+              const offset = i - activeIdx;
+              const style = getStyle(offset);
+              if (!style) return null;
+              const isActive = offset === 0;
+
+              return (
+                <div
+                  key={video.id}
+                  className="absolute"
+                  style={{ width: '230px', ...style, cursor: isActive ? 'default' : 'pointer' }}
+                  onClick={() => !isActive && setActiveIdx(i)}
+                >
+                  {/* Card */}
+                  <div
+                    className="relative w-full rounded-2xl overflow-hidden bg-[#0f0f0f] shadow-2xl shadow-black/60"
+                    style={{ paddingBottom: '177.78%' }}
                   >
-                    <img
-                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                      alt={lang === 'tr' ? video.titleTr : video.titleEn}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    {/* Play overlay */}
-                    <div className="absolute inset-0 bg-black/30 group-hover/play:bg-black/10 transition-all duration-300 flex items-center justify-center">
-                      <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover/play:scale-110 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
+                    {/* Dim overlay for non-active */}
+                    {!isActive && (
+                      <div className="absolute inset-0 bg-black/50 z-10 rounded-2xl pointer-events-none" />
+                    )}
+
+                    {playingIds.has(video.id) && isActive ? (
+                      <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
+                        title={lang === 'tr' ? video.titleTr : video.titleEn}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <button
+                        className="absolute inset-0 w-full h-full group/play"
+                        onClick={(e) => { e.stopPropagation(); if (isActive) play(video.id); }}
+                        aria-label="Oynat"
+                      >
+                        <img
+                          src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                          alt={lang === 'tr' ? video.titleTr : video.titleEn}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                        {isActive && (
+                          <div className="absolute inset-0 bg-black/20 group-hover/play:bg-black/0 transition-all duration-300 flex items-center justify-center">
+                            <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover/play:scale-110 transition-transform duration-300">
+                              <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </div>
+                        )}
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Meta — active card only */}
+                  {isActive && (
+                    <div className="mt-5 text-center">
+                      <span className="inline-block text-[8px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-[#c9a85440] text-[#c9a854]/80 mb-2">
+                        {t.categories[video.category]}
+                      </span>
+                      <p className="text-sm text-white font-light tracking-wide">
+                        {lang === 'tr' ? video.titleTr : video.titleEn}
+                      </p>
                     </div>
-                  </button>
-                )}
-              </div>
-              {/* Meta */}
-              <div className="px-1">
-                <span className="inline-block text-[8px] tracking-widest uppercase px-2 py-0.5 rounded-full border border-[#c9a85430] text-[#c9a854]/70 mb-1.5">
-                  {t.categories[video.category]}
-                </span>
-                <p className="text-xs text-gray-300 font-light leading-snug">
-                  {lang === 'tr' ? video.titleTr : video.titleEn}
-                </p>
-              </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-5 mt-8">
+            <button
+              onClick={prev}
+              disabled={activeIdx === 0}
+              className="w-10 h-10 rounded-full border border-[#2a2a2a] flex items-center justify-center text-gray-500 hover:border-[#c9a85450] hover:text-[#c9a854] disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Dot indicators */}
+            <div className="flex items-center gap-2">
+              {filtered.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveIdx(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === activeIdx
+                      ? 'w-5 h-1.5 bg-[#c9a854]'
+                      : 'w-1.5 h-1.5 bg-[#2a2a2a] hover:bg-[#c9a85460]'
+                  }`}
+                />
+              ))}
             </div>
-          ))}
+
+            <button
+              onClick={next}
+              disabled={activeIdx === filtered.length - 1}
+              className="w-10 h-10 rounded-full border border-[#2a2a2a] flex items-center justify-center text-gray-500 hover:border-[#c9a85450] hover:text-[#c9a854] disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* ── Mobile: single card + nav ───────────────────────── */}
+        <div className="md:hidden px-6">
+          {filtered[activeIdx] && (() => {
+            const video = filtered[activeIdx];
+            return (
+              <div>
+                <div
+                  className="relative w-full max-w-[300px] mx-auto rounded-2xl overflow-hidden bg-[#0f0f0f] shadow-2xl shadow-black/60"
+                  style={{ paddingBottom: 'min(533px, 177.78%)' }}
+                >
+                  {playingIds.has(video.id) ? (
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1&autoplay=1`}
+                      title={lang === 'tr' ? video.titleTr : video.titleEn}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <button
+                      className="absolute inset-0 w-full h-full group/play"
+                      onClick={() => play(video.id)}
+                      aria-label="Oynat"
+                    >
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                        alt={lang === 'tr' ? video.titleTr : video.titleEn}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/25 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                          <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
+                  )}
+                </div>
+
+                {/* Meta */}
+                <div className="mt-4 text-center">
+                  <span className="inline-block text-[8px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-[#c9a85440] text-[#c9a854]/80 mb-2">
+                    {t.categories[video.category]}
+                  </span>
+                  <p className="text-sm text-white font-light">{lang === 'tr' ? video.titleTr : video.titleEn}</p>
+                </div>
+
+                {/* Navigation */}
+                <div className="flex items-center justify-center gap-5 mt-6">
+                  <button onClick={prev} disabled={activeIdx === 0} className="w-10 h-10 rounded-full border border-[#2a2a2a] flex items-center justify-center text-gray-500 disabled:opacity-20 disabled:cursor-not-allowed hover:border-[#c9a85450] hover:text-[#c9a854] transition-all">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                  </button>
+                  <div className="flex gap-2">
+                    {filtered.map((_, i) => (
+                      <button key={i} onClick={() => setActiveIdx(i)} className={`rounded-full transition-all duration-300 ${i === activeIdx ? 'w-5 h-1.5 bg-[#c9a854]' : 'w-1.5 h-1.5 bg-[#2a2a2a]'}`} />
+                    ))}
+                  </div>
+                  <button onClick={next} disabled={activeIdx === filtered.length - 1} className="w-10 h-10 rounded-full border border-[#2a2a2a] flex items-center justify-center text-gray-500 disabled:opacity-20 disabled:cursor-not-allowed hover:border-[#c9a85450] hover:text-[#c9a854] transition-all">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </button>
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 

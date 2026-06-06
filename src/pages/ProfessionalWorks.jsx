@@ -81,6 +81,12 @@ const videoItems = [
     titleEn: 'Spil Mountain — Leech Lake & Yarıkkaya Canyon',
     category: 'extreme',
   },
+  {
+    id: 'bnQVVPRcnl4',
+    titleTr: 'Florya Padel Akademisi — Drone',
+    titleEn: 'Florya Padel Academy — Drone',
+    category: 'venue',
+  },
 ];
 
 const LOGO =

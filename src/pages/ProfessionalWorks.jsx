@@ -132,8 +132,13 @@ export default function ProfessionalWorks() {
     setPlayingIds(new Set());
   }, [activeFilter]);
 
-  const prev = () => setActiveIdx(i => Math.max(0, i - 1));
-  const next = () => setActiveIdx(i => Math.min(filtered.length - 1, i + 1));
+  // Navigate and stop any playing video
+  const navigateTo = (idx) => {
+    setPlayingIds(new Set());
+    setActiveIdx(idx);
+  };
+  const prev = () => navigateTo(Math.max(0, activeIdx - 1));
+  const next = () => navigateTo(Math.min(filtered.length - 1, activeIdx + 1));
 
   // 3D transform config per offset distance
   const cardConfig = [
@@ -258,7 +263,7 @@ export default function ProfessionalWorks() {
                   key={video.id}
                   className="absolute"
                   style={{ width: '230px', ...style, cursor: isActive ? 'default' : 'pointer' }}
-                  onClick={() => !isActive && setActiveIdx(i)}
+                  onClick={() => !isActive && navigateTo(i)}
                 >
                   {/* Card */}
                   <div
@@ -301,7 +306,7 @@ export default function ProfessionalWorks() {
                           className="w-full h-full object-cover"
                           loading="lazy"
                         />
-                        {isActive && (
+                        {isActive && !playingIds.has(video.id) && (
                           <div className="absolute inset-0 bg-black/20 group-hover/play:bg-black/0 transition-all duration-300 flex items-center justify-center">
                             <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover/play:scale-110 transition-transform duration-300">
                               <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">

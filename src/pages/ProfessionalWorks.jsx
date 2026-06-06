@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // ─── Translations ─────────────────────────────────────────────────────────────
@@ -163,6 +163,17 @@ export default function ProfessionalWorks() {
   };
   const prev = () => navigateTo(Math.max(0, activeIdx - 1));
   const next = () => navigateTo(Math.min(filtered.length - 1, activeIdx + 1));
+
+  // Touch swipe (mobile)
+  const touchStartX = useRef(null);
+  const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (dx < -50) next();        // swipe left → next
+    else if (dx > 50) prev();    // swipe right → prev
+    touchStartX.current = null;
+  };
 
   // 3D transform config per offset distance
   const cardConfig = [
@@ -344,8 +355,8 @@ export default function ProfessionalWorks() {
                     ) : (
                       <button
                         className="absolute inset-0 w-full h-full group/play"
-                        onClick={(e) => { e.stopPropagation(); if (isActive) play(video.id); }}
-                        aria-label="Oynat"
+                        onClick={(e) => { e.stopPropagation(); if (isActive) play(video.id); else navigateTo(i); }}
+                        aria-label={isActive ? 'Oynat' : 'Geç'}
                       >
                         <img
                           src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
@@ -428,7 +439,7 @@ export default function ProfessionalWorks() {
           {filtered[activeIdx] && (() => {
             const video = filtered[activeIdx];
             return (
-              <div>
+              <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
                 <div
                   className="relative w-full max-w-[300px] mx-auto rounded-2xl overflow-hidden bg-[#0f0f0f] shadow-2xl shadow-black/60"
                   style={{ paddingBottom: 'min(533px, 177.78%)' }}
